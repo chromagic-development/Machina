@@ -2194,6 +2194,13 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>150</MacroType>
           <SendToPlugin>
             <PluginName>GetCommand</PluginName>
@@ -2607,7 +2614,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>previous_p</Name>
-            <Value>{response_p} {previous_p}</Value>
+            <Value>{response_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2899,13 +2906,6 @@
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>previous_p</Name>
-            <Value></Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
           <MacroType>54</MacroType>
           <SpeakText>
             <Text>This conversation is tiring, so I am ending it now. Sorry!</Text>
@@ -2978,17 +2978,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Initialize variables</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>command_p</Name>
-            <Value>&quot;&quot;</Value>
-          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -3441,6 +3430,13 @@
         <MacroAction>
           <MacroType>61</MacroType>
           <Comment>***** Get command *****</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>150</MacroType>
@@ -8854,7 +8850,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1250</Pause>
+          <Pause>1500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>

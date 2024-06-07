@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)pvrecorder\1.2.5\build\net6.0\PvRecorder.targets" Condition="Exists('$(NuGetPackageRoot)pvrecorder\1.2.5\build\net6.0\PvRecorder.targets')" />
+    <Import Project="$(NuGetPackageRoot)porcupine\3.0.2\build\net6.0\Porcupine.targets" Condition="Exists('$(NuGetPackageRoot)porcupine\3.0.2\build\net6.0\Porcupine.targets')" />
+  </ImportGroup>
+</Project>

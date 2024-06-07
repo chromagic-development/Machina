@@ -1,0 +1,7 @@
+C:\Machina\Plugins\GetWeather.dll
+C:\Machina\Plugins\GetWeather.pdb
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Release\GetWeather.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Release\GetWeather.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Release\GetWeather.csproj.Up2Date
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Release\GetWeather.dll
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Release\GetWeather.pdb

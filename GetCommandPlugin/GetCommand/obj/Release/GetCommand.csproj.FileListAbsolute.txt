@@ -1,0 +1,7 @@
+C:\Machina\Plugins\GetCommand.dll
+C:\Machina\Plugins\GetCommand.pdb
+C:\Users\Bruce\source\repos\GetCommandPlugin\GetCommand\obj\Release\GetCommand.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetCommandPlugin\GetCommand\obj\Release\GetCommand.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetCommandPlugin\GetCommand\obj\Release\GetCommand.csproj.Up2Date
+C:\Users\Bruce\source\repos\GetCommandPlugin\GetCommand\obj\Release\GetCommand.dll
+C:\Users\Bruce\source\repos\GetCommandPlugin\GetCommand\obj\Release\GetCommand.pdb

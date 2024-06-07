@@ -1,7 +1,7 @@
 Machina
 ==
 
-Use case is a personal voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed several C# VM plugins as well as macros to give it life. They are combined with a Picovoice Porcupine wake word program running locally in the background to activate the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
+Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed several C# VM plugins as well as macros to give it life. They are combined with a Picovoice Porcupine wake word program running locally in the background to activate the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
 
 - Responds to a question with GPT response or have a conversation
 - Seeded with an origin story, and context "memory" with current date/time

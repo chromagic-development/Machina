@@ -5,7 +5,7 @@ Use case is a personal voice assistant with [VoiceMacro](https://www.voicemacro.
 
 - Responds to a question with GPT response or have a conversation
 - Seeded with an origin story, and context "memory" with current date/time
-- Can give you local weather forecast or for any city
+- Can give you local weather forecast or for any city from the National Weather Service
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting

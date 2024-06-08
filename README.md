@@ -35,13 +35,13 @@ Argument 3: Spoken text
 speaking_p: TRUE when speaking  
 
 **AskChatGPT**  
-Get response_p from prompt using LLM AI
+Get response_p from prompt using LLM AI  
 Argument 1: OpenAI API key  
 Argument 2: ChatGPT model  
 Argument 3: Prompt text  
 
 **GetWeather**  
-Get forecast_p for City, State using NWS
+Get forecast_p for City, State using NWS  
 Argument 1: Open Cage API key  
 Argument 2: City  
 Argument 3: State  

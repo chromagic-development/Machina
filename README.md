@@ -23,25 +23,25 @@ Plugin Descriptions
 --
 
 **GetCommand**  
-Get command_p text using Deepgram STT API  
+Get command_p text using voice AI STT  
 Argument 1: Deepgram API key  
 Argument 2: Speech duration in seconds  
 
 **SpeakText**  
-Speak text using Deepgram TTS API  
+Speak text using voice AI TTS  
 Argument 1: Deepgram API key  
 Argument 2: Aura voice model  
 Argument 3: Spoken text  
 speaking_p: TRUE when speaking  
 
 **AskChatGPT**  
-Get response_p from prompt  
+Get response_p from prompt using LLM AI
 Argument 1: OpenAI API key  
 Argument 2: ChatGPT model  
 Argument 3: Prompt text  
 
 **GetWeather**  
-Get forecast_p for City, State  
+Get forecast_p for City, State using NWS
 Argument 1: Open Cage API key  
 Argument 2: City  
 Argument 3: State  

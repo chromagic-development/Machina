@@ -1,4 +1,4 @@
-﻿// SpeakText VM plugin: Speak text using Deepgram TTS API
+﻿// SpeakText VM plugin: Speak text using voice AI TTS
 // Bruce Alexander 2024 v1
 
 using vmAPI;
@@ -38,7 +38,7 @@ namespace SpeakTextPluginCS
         {
             get
             {
-                return "Speak text using Deepgram TTS API\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: TRUE when speaking";
+                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: TRUE when speaking";
             }
         }
 
@@ -92,7 +92,7 @@ namespace SpeakTextPluginCS
         }
         #endregion
 
-        // Speak text using Deepgram TTS API
+        // Speak text using voice AI TTS
         // Argument 1: Deepgram API key
         // Argument 2: Aura voice model
         // Argument 3: Spoken text

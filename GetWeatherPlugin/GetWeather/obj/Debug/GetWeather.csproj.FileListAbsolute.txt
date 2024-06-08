@@ -1,0 +1,7 @@
+C:\VoiceMacro\Plugins\GetWeather.dll
+C:\VoiceMacro\Plugins\GetWeather.pdb
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Debug\GetWeather.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Debug\GetWeather.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Debug\GetWeather.csproj.Up2Date
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Debug\GetWeather.dll
+C:\Users\Bruce\source\repos\GetWeatherPlugin\GetWeather\obj\Debug\GetWeather.pdb

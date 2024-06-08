@@ -2969,7 +2969,7 @@
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Unable to interrupt to response</Text>
+            <Text>Unable to interrupt response</Text>
             <Label>!</Label>
             <ColorR>255</ColorR>
             <ColorG>255</ColorG>
@@ -3082,10 +3082,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3105,10 +3101,6 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3132,10 +3124,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3155,10 +3143,6 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3182,10 +3166,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3205,10 +3185,6 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3337,10 +3313,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3381,10 +3353,6 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3444,7 +3412,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>4</Param2>
+            <Param2>5</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -8850,7 +8818,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>1750</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>

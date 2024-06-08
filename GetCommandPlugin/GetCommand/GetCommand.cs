@@ -1,4 +1,4 @@
-﻿// GetCommand VM plugin: Get command_p text using Deepgram STT API
+﻿// GetCommand VM plugin: Get command_p text using voice AI STT
 // Bruce Alexander 2024 v1
 
 using vmAPI;
@@ -40,7 +40,7 @@ namespace GetCommandPluginCS
         {
             get
             {
-                return "Get command_p text using Deepgram STT API\r\nArgument 1: Deepgram API key\r\nArgument 2: Speech duration in seconds";
+                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Speech duration in seconds";
             }
         }
 
@@ -63,9 +63,6 @@ namespace GetCommandPluginCS
         // This is invoked when you use SendToPlugin action
         void vmInterface.ReceiveParams(string Param1, string Param2, string Param3, bool Synchron)
         {
-            // Get command_p using Deepgram STT API
-            // Argument 1: DEEPGRAM_API_KEY
-            // Argument 2: Speech duration in seconds
             Task.Run(() => GetCommand(Param1, Param2));
         }
 
@@ -89,7 +86,7 @@ namespace GetCommandPluginCS
         }
         #endregion
 
-        // Get command using Deepgram STT API
+        // Get command_p text using voice AI STT
         // Argument 1: DEEPGRAM_API_KEY
         // Argument 2: Speech duration in seconds
         async Task GetCommand(string param1, string param2)

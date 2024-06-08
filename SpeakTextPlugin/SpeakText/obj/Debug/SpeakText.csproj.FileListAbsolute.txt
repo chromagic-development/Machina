@@ -1,0 +1,8 @@
+C:\Program Files (x86)\VoiceMacro\Plugins\SpeakText.dll
+C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Debug\SpeakText.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Debug\SpeakText.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Debug\SpeakText.csproj.Up2Date
+C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Debug\SpeakText.dll
+C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Debug\SpeakText.pdb
+C:\VoiceMacro\Plugins\SpeakText.dll
+C:\VoiceMacro\Plugins\SpeakText.pdb

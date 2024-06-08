@@ -1,4 +1,4 @@
-﻿// GetWeather VM plugin: Get forecast_p from GetWeather prompt
+﻿// GetWeather VM plugin: Get forecast_p for City, State using NWS
 // Bruce Alexander 2024 v1
 
 using vmAPI;
@@ -22,7 +22,7 @@ namespace GetWeatherPluginCS
     {
         public string DisplayName => "GetWeather";
 
-        public string Description => "Get forecast_p for City, State\r\nArgument 1: Open Cage API key\r\nArgument 2: City\r\nArgument 3: State";
+        public string Description => "Get forecast_p for City, State using NWS\r\nArgument 1: Open Cage API key\r\nArgument 2: City\r\nArgument 3: State";
 
         public string ID => "6907fe53-5cd1-4d0a-be30-417134832d2e";
 
@@ -62,7 +62,7 @@ namespace GetWeatherPluginCS
         private static readonly HttpClient client = new HttpClient();
         private const string UserAgent = "GetWeather/1.0 (weathermanupdate2024@gmail.com)";
 
-        // Get forecast_p for City, State
+        // Get forecast_p for City, State using NWS
         // Argument 1: Open Cage API key
         // Argument 2: City
         // Argument 3: State

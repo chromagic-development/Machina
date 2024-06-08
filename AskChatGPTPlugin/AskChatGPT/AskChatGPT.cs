@@ -1,4 +1,4 @@
-﻿// AskChatGPT VM plugin: Get response_p from ChatGPT prompt
+﻿// AskChatGPT VM plugin: Get response_p from prompt using LLM AI
 // Bruce Alexander 2024 v1
 
 using vmAPI;
@@ -23,7 +23,7 @@ namespace AskChatGPTPluginCS
     {
         public string DisplayName => "AskChatGTP";
 
-        public string Description => "Get response_p from prompt\r\nArgument 1: OpenAI API key\r\nArgument 2: ChatGPT model\r\nArgument 3: Prompt text";
+        public string Description => "Get response_p from prompt using LLM AI\r\nArgument 1: OpenAI API key\r\nArgument 2: ChatGPT model\r\nArgument 3: Prompt text";
 
         public string ID => "de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1";
 
@@ -60,7 +60,7 @@ namespace AskChatGPTPluginCS
             // Stop activities because VoiceMacro is shutting down
         }
 
-        // Get response_p from prompt
+        // Get response_p from prompt using LLM AI
         // Argument 1: OpenAI API key
         // Argument 2: ChatGPT mode
         // Argument 3: Prompt text

@@ -1,0 +1,7 @@
+C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Debug\AskChatGPT.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Debug\AskChatGPT.csproj.CoreCompileInputs.cache
+C:\VoiceMacro\Plugins\AskChatGPT.dll
+C:\VoiceMacro\Plugins\AskChatGPT.pdb
+C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Debug\AskChatGPT.csproj.Up2Date
+C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Debug\AskChatGPT.dll
+C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Debug\AskChatGPT.pdb

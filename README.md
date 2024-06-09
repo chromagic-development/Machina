@@ -1,11 +1,13 @@
 Machina
 ==
 
-Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed several C# VM plugins as well as macros to give it life. They are combined with a Picovoice Porcupine AI wake word program running *locally* in the background to activate the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Picovoice, Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
+Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed several C# VM plugins as well as macros to give it life. They are combined with a Picovoice Porcupine AI wake word program running *locally* in the background to activate the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, GetWeather, GetStockQuote, and GetHeadlines plugins. It requires creating accounts with Picovoice, Deepgram, OpenAI, Open Cage, Alpha Vantage, and News API for API keys set in the "Initialize Machina" macro.
 
 - Responds in a natural voice after a question answered by GPT or have a conversation
-- Seeded with an origin story, and context "memory" with current date/time
+- Seeded with an origin story, and context "memory" with current date/time for reference
 - Can give you local weather forecast or for any city from the National Weather Service
+- Can give you current stock quote information for a publicly listed company
+- Can give you news headlines from the previous day
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
@@ -45,6 +47,15 @@ Get forecast_p for City, State using NWS
 Argument 1: Open Cage API key  
 Argument 2: City  
 Argument 3: State  
+
+**GetStockQuote**  
+Get stock price_p from symbol  
+Argument 1: Alpha Vantage API key  
+Argument 2: Stock symbol  
+
+**GetHeadlines**  
+Get top three national news headlines_p  
+Argument 1: News API key  
 
 Plugin Example Usage
 --
@@ -94,6 +105,30 @@ ExitLoop	        ---------- exit loop here ----------
 Condition	        EndIf
 Pause	        0.100 sec
 Loop	    1_End
+```
+
+```VoiceMacro
+SetVariable	    price_p = ""
+SendToPlugin	    GetStockQuote, {alphavantage_api_key_p}, {response_p}
+Pause	    3.000 sec
+Loop	    1_Start (300x)
+Condition	        If price_p <> ""
+ExitLoop	        ---------- exit loop here ----------
+Condition	        EndIf
+Pause	        0.100 sec
+Loop	    1_End
+```
+
+```VoiceMacro
+SetVariable	headlines_p = ""
+SendToPlugin	GetHeadlines, {news_api_key_p}
+Pause	3.000 sec
+Loop	1_Start (300x)
+Condition	    If headlines_p <> ""
+ExitLoop	    ---------- exit loop here ----------
+Condition	    EndIf
+Pause	    0.100 sec
+Loop	1_End
 ```
 
 Installation Steps

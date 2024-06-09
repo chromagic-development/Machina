@@ -1,0 +1,7 @@
+C:\VoiceMacro\Plugins\GetHeadlines.dll
+C:\VoiceMacro\Plugins\GetHeadlines.pdb
+C:\Users\Bruce\source\repos\GetHeadlines\GetHeadlines\obj\Debug\GetHeadlines.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetHeadlines\GetHeadlines\obj\Debug\GetHeadlines.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetHeadlines\GetHeadlines\obj\Debug\GetHeadl.F4CD7129.Up2Date
+C:\Users\Bruce\source\repos\GetHeadlines\GetHeadlines\obj\Debug\GetHeadlines.dll
+C:\Users\Bruce\source\repos\GetHeadlines\GetHeadlines\obj\Debug\GetHeadlines.pdb

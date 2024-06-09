@@ -597,6 +597,20 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>alphavantage_api_key_p</Name>
+            <Value></Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>news_api_key_p</Name>
+            <Value></Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Provide your location in the form of City, State&quot;</Comment>
         </MacroAction>
@@ -1652,8 +1666,8 @@
     <Commands>
       <GUID>5de85abf-40d7-4248-bdac-9c0b721da834</GUID>
       <Group>Misc</Group>
-      <Description>ChatGPT prompt</Description>
-      <RecocnitionText>ChatGPT</RecocnitionText>
+      <Description>Ask ChatGPT prompt</Description>
+      <RecocnitionText>AskChatGPT</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -2651,7 +2665,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>6</Param2>
+            <Param2>7</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -3060,7 +3074,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>filler</Name>
-            <Value>(RANDOM 1-15) </Value>
+            <Value>(RANDOM 1-3) </Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -3080,6 +3094,10 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3103,6 +3121,10 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3122,6 +3144,10 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3145,6 +3171,10 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3164,6 +3194,10 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3313,6 +3347,10 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -3353,6 +3391,10 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -4432,7 +4474,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Weather report</Comment>
+          <Comment>Get weather forecast</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -4460,7 +4502,63 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Love poem time machine easter egg</Comment>
+          <Comment>Get stock quote</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;stock&quot; OR command_p &gt;&lt; &quot;quote&quot; OR command_p &gt;&lt; &quot;share&quot; OR command_p &gt;&lt; &quot;current price&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>8f046a92-5118-4646-9d87-a004197c78ea</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Get headlines</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;news&quot; OR command_p &gt;&lt; &quot;headline&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>078a954a-3452-4dd6-a9f0-26264140293b</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Love poem time machine (easter egg)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -4488,7 +4586,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>ChatGPT prompt</Comment>
+          <Comment>Ask ChatGPT pompt</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -4516,7 +4614,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>ChatGPT long prompt</Comment>
+          <Comment>Ask ChatGPT a long prompt</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -4748,8 +4846,8 @@
     <Commands>
       <GUID>0c0490ad-3d55-4af8-9917-60a6a4520241</GUID>
       <Group>Misc</Group>
-      <Description>ChatGPT long prompt</Description>
-      <RecocnitionText>ChatGPT long</RecocnitionText>
+      <Description>Ask ChatGPT a long prompt</Description>
+      <RecocnitionText>AskChatGPT long</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -5692,7 +5790,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>7</Param2>
+            <Param2>12</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -6013,6 +6111,41 @@
             <Param3>Ok, I will {command_p}</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>900</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>speaking_p = FALSE</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -6442,22 +6575,164 @@
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>25c848a1-a049-4b50-a8f5-f2c59815c64e</GUID>
+      <GUID>8f046a92-5118-4646-9d87-a004197c78ea</GUID>
       <Group>Misc</Group>
-      <Description>Show the last ChatGPT response from Machina</Description>
-      <RecocnitionText>Machina said</RecocnitionText>
+      <Description>Get stock quote for publicly traded company</Description>
+      <RecocnitionText>GetStockQuote</RecocnitionText>
       <ShortCut>
-        <Key>M</Key>
+        <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
-        <ALTGR>true</ALTGR>
-        <Clicks>1</Clicks>
+        <Clicks>0</Clicks>
       </ShortCut>
-      <UseShortCut>true</UseShortCut>
       <MacroActions>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>filler</Name>
+            <Value>(RANDOM 1-2) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let me check the stock market.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let me look for a quote.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>let me look for a quote</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>Respond with only the stock symbol for the company mentioned in the following string: {command_p}. If you cannot determine the stock symbol respond with this single word: undefined</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; undefined</Condition>
+          </IfElseIf>
+        </MacroAction>
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Pop-up window activated displaying Machina said: {response_p}</Text>
+            <Text>Reporting the current price and percentage change for {response_p}</Text>
             <Label>i</Label>
             <ColorR>0</ColorR>
             <ColorG>255</ColorG>
@@ -6465,22 +6740,363 @@
           </WriteToLog>
         </MacroAction>
         <MacroAction>
-          <MacroType>57</MacroType>
-          <ShowDialog>
-            <Title>Machina said:</Title>
-            <Text>{response_p}</Text>
-            <Button1>Ok</Button1>
-            <Button2></Button2>
-            <Button3></Button3>
-            <StartPosition>0</StartPosition>
-            <ManualPosition>
-              <X>0</X>
-              <Y>0</Y>
-            </ManualPosition>
-            <WaitForClose>true</WaitForClose>
-            <UseTimeOut>false</UseTimeOut>
-            <Timeout>5000</Timeout>
-          </ShowDialog>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>price_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>GetStockQuote</PluginName>
+            <PluginID>c079bdce-5441-4f98-bfc2-ab992cb7256e</PluginID>
+            <Param1>{alphavantage_api_key_p}</Param1>
+            <Param2>{response_p}</Param2>
+            <Param3></Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>price_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>price_p</Name>
+            <Value>REPLACE[{price_p}, &quot;with a change of -&quot;,&quot;, down &quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>{price_p}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{price_p}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>The stock symbol could not be determined.</Text>
+            <Label>!</Label>
+            <ColorR>255</ColorR>
+            <ColorG>0</ColorG>
+            <ColorB>0</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\I couldn&apos;t identify a stock symbol.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Sorry, I couldn&apos;t identify a stock symbol for the company you mentioned.</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>078a954a-3452-4dd6-a9f0-26264140293b</GUID>
+      <Group>Misc</Group>
+      <Description>Get top three national news headlines</Description>
+      <RecocnitionText>GeHeadlines</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>filler</Name>
+            <Value>(RANDOM 1-2) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Ok, Let me check the latest news stories.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{price_p}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Reporting the top three national news headlines</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>headlines_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>GetHeadlines</PluginName>
+            <PluginID>6e85fa50-8496-4d7c-a289-fb53e82e7ff6</PluginID>
+            <Param1>{news_api_key_p}</Param1>
+            <Param2></Param2>
+            <Param3></Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>headlines_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>headlines_p</Name>
+            <Value>REPLACE[{headlines_p}, &quot; - &quot;,&quot; ... reported by &quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>headlines_p</Name>
+            <Value>REPLACE[{headlines_p}, &quot;and ...&quot;,&quot;... and also ...&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>{headlines_p}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{headlines_p}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -7081,6 +7697,49 @@
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>25c848a1-a049-4b50-a8f5-f2c59815c64e</GUID>
+      <Group>Misc</Group>
+      <Description>Show the last ChatGPT response from Machina</Description>
+      <RecocnitionText>Machina said</RecocnitionText>
+      <ShortCut>
+        <Key>M</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <ALTGR>true</ALTGR>
+        <Clicks>1</Clicks>
+      </ShortCut>
+      <UseShortCut>true</UseShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Pop-up window activated displaying Machina said: {response_p}</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>57</MacroType>
+          <ShowDialog>
+            <Title>Machina said:</Title>
+            <Text>{response_p}</Text>
+            <Button1>Ok</Button1>
+            <Button2></Button2>
+            <Button3></Button3>
+            <StartPosition>0</StartPosition>
+            <ManualPosition>
+              <X>0</X>
+              <Y>0</Y>
+            </ManualPosition>
+            <WaitForClose>true</WaitForClose>
+            <UseTimeOut>false</UseTimeOut>
+            <Timeout>5000</Timeout>
+          </ShowDialog>
         </MacroAction>
       </MacroActions>
     </Commands>

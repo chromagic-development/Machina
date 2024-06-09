@@ -1,0 +1,7 @@
+C:\VoiceMacro\Plugins\GetStockQuote.dll
+C:\VoiceMacro\Plugins\GetStockQuote.pdb
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Debug\GetStockQuote.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Debug\GetStockQuote.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Debug\GetStock.582AB8E1.Up2Date
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Debug\GetStockQuote.dll
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Debug\GetStockQuote.pdb

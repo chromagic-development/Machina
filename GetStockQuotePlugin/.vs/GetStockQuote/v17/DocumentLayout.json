@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bruce\\source\\repos\\GetStockQuotePlugin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|GetStockQuote\\GetStockQuote.csproj|c:\\users\\bruce\\source\\repos\\getstockquoteplugin\\getstockquote\\getstockquote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|GetStockQuote\\GetStockQuote.csproj|solutionrelative:getstockquote\\getstockquote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetStockQuote.cs",
+              "DocumentMoniker": "C:\\Users\\Bruce\\source\\repos\\GetStockQuotePlugin\\GetStockQuote\\GetStockQuote.cs",
+              "RelativeDocumentMoniker": "GetStockQuote\\GetStockQuote.cs",
+              "ToolTip": "C:\\Users\\Bruce\\source\\repos\\GetStockQuotePlugin\\GetStockQuote\\GetStockQuote.cs",
+              "RelativeToolTip": "GetStockQuote\\GetStockQuote.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwC8AAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T00:17:04.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

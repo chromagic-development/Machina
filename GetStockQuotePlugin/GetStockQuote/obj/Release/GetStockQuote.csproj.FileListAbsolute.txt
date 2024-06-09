@@ -1,0 +1,7 @@
+C:\Machina\Plugins\GetStockQuote.dll
+C:\Machina\Plugins\GetStockQuote.pdb
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Release\GetStockQuote.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Release\GetStockQuote.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Release\GetStock.582AB8E1.Up2Date
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Release\GetStockQuote.dll
+C:\Users\Bruce\source\repos\GetStockQuotePlugin\GetStockQuote\obj\Release\GetStockQuote.pdb

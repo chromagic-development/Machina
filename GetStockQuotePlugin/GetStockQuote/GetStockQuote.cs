@@ -1,5 +1,5 @@
 // GetStockQuote VM plugin: Get stock price_p from symbol
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System;
@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace GetStockQuotePluginCS
+namespace GetStockQuotePlugin
 {
     public static class Interface_Manager
     {
@@ -81,7 +81,7 @@ namespace GetStockQuotePluginCS
                         string price = RoundUpToTwoDecimalPlaces(responseObject.GlobalQuote.Price);
                         string changePercent = RoundUpToTwoDecimalPlaces(responseObject.GlobalQuote.ChangePercent.TrimEnd('%'));
 
-                        return $"{symbol} shares are currently trading at {price} dollars with a change of {changePercent}% from the previous close.";
+                        return $"{symbol} shares ended the last trading day at {price} dollars with a change of {changePercent}% from the previous close.";
                     }
                 }
                 else

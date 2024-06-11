@@ -1,16 +1,14 @@
 // GetHeadlines VM plugin: Get top three national news headlines_p
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace GetHeadlinesPluginCS
+namespace GetHeadlinesPlugin
 {
     public static class Interface_Manager
     {

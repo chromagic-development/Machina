@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Drawing;
 using NAudio.Wave;
 
-namespace SpeakTextPluginCS
+namespace SpeakTextPlugin
 {
     public static class Interface_Manager
     {

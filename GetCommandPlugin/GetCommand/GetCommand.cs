@@ -1,5 +1,7 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// Bruce Alexander 2024 v1
+// Implements simple RMS VAD
+// The durationSeconds parameter now becomes maxDurationSeconds
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System;
@@ -10,10 +12,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
 using Newtonsoft.Json.Linq;
-using NAudio.Utils;
 using NAudio.Wave;
 
-namespace GetCommandPluginCS
+namespace GetCommandPlugin
 {
     public static class Interface_Manager
     {
@@ -40,7 +41,7 @@ namespace GetCommandPluginCS
         {
             get
             {
-                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Speech duration in seconds";
+                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Maximum speech duration in seconds";
             }
         }
 
@@ -88,7 +89,7 @@ namespace GetCommandPluginCS
 
         // Get command_p text using voice AI STT
         // Argument 1: DEEPGRAM_API_KEY
-        // Argument 2: Speech duration in seconds
+        // Argument 2: Maximum speech duration in seconds
         async Task GetCommand(string param1, string param2)
         {
             // Remove quotes
@@ -113,13 +114,13 @@ namespace GetCommandPluginCS
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        static async Task<string> GetSTT(string apiKey, int durationSeconds)
+        static async Task<string> GetSTT(string apiKey, int maxDurationSeconds)
         {
             // Deepgram API endpoint
             string url = "https://api.deepgram.com/v1/listen?model=nova-2&smart_format=true";
 
             // Record audio from the microphone
-            byte[] audioData = RecordAudioFromMicrophone(durationSeconds);
+            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds);
 
             // Create an instance of HttpClient
             using (HttpClient httpClient = new HttpClient())
@@ -174,22 +175,64 @@ namespace GetCommandPluginCS
             }
         }
 
-        static byte[] RecordAudioFromMicrophone(int durationSeconds)
+        static byte[] RecordAudioFromMicrophone(int maxDurationSeconds)
         {
             using (var memoryStream = new MemoryStream())
             {
                 using (var waveIn = new WaveInEvent())
                 {
                     waveIn.WaveFormat = new WaveFormat(16000, 16, 1); // 16kHz, 16-bit, mono
+
+                    object lockObject = new object();
+                    bool voiceDetected = false;
+                    int silenceCounter = 0;
+                    const int silenceThreshold = 2; // 2 seconds of silence
+                    const int checkIntervalMs = 100; // Check for silence every 100 ms
+                    const double voiceActivityThreshold = 0.02; // Threshold for voice activity detection
+
                     waveIn.DataAvailable += (sender, e) =>
                     {
-                        memoryStream.Write(e.Buffer, 0, e.BytesRecorded);
+                        lock (lockObject)
+                        {
+                            memoryStream.Write(e.Buffer, 0, e.BytesRecorded);
+
+                            // Calculate RMS to determine if voice activity is present
+                            double rms = CalculateRms(e.Buffer, e.BytesRecorded);
+                            if (rms > voiceActivityThreshold)
+                            {
+                                voiceDetected = true;
+                                silenceCounter = 0;
+                            }
+                        }
                     };
 
                     waveIn.StartRecording();
 
-                    // Record for the specified duration
-                    Thread.Sleep(durationSeconds * 1000);
+                    DateTime recordingStartTime = DateTime.Now;
+                    while (true)
+                    {
+                        Thread.Sleep(checkIntervalMs);
+                        lock (lockObject)
+                        {
+                            if ((DateTime.Now - recordingStartTime).TotalSeconds >= maxDurationSeconds)
+                            {
+                                break;
+                            }
+
+                            if (!voiceDetected)
+                            {
+                                silenceCounter++;
+                                if (silenceCounter * checkIntervalMs >= silenceThreshold * 1000)
+                                {
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                voiceDetected = false;
+                            }
+                        }
+                    }
 
                     waveIn.StopRecording();
                 }
@@ -208,5 +251,52 @@ namespace GetCommandPluginCS
                 return memoryStream.ToArray();
             }
         }
+
+        private static double CalculateRms(byte[] buffer, int bytesRecorded)
+        {
+            int sampleCount = bytesRecorded / 2; // 2 bytes per sample (16-bit audio)
+            double sumSquares = 0;
+
+            for (int i = 0; i < bytesRecorded; i += 2)
+            {
+                short sample = BitConverter.ToInt16(buffer, i);
+                double sample32 = sample / 32768.0; // Convert to -1 to 1 range
+                sumSquares += sample32 * sample32;
+            }
+
+            return Math.Sqrt(sumSquares / sampleCount);
+        }
+    }
+
+    public class IgnoreDisposeStream : Stream
+    {
+        private readonly Stream _innerStream;
+
+        public IgnoreDisposeStream(Stream innerStream)
+        {
+            _innerStream = innerStream;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            // Don't dispose the inner stream
+        }
+
+        public override bool CanRead => _innerStream.CanRead;
+        public override bool CanSeek => _innerStream.CanSeek;
+        public override bool CanWrite => _innerStream.CanWrite;
+        public override long Length => _innerStream.Length;
+
+        public override long Position
+        {
+            get => _innerStream.Position;
+            set => _innerStream.Position = value;
+        }
+
+        public override void Flush() => _innerStream.Flush();
+        public override int Read(byte[] buffer, int offset, int count) => _innerStream.Read(buffer, offset, count);
+        public override long Seek(long offset, SeekOrigin origin) => _innerStream.Seek(offset, origin);
+        public override void SetLength(long value) => _innerStream.SetLength(value);
+        public override void Write(byte[] buffer, int offset, int count) => _innerStream.Write(buffer, offset, count);
     }
 }

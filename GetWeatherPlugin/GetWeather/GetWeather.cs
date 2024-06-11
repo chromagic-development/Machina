@@ -1,5 +1,5 @@
 ﻿// GetWeather VM plugin: Get forecast_p for City, State using NWS
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System;
@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
-namespace GetWeatherPluginCS
+namespace GetWeatherPlugin
 {
     public static class Interface_Manager
     {

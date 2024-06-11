@@ -1,5 +1,5 @@
 ﻿// AskChatGPT VM plugin: Get response_p from prompt using LLM AI
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace AskChatGPTPluginCS
+namespace AskChatGPTPlugin
 {
     public static class Interface_Manager
     {

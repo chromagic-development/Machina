@@ -6,7 +6,7 @@ Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemac
 - Responds in a natural voice after a question answered by GPT or have a conversation
 - Seeded with an origin story, and context "memory" with current date/time for reference
 - Can give you local weather forecast or for any city from the National Weather Service
-- Can give you current stock quote information for a publicly listed company
+- Can give you stock quote information for a publicly listed company
 - Can give you news headlines from the previous day
 - Can start your Roomba
 - Remote control web app when you're out of audio range

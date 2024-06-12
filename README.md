@@ -63,7 +63,7 @@ Plugin Example Usage
 
 ```VoiceMacro
 SetVariable	        command_p = ""
-SendToPlugin	        GetCommand, {deepgram_api_key_p}, 4
+SendToPlugin	        GetCommand, {deepgram_api_key_p}, 4, 1
 Loop	        1_Start (450x)
 Condition	            If command_p <> ""
 ExitLoop	            ---------- exit loop here ----------
@@ -73,13 +73,12 @@ Loop	        1_End
 ```
 
 ```VoiceMacro
-SendToPlugin	        SpeakText, {deepgram_api_key_p}, {aivoice_p}, Forecast for {city} {state}
-Pause	        3.000 sec
+SendToPlugin	        SpeakText, {deepgram_api_key_p}, {aivoice_p}, {command_p}
 Loop	        1_Start (600x)
+Pause	            1.000 sec
 Condition	            If speaking_p = FALSE
 ExitLoop	            ---------- exit loop here ----------
 Condition	            EndIf
-Pause	            0.100 sec
 Loop	        1_End
 ```
 

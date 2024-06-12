@@ -1,7 +1,8 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
 // Implements simple RMS VAD
 // The durationSeconds parameter now becomes maxDurationSeconds
-// Bruce Alexander 2024 v2
+// Set silenceThreshold in seconds
+// Bruce Alexander 2024 v3
 
 using vmAPI;
 using System;
@@ -41,7 +42,7 @@ namespace GetCommandPlugin
         {
             get
             {
-                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Maximum speech duration in seconds";
+                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
             }
         }
 
@@ -64,7 +65,7 @@ namespace GetCommandPlugin
         // This is invoked when you use SendToPlugin action
         void vmInterface.ReceiveParams(string Param1, string Param2, string Param3, bool Synchron)
         {
-            Task.Run(() => GetCommand(Param1, Param2));
+            Task.Run(() => GetCommand(Param1, Param2, Param3));
         }
 
         // This is invoked when a profile is switched
@@ -90,13 +91,22 @@ namespace GetCommandPlugin
         // Get command_p text using voice AI STT
         // Argument 1: DEEPGRAM_API_KEY
         // Argument 2: Maximum speech duration in seconds
-        async Task GetCommand(string param1, string param2)
+        // Argument 3: Silence threshold in seconds
+        async Task GetCommand(string param1, string param2, string param3)
         {
+
+            // Default value
+            if (string.IsNullOrEmpty(param3))
+            {
+                param3 = "2";
+            }
+
             // Remove quotes
             param1 = param1.Replace("\"", "");
 
             // Convert seconds to integer
             int intParam2 = int.Parse(param2);
+            int intParam3 = int.Parse(param3);
 
             // Enforce range for duration
             if (intParam2 == 0 || intParam2 > 20)
@@ -105,7 +115,7 @@ namespace GetCommandPlugin
             }
 
             // Get command from STT
-            string transcription = await GetSTT(param1, intParam2);
+            string transcription = await GetSTT(param1, intParam2, intParam3);
 
             // Set command variable from STT result
             vmCommand.SetVariable("command_p", transcription);
@@ -114,13 +124,13 @@ namespace GetCommandPlugin
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        static async Task<string> GetSTT(string apiKey, int maxDurationSeconds)
+        static async Task<string> GetSTT(string apiKey, int maxDurationSeconds, int silenceThreshold)
         {
             // Deepgram API endpoint
             string url = "https://api.deepgram.com/v1/listen?model=nova-2&smart_format=true";
 
             // Record audio from the microphone
-            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds);
+            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds, silenceThreshold);
 
             // Create an instance of HttpClient
             using (HttpClient httpClient = new HttpClient())
@@ -175,7 +185,7 @@ namespace GetCommandPlugin
             }
         }
 
-        static byte[] RecordAudioFromMicrophone(int maxDurationSeconds)
+        static byte[] RecordAudioFromMicrophone(int maxDurationSeconds, int silenceThreshold)
         {
             using (var memoryStream = new MemoryStream())
             {
@@ -186,7 +196,6 @@ namespace GetCommandPlugin
                     object lockObject = new object();
                     bool voiceDetected = false;
                     int silenceCounter = 0;
-                    const int silenceThreshold = 2; // 2 seconds of silence
                     const int checkIntervalMs = 100; // Check for silence every 100 ms
                     const double voiceActivityThreshold = 0.02; // Threshold for voice activity detection
 

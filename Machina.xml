@@ -1734,7 +1734,7 @@
             <AudioFile>C:\Machina\Voices\Yeah.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1755,7 +1755,7 @@
             <AudioFile>C:\Machina\Voices\Oh.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1776,7 +1776,7 @@
             <AudioFile>C:\Machina\Voices\Ok ok.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1797,7 +1797,7 @@
             <AudioFile>C:\Machina\Voices\Ok, well.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1818,7 +1818,7 @@
             <AudioFile>C:\Machina\Voices\Let&apos;s check.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1839,7 +1839,7 @@
             <AudioFile>C:\Machina\Voices\Umm.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1860,7 +1860,7 @@
             <AudioFile>C:\Machina\Voices\Ok.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1881,7 +1881,7 @@
             <AudioFile>C:\Machina\Voices\Oh uh.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1902,7 +1902,7 @@
             <AudioFile>C:\Machina\Voices\Oh!.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1923,7 +1923,7 @@
             <AudioFile>C:\Machina\Voices\uh k.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1944,7 +1944,7 @@
             <AudioFile>C:\Machina\Voices\Sure um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1965,7 +1965,7 @@
             <AudioFile>C:\Machina\Voices\Well um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -1986,7 +1986,7 @@
             <AudioFile>C:\Machina\Voices\Right um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -2007,7 +2007,7 @@
             <AudioFile>C:\Machina\Voices\So um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -2028,7 +2028,7 @@
             <AudioFile>C:\Machina\Voices\Let me think .mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -2323,7 +2323,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2573,6 +2573,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -2584,10 +2588,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>

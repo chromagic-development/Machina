@@ -2268,6 +2268,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -2279,10 +2283,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -2323,7 +2323,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis and do not start with, &quot;Sure thing!&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2366,6 +2366,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -2379,10 +2383,6 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>false</LoopStartStop>
@@ -2391,7 +2391,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Speak response</Comment>
+          <Comment>Machina responds</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -2675,6 +2675,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -2686,10 +2690,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -2709,7 +2709,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&gt; &quot;?&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3082,6 +3082,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
@@ -3105,6 +3109,10 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>filler = 2</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3132,6 +3140,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
@@ -3155,6 +3167,10 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>filler = 4</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3182,6 +3198,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
@@ -3207,15 +3227,23 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hi there.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Yeah sharp.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3228,15 +3256,23 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1750</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\yeah, what is it.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Yo.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3335,17 +3371,13 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah sharp.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Hi there.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3381,17 +3413,13 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yo.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\yeah, what is it.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3464,6 +3492,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -3475,10 +3507,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -3736,7 +3764,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;in bedroom&quot; OR command_p &gt;&lt; &quot;to bedroom&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;bedroom&quot; AND command_p &gt;&lt; &quot;speaker&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3764,7 +3792,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;external&quot; OR command_p &gt;&lt; &quot;outside&quot; OR command_p &gt;&lt; &quot;outdoor&quot; OR command_p &gt;&lt; &quot;deck&quot;</Condition>
+            <Condition>(command_p &gt;&lt; &quot;external&quot; OR command_p &gt;&lt; &quot;outside&quot; OR command_p &gt;&lt; &quot;outdoor&quot; OR command_p &gt;&lt; &quot;deck&quot;) AND command_p &gt;&lt; &quot;speaker&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -4852,15 +4880,15 @@
           </SendToPlugin>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>true</LoopStartStop>
             <LoopCount>900</LoopCount>
           </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -4874,10 +4902,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5001,6 +5025,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5012,10 +5040,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5157,6 +5181,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5168,10 +5196,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5234,6 +5258,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5245,10 +5273,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5422,6 +5446,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5433,10 +5461,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5488,6 +5512,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5499,10 +5527,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5738,6 +5762,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -5749,10 +5777,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -6675,6 +6699,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -6686,10 +6714,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -7010,6 +7034,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -7021,10 +7049,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -7304,6 +7328,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -7315,10 +7343,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -7620,15 +7644,15 @@
           </SendToPlugin>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>true</LoopStartStop>
             <LoopCount>300</LoopCount>
           </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -7642,10 +7666,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -7754,15 +7774,15 @@
           </SendToPlugin>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>2000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>true</LoopStartStop>
             <LoopCount>600</LoopCount>
           </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -7778,15 +7798,15 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>false</LoopStartStop>
             <LoopCount></LoopCount>
           </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -8220,6 +8240,10 @@
           </LoopAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -8231,10 +8255,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>

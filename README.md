@@ -62,69 +62,68 @@ Plugin Example Usage
 --
 
 ```VoiceMacro
-SetVariable	        command_p = ""
-SendToPlugin	        GetCommand, {deepgram_api_key_p}, 10, 1
-Loop	        1_Start (300x)
-Pause	            0.100 sec
+SetVariable	       command_p = ""
+SendToPlugin	     GetCommand, {deepgram_api_key_p}, 10, 1
+Loop	             1_Start (300x)
+Pause	                0.100 sec
 Condition	            If command_p <> ""
 ExitLoop	            ---------- exit loop here ----------
 Condition	            EndIf
-Loop	        1_End
+Loop	             1_End
 ```
 
 ```VoiceMacro
-SendToPlugin	        SpeakText, {deepgram_api_key_p}, {aivoice_p}, {command_p}
-Loop	        1_Start (600x)
-Pause	            0.100 sec
-Condition	            If speaking_p = FALSE
-ExitLoop	            ---------- exit loop here ----------
-Condition	            EndIf
-Loop	        1_End
+SendToPlugin	    SpeakText, {deepgram_api_key_p}, {aivoice_p}, {command_p}
+Loop	            1_Start (600x)
+Pause	              0.100 sec
+Condition	          If speaking_p = FALSE
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
 ```
 
 ```VoiceMacro
-SetVariable	    response_p = ""
+SetVariable	      response_p = ""
 SendToPlugin	    AskChatGTP, {openai_api_key_p}, {chatgpt_model_p}, {prompt}
-Loop	    1_Start (300x)
-Pause	        0.100 sec
-Condition	        If response_p <> ""
-ExitLoop	        ---------- exit loop here ----------
-Condition	        EndIf
-Loop	    1_End
-Condition	EndIf
+Loop	            1_Start (300x)
+Pause	              0.100 sec
+Condition	          If response_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
 ```
 
 ```VoiceMacro
-SetVariable	    forecast_p = ""
+SetVariable	      forecast_p = ""
 SendToPlugin	    GetWeather, {opencage_api_key_p}, {city}, {state}
-Loop	    1_Start (300x)
-Pause	        0.100 sec
-Condition	        If forecast_p <> ""
-ExitLoop	        ---------- exit loop here ----------
-Condition	        EndIf
-Loop	    1_End
+Loop	            1_Start (300x)
+Pause	              0.100 sec
+Condition	          If forecast_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
 ```
 
 ```VoiceMacro
-SetVariable	    price_p = ""
+SetVariable	      price_p = ""
 SendToPlugin	    GetStockQuote, {alphavantage_api_key_p}, {response_p}
-Loop	    1_Start (300x)
-Pause	        0.100 sec
-Condition	        If price_p <> ""
-ExitLoop	        ---------- exit loop here ----------
-Condition	        EndIf
-Loop	    1_End
+Loop	            1_Start (300x)
+Pause	              0.100 sec
+Condition	          If price_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
 ```
 
 ```VoiceMacro
-SetVariable	headlines_p = ""
-SendToPlugin	GetHeadlines, {news_api_key_p}
-Loop	1_Start (300x)
-Pause	        0.100 sec
-Condition	    If headlines_p <> ""
-ExitLoop	    ---------- exit loop here ----------
-Condition	    EndIf
-Loop	1_End
+SetVariable	      headlines_p = ""
+SendToPlugin	    GetHeadlines, {news_api_key_p}
+Loop	            1_Start (300x)
+Pause	              0.100 sec
+Condition	          If headlines_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
 ```
 
 Installation Steps

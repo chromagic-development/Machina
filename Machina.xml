@@ -565,10 +565,6 @@
           </ShowOSD>
         </MacroAction>
         <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Provide your API keys</Comment>
-        </MacroAction>
-        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>picovoice_access_key</Name>
@@ -728,7 +724,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\Wakeword\Machina.exe</FileName>
-            <Arguments>--access_key {picovoice_access_key} --sensitivities 0.7 --keyword_paths  C:\Machina\Wakeword\Machina_en_windows_v3_0_0.ppn</Arguments>
+            <Arguments>--access_key {picovoice_access_key} --sensitivities 0.8 --keyword_paths  C:\Machina\Wakeword\Machina_en_windows_v3_0_0.ppn</Arguments>
             <WorkingDirectory>C:\Machina\Wakeword</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1212,10 +1208,20 @@
           <Comment>Reset audio</Comment>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Speakers</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -3708,7 +3714,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>(command_p &gt;&lt; &quot;kitchen&quot; OR command_p &gt;&lt; &quot;inside&quot;) AND command_p &gt;&lt; &quot;speaker&quot;</Condition>
+            <Condition>(command_p &gt;&lt; &quot;kitchen&quot; OR command_p &gt;&lt; &quot;inside&quot; OR command_p &gt;&lt; &quot;house&quot;) AND command_p &gt;&lt; &quot;speaker&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -8177,6 +8183,233 @@
           </WriteToLog>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>filler</Name>
+            <Value>(RANDOM 1-6) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Did you say something.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Were you asking me .mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 3</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Were you telling me.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>filler</Name>
+            <Value>(RANDOM 1-6) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Sorry, I didnt hear.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\I didnt hear what you said.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 3</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Missed that.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 4</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\You need to ask me again.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 5</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\I didnt catch what you said.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 6</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1500</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\I missed what you just said.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
@@ -8187,16 +8420,6 @@
             <ColorR>255</ColorR>
             <ColorG>0</ColorG>
             <ColorB>0</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Trying again</Text>
-            <Label>?</Label>
-            <ColorR>255</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
           </WriteToLog>
         </MacroAction>
         <MacroAction>

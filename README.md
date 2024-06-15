@@ -11,7 +11,7 @@ Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemac
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
-- You can keep incrementally customizing it with fun stuff on the fly!
+- You can keep incrementally customizing it with fun functions on the fly!
 
 <p align="center">
   <img src="https://repository-images.githubusercontent.com/811629505/ba9e6961-bbdc-488c-8760-97e0d3ad67d7" />

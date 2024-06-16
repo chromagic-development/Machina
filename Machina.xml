@@ -1061,6 +1061,7 @@
         <Key>R</Key>
         <OnKeyAction>0</OnKeyAction>
         <Alt>true</Alt>
+        <lCTRL>true</lCTRL>
         <Clicks>1</Clicks>
       </ShortCut>
       <Schedulers>
@@ -1208,20 +1209,10 @@
           <Comment>Reset audio</Comment>
         </MacroAction>
         <MacroAction>
-          <MacroType>1050</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice Speakers</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
-        </MacroAction>
-        <MacroAction>
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
+            <Arguments>setdefaultsounddevice Speakers</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1240,6 +1231,9 @@
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>10</MacroType>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -3089,7 +3083,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3104,7 +3098,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3118,7 +3112,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3133,7 +3127,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3147,7 +3141,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1000</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3162,7 +3156,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3176,36 +3170,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3220,7 +3185,36 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>500</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 5</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>500</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3234,7 +3228,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3263,7 +3257,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1750</Pause>
+          <Pause>3200</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3271,14 +3265,14 @@
             <AudioFile>C:\Machina\Voices\Yo.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>300</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -4490,7 +4484,7 @@
           <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>e4095230-3b70-47e9-9bd8-a50780a35c4a</MacroGUID>
+            <MacroGUID>b0a43860-af8c-4318-b15a-50aab528d9b9</MacroGUID>
             <Variable></Variable>
             <RunOnlyOneThread>true</RunOnlyOneThread>
             <Sync>false</Sync>
@@ -4623,7 +4617,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -6450,50 +6444,7 @@
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>25c848a1-a049-4b50-a8f5-f2c59815c64e</GUID>
-      <Group>Misc</Group>
-      <Description>Show the last ChatGPT response from Machina</Description>
-      <RecocnitionText>Machina said</RecocnitionText>
-      <ShortCut>
-        <Key>M</Key>
-        <OnKeyAction>0</OnKeyAction>
-        <ALTGR>true</ALTGR>
-        <Clicks>1</Clicks>
-      </ShortCut>
-      <UseShortCut>true</UseShortCut>
-      <MacroActions>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Pop-up window activated displaying Machina said: {response_p}</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>57</MacroType>
-          <ShowDialog>
-            <Title>Machina said:</Title>
-            <Text>{response_p}</Text>
-            <Button1>Ok</Button1>
-            <Button2></Button2>
-            <Button3></Button3>
-            <StartPosition>0</StartPosition>
-            <ManualPosition>
-              <X>0</X>
-              <Y>0</Y>
-            </ManualPosition>
-            <WaitForClose>true</WaitForClose>
-            <UseTimeOut>false</UseTimeOut>
-            <Timeout>5000</Timeout>
-          </ShowDialog>
-        </MacroAction>
-      </MacroActions>
-    </Commands>
-    <Commands>
-      <GUID>e4095230-3b70-47e9-9bd8-a50780a35c4a</GUID>
+      <GUID>b0a43860-af8c-4318-b15a-50aab528d9b9</GUID>
       <Group>Misc</Group>
       <Description>Check logged in gmail</Description>
       <RecocnitionText>Check email</RecocnitionText>
@@ -6527,7 +6478,7 @@
             <AudioFile>C:\Machina\Voices\Ok, let me check your email.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -6541,7 +6492,7 @@
             <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>30</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -6559,22 +6510,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>4</MacroType>
-          <FindWindowAndActivate>Inbox * - *.com - Gmail — Mozilla Firefox</FindWindowAndActivate>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>28</MacroType>
-          <ChangeDisplayStyle>
-            <WindowTitle>Inbox * - * - Gmail — Mozilla Firefox</WindowTitle>
-            <SetStyle>true</SetStyle>
-            <Style>3</Style>
-            <SetTransparency>false</SetTransparency>
-            <Transparency>0</Transparency>
-            <SetTopMost>false</SetTopMost>
-            <TopMost>true</TopMost>
-          </ChangeDisplayStyle>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -6601,51 +6536,29 @@
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
+          <MacroType>12</MacroType>
+          <WaitForWindow>
+            <WindowName>Inbox * - * - Gmail — Mozilla Firefox</WindowName>
+            <AbortTimeOut>true</AbortTimeOut>
+            <Timeout>10000</Timeout>
+          </WaitForWindow>
+        </MacroAction>
+        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>true</LoopStartStop>
-            <LoopCount>5</LoopCount>
-          </LoopAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>number</Name>
+            <Value>0</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
-          <MacroType>70</MacroType>
-          <WaitForPixel>
-            <RelativeToWindowPos>false</RelativeToWindowPos>
-            <RelativePosCorner>0</RelativePosCorner>
-            <Position>
-              <X>78</X>
-              <Y>159</Y>
-            </Position>
-            <ColorRed>234</ColorRed>
-            <ColorGreen>67</ColorGreen>
-            <ColorBlue>53</ColorBlue>
-            <Timeout>5000</Timeout>
-            <Radius>0</Radius>
-            <RestrictXorY>0</RestrictXorY>
-            <RestrictPixel>0</RestrictPixel>
-            <Pollrate>200</Pollrate>
-            <Tolerance>0</Tolerance>
-            <WaitForDisappear>false</WaitForDisappear>
-            <ExitLoop>true</ExitLoop>
-          </WaitForPixel>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>false</LoopStartStop>
-            <LoopCount></LoopCount>
-          </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>CurrentWinTitle &gt;&lt; &quot;(&quot;</Condition>
+          </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -6653,6 +6566,9 @@
             <Name>number</Name>
             <Value>GETNUM[{CurrentWinTitle}]</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -6948,6 +6864,49 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>25c848a1-a049-4b50-a8f5-f2c59815c64e</GUID>
+      <Group>Misc</Group>
+      <Description>Show the last ChatGPT response from Machina</Description>
+      <RecocnitionText>Machina said</RecocnitionText>
+      <ShortCut>
+        <Key>M</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <ALTGR>true</ALTGR>
+        <Clicks>1</Clicks>
+      </ShortCut>
+      <UseShortCut>true</UseShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Pop-up window activated displaying Machina said: {response_p}</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>57</MacroType>
+          <ShowDialog>
+            <Title>Machina said:</Title>
+            <Text>{response_p}</Text>
+            <Button1>Ok</Button1>
+            <Button2></Button2>
+            <Button3></Button3>
+            <StartPosition>0</StartPosition>
+            <ManualPosition>
+              <X>0</X>
+              <Y>0</Y>
+            </ManualPosition>
+            <WaitForClose>true</WaitForClose>
+            <UseTimeOut>false</UseTimeOut>
+            <Timeout>5000</Timeout>
+          </ShowDialog>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -8368,7 +8327,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -8393,7 +8352,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>

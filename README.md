@@ -8,7 +8,7 @@ Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemac
 - Seeded with an origin story, and context "memory" with current date/time for reference
 - Can give you local weather forecast or for any city from the National Weather Service
 - Can give you stock quote information for a publicly listed company
-- Can give you news headlines from the previous day
+- Can give you news headlines
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting- 

@@ -6791,7 +6791,7 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
-          <MacroType>1022</MacroType>
+          <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
             <MacroGUID>d0c0c737-1210-411e-9fa6-5021729322ec</MacroGUID>
@@ -6897,6 +6897,10 @@
         <Clicks>0</Clicks>
       </ShortCut>
       <MacroActions>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Requires right of inbox reading pane setting for logged in gmail account</Comment>
+        </MacroAction>
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>

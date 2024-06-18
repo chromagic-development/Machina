@@ -3082,10 +3082,6 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
@@ -3109,10 +3105,6 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>filler = 2</Condition>
           </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3140,10 +3132,6 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
@@ -3167,10 +3155,6 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>filler = 4</Condition>
           </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -3198,10 +3182,6 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
@@ -3227,10 +3207,6 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\Yeah sharp.mp3</AudioFile>
@@ -3254,10 +3230,6 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>filler = 7</Condition>
           </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -6538,10 +6510,14 @@
         <MacroAction>
           <MacroType>12</MacroType>
           <WaitForWindow>
-            <WindowName>Inbox * - * - Gmail — Mozilla Firefox</WindowName>
+            <WindowName>Inbox * - Gmail — Mozilla Firefox</WindowName>
             <AbortTimeOut>true</AbortTimeOut>
             <Timeout>10000</Timeout>
           </WaitForWindow>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>4</MacroType>
+          <FindWindowAndActivate>Inbox * - Gmail — Mozilla Firefox</FindWindowAndActivate>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -6815,7 +6791,7 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
-          <MacroType>22</MacroType>
+          <MacroType>1022</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
             <MacroGUID>d0c0c737-1210-411e-9fa6-5021729322ec</MacroGUID>
@@ -7771,7 +7747,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>400</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>

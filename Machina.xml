@@ -61,6 +61,16 @@
       </ShortCut>
       <MacroActions>
         <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Setting timer</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Activate countdown</Comment>
         </MacroAction>
@@ -403,6 +413,16 @@
         <Clicks>0</Clicks>
       </ShortCut>
       <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Cancelling timer</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
@@ -1095,6 +1115,16 @@
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
         <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Resetting configuration and audio</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
           <MacroType>58</MacroType>
           <ShowOSD>
             <OSDName>Please wait</OSDName>
@@ -1515,6 +1545,16 @@
       </Schedulers>
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Activating sleep mode</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
@@ -6054,6 +6094,16 @@
       </ShortCut>
       <MacroActions>
         <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Switching to inside speakers</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -6154,6 +6204,16 @@
         <Clicks>0</Clicks>
       </ShortCut>
       <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Switching to outside speakers</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
@@ -6256,6 +6316,16 @@
       </ShortCut>
       <MacroActions>
         <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Switching to bedroom speakers</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -6357,6 +6427,16 @@
       </ShortCut>
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Playing ocean waves</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>

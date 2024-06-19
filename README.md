@@ -20,7 +20,7 @@ Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemac
 
 System Requirements
 --
-Windows PC with microphone and speaker
+Windows PC with speaker and microphone
 
 Plugin Descriptions
 --

@@ -3,7 +3,7 @@ Machina
 
 Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed several C# VM plugins as well as macros to give it life. They are combined with a Picovoice Porcupine AI wake word program running *locally* in the background to activate the command macro that uses the GetCommand AI STT plugin implementing VAD. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, GetWeather, GetStockQuote, and GetHeadlines plugins. It requires creating accounts with Picovoice, Deepgram, OpenAI, Open Cage, Alpha Vantage, and News API for API keys set in the "Initialize Machina" macro.
 
-- VM essentially serves as a flexible, symbolic layer and interface for the AI plugins with UI access
+- VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Responds in a natural voice after a question answered by GPT or have a conversation
 - Seeded with an origin story, and context "memory" with current date/time for reference
 - Can give you local weather forecast or for any city from the National Weather Service

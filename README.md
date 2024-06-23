@@ -131,13 +131,13 @@ Installation Steps
 --
 1. Download Machina.zip and Machina.xml files.
 2. Copy the entire Machina folder from Machina.zip to the root of C: so it appears as C:\Machina.
-3. Install VoiceMacro_1.4_Setup.msi from https://www.voicemacro.net/download and accept all defaults.
+3. <a href="https://www.voicemacro.net/download">Download</a> and install VoiceMacro and accept all defaults.
 4. Install winamp and accept all defaults to stream music (optional; all macros can be edited to suit your needs).
 5. Copy all the files in \Machina\Plugins to overwrite files in your VM Plugins folder at \VoiceMacro\Plugins.
 6. Start VoiceMacro and click Edit and Import the Machina.xml file you downloaded for the latest macros.
 7. Make sure Machina is selected as the Profile and click Edit.
 8. Select and double-click on the Initialize Machina macro and provide your API keys for web services.
-9. Make sure the Initialize Machina macro is set to (Auto) after selecting it and clicking Auto.
+9. Make sure the Initialize Machina macro is set to (Auto).
 10. Restart VoiceMacro.
 
 2024 Bruce Alexander

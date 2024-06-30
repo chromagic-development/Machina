@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// Bruce Alexander 2024 v3
+// Bruce Alexander 2024 v4
 
 using vmAPI;
 using System;
@@ -100,14 +100,12 @@ namespace SpeakTextPlugin
         {
             // Remove unpronounceable characters
             text = text.Replace("\"", "")
-                .Replace("'", "")
                 .Replace("*", "")
                 .Replace("\n", " ... ")
                 .Replace("\r", " ... ")
                 .Replace("\r\n", " ... ")
                 .Replace("\\", " divided by ")
                 .Replace("#", " hash tag ")
-                .Replace("youll", "you will")
                 .Replace("U.S.", " United States ");
 
             // Make year ranges pronounceable

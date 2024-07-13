@@ -580,7 +580,7 @@
               <X>0</X>
               <Y>0</Y>
             </ManualPosition>
-            <DisplayTime>5</DisplayTime>
+            <DisplayTime>10</DisplayTime>
             <Transparency>5</Transparency>
           </ShowOSD>
         </MacroAction>
@@ -691,9 +691,13 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Speakers</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>700</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -701,7 +705,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 65535</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -711,7 +715,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>mutesysvolume 0</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1111,7 +1115,6 @@
         </Scheduler>
       </Schedulers>
       <UseShortCut>true</UseShortCut>
-      <UseScheduler>true</UseScheduler>
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
         <MacroAction>
@@ -1155,16 +1158,6 @@
             <DisplayTime>10</DisplayTime>
             <Transparency>5</Transparency>
           </ShowOSD>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Resetting configuration</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -1244,7 +1237,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Speakers</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1258,7 +1251,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 65535</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1660,7 +1653,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>muteappvolume firefox.exe 1</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1670,7 +1663,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice &quot;Bedroom&quot;</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1684,7 +1677,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 26214</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -1855,7 +1848,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s check.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Allright.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2363,7 +2356,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis and do not start with, &quot;Sure thing!&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing!&quot; or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2749,7 +2742,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;I&quot; OR command_p &lt;&lt; &quot;Do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3047,7 +3040,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Speakers</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -3059,9 +3052,9 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setsysvolume 52428</Arguments>
+            <Arguments>setsysvolume 65535</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -3492,7 +3485,7 @@
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>10</Param2>
-            <Param3>1</Param3>
+            <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -4756,7 +4749,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>changeappvolume winamp.exe 0.20</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -4846,7 +4839,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>changeappvolume winamp.exe -0.20</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6009,7 +6002,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6021,9 +6014,9 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setsysvolume 32768</Arguments>
+            <Arguments>setsysvolume 21845</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6155,7 +6148,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Speakers</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6169,7 +6162,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 65535</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6266,7 +6259,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Outside</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6280,7 +6273,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 52428</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6377,7 +6370,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setdefaultsounddevice Bedroom</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6391,7 +6384,7 @@
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>setsysvolume 65535</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>2</WindowStyle>
+            <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -6791,7 +6784,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>2</MacroType>
@@ -6815,7 +6808,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>5000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -8612,6 +8605,131 @@
             <Name>chatting_p</Name>
             <Value>FALSE</Value>
           </SetVariable>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>365ad47f-3f45-4535-a649-9d0ad7aeb4e9</GUID>
+      <Group>Audio</Group>
+      <Description>Toggle office/kitchen input</Description>
+      <RecocnitionText>Toggle Mic</RecocnitionText>
+      <ShortCut>
+        <Key>F4</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>1</Clicks>
+      </ShortCut>
+      <UseShortCut>true</UseShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>office_p = TRUE</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>office_p</Name>
+            <Value>FALSE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>58</MacroType>
+          <ShowOSD>
+            <OSDName>Please wait</OSDName>
+            <OSDTextElements>
+              <OSDTextElement>
+                <Text>Speakerphone mic is listening</Text>
+                <Align>32</Align>
+                <Font>
+                  <Name>Tahoma</Name>
+                  <Style>1</Style>
+                  <Size>26.25</Size>
+                  <GDICharset>0</GDICharset>
+                </Font>
+                <ColorR>0</ColorR>
+                <ColorG>255</ColorG>
+                <ColorB>0</ColorB>
+                <PositionY>38</PositionY>
+              </OSDTextElement>
+            </OSDTextElements>
+            <StartPosition>2</StartPosition>
+            <Width>1000</Width>
+            <Height>90</Height>
+            <DisplayName>DISPLAY1</DisplayName>
+            <ManualPosition>
+              <X>0</X>
+              <Y>0</Y>
+            </ManualPosition>
+            <DisplayTime>3</DisplayTime>
+            <Transparency>5</Transparency>
+          </ShowOSD>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setdefaultsounddevice &quot;Speakerphone In&quot;</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>office_p</Name>
+            <Value>TRUE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>58</MacroType>
+          <ShowOSD>
+            <OSDName>Please wait</OSDName>
+            <OSDTextElements>
+              <OSDTextElement>
+                <Text>PC microphone is listening</Text>
+                <Align>32</Align>
+                <Font>
+                  <Name>Tahoma</Name>
+                  <Style>1</Style>
+                  <Size>26.25</Size>
+                  <GDICharset>0</GDICharset>
+                </Font>
+                <ColorR>0</ColorR>
+                <ColorG>255</ColorG>
+                <ColorB>0</ColorB>
+                <PositionY>38</PositionY>
+              </OSDTextElement>
+            </OSDTextElements>
+            <StartPosition>2</StartPosition>
+            <Width>1000</Width>
+            <Height>90</Height>
+            <DisplayName>DISPLAY1</DisplayName>
+            <ManualPosition>
+              <X>0</X>
+              <Y>0</Y>
+            </ManualPosition>
+            <DisplayTime>3</DisplayTime>
+            <Transparency>5</Transparency>
+          </ShowOSD>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setdefaultsounddevice Microphone</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
       </MacroActions>
     </Commands>

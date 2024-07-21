@@ -587,13 +587,6 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>picovoice_access_key</Name>
-            <Value></Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
             <Name>deepgram_api_key_p</Name>
             <Value></Value>
           </SetVariable>
@@ -742,14 +735,42 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Bootstrap Machina for Porcupine wake word</Comment>
+          <Comment>Start listening for Machina wake word [Argument: Wake word model path (default is Machina.table)]</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\Wakeword\Machina.exe</FileName>
-            <Arguments>--access_key {picovoice_access_key} --sensitivities 0.7 --keyword_paths  C:\Machina\Wakeword\Machina_en_windows_v3_0_0.ppn</Arguments>
+            <Arguments>Machina_HighSensitivity.table</Arguments>
             <WorkingDirectory>C:\Machina\Wakeword</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>*** CUSTOM ***</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>700</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setsysvolume 21845</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -988,7 +1009,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
-            <Arguments>{path_p}\Machina\Streams\lofi.m3u</Arguments>
+            <Arguments>{path_p}\Machina\Streams\LoFi.pls</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1257,6 +1278,34 @@
         </MacroAction>
         <MacroAction>
           <MacroType>10</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>*** CUSTOM ***</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>700</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
+            <Arguments>setsysvolume 21845</Arguments>
+            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -2742,7 +2791,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;I&quot; OR command_p &lt;&lt; &quot;Do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;I&quot; OR command_p &lt;&lt; &quot;Do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -4622,7 +4671,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>

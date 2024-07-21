@@ -2,7 +2,7 @@
 // Implements simple RMS VAD
 // The durationSeconds parameter now becomes maxDurationSeconds
 // Set silenceThreshold in seconds
-// Bruce Alexander 2024 v3
+// Bruce Alexander 2024 v4
 
 using vmAPI;
 using System;
@@ -83,7 +83,15 @@ namespace GetCommandPlugin
             Process[] processes = Process.GetProcessesByName("Machina");
             foreach (var proc in processes)
             {
-                proc.Kill();
+                if (!proc.HasExited)
+                {
+                    proc.CloseMainWindow(); // Attempt to close the main window
+                    if (!proc.WaitForExit(5000)) // Wait for up to 5 seconds for the process to exit
+                    {
+                        // If it hasn't exited, force termination
+                        proc.Kill();
+                    }
+                }
             }
         }
         #endregion

@@ -1,7 +1,7 @@
 Machina
 ==
 
-Use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros to give it life. When "Machina" is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
+The use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros to give it life. When "Machina" is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
 
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Responds in a natural voice after a question answered by GPT or have a conversation

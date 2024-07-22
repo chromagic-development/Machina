@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ApplicationIcon>Machina.ico</ApplicationIcon>
     <Company>Chromagic Development</Company>
-    <Copyright>Copyright © Bruce Alexander 2024</Copyright>
+    <Copyright>Copyright © 2024 Bruce Alexander</Copyright>
     <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 

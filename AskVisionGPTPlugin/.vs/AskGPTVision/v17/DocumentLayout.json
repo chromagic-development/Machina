@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bruce\\source\\repos\\GetVisionPlugin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|AskChatGPT\\AskVisionGPT.csproj|c:\\users\\bruce\\source\\repos\\getvisionplugin\\askchatgpt\\askvisiongpt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|AskChatGPT\\AskVisionGPT.csproj|solutionrelative:askchatgpt\\askvisiongpt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AskVisionGPT.cs",
+              "DocumentMoniker": "C:\\Users\\Bruce\\source\\repos\\GetVisionPlugin\\AskChatGPT\\AskVisionGPT.cs",
+              "RelativeDocumentMoniker": "AskChatGPT\\AskVisionGPT.cs",
+              "ToolTip": "C:\\Users\\Bruce\\source\\repos\\GetVisionPlugin\\AskChatGPT\\AskVisionGPT.cs",
+              "RelativeToolTip": "AskChatGPT\\AskVisionGPT.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:32:11.924Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

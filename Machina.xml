@@ -585,6 +585,10 @@
           </ShowOSD>
         </MacroAction>
         <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>API keys</Comment>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>deepgram_api_key_p</Name>
@@ -638,7 +642,18 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatgpt_model_p</Name>
-            <Value>gpt-4o</Value>
+            <Value>gpt-4o-mini</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>RTSP URL for IP camera</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>rtspurl_p</Name>
+            <Value>rtsp://USERNAME:PASSWORD@192.168.1.2:554/stream2</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2185,7 +2200,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
-            <Value>{command_p} Respond to this question as if Bruce Alexander is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is Mary. You are an artificial intelligence voice assistant that uses a GPT Neural Network integrating Picovoice wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024.</Value>
+            <Value>{command_p} Respond to this question as if Bruce Alexander is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is Mary. You are an artificial intelligence voice assistant that uses a GPT Neural Network integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2413,9 +2428,27 @@
           <Comment>New chat prompt</Comment>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Vision related?</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>prompt &gt;&lt; &quot;look&quot; OR prompt &gt;&lt; &quot;see&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Providing chat prompt</Text>
+            <Text>Providing vision prompt</Text>
             <Label>i</Label>
             <ColorR>0</ColorR>
             <ColorG>255</ColorG>
@@ -2425,9 +2458,33 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>response_p</Name>
-            <Value>&quot;&quot;</Value>
+            <Name>context</Name>
+            <Value>{context} You also have the ability to see what&apos;s in front of you.</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskVisionGPT</PluginName>
+            <PluginID>3bcdd962-292c-4507-9818-504dc7b1ecce</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{rtspurl_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Providing chat prompt</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>150</MacroType>
@@ -2441,10 +2498,13 @@
           </SendToPlugin>
         </MacroAction>
         <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>true</LoopStartStop>
-            <LoopCount>300</LoopCount>
+            <LoopCount>1200</LoopCount>
           </LoopAction>
         </MacroAction>
         <MacroAction>

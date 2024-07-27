@@ -1,10 +1,11 @@
 Machina
 ==
 
-The use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros to give it life. When "Machina" is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
+The use case is a personal AI voice assistant with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros to give it life. When "Machina" is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, AskVisionGPT, and GetWeather plugins. It requires creating accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
 
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Responds in a natural voice after a question answered by GPT or have a conversation
+- Uses multimodal vision with either a local or IP camera so you can ask about what it sees
 - Seeded with an origin story, and context "memory" with current date/time for reference
 - Can give you local weather forecast or for any city from the National Weather Service
 - Can give you stock quote information for a publicly listed company
@@ -42,6 +43,12 @@ speaking_p: TRUE when speaking
 Get response_p from prompt using LLM AI  
 Argument 1: OpenAI API key  
 Argument 2: ChatGPT model  
+Argument 3: Prompt text  
+
+**AskVisionGPT**  
+Get response_p from prompt using LLM Vision AI  
+Argument 1: OpenAI API key  
+Argument 2: RTSP URL or leave blank  
 Argument 3: Prompt text  
 
 **GetWeather**  
@@ -86,6 +93,17 @@ Loop	            1_End
 ```VoiceMacro
 SetVariable	    response_p = ""
 SendToPlugin	    AskChatGTP, {openai_api_key_p}, {chatgpt_model_p}, {prompt}
+Loop	            1_Start (300x)
+Pause	              0.100 sec
+Condition	          If response_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
+```
+
+```VoiceMacro
+SetVariable	    response_p = ""
+SendToPlugin	    AskVisionGPT, {openai_api_key_p}, {rtspurl_p}, {prompt}
 Loop	            1_Start (300x)
 Pause	              0.100 sec
 Condition	          If response_p <> ""

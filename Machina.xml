@@ -2504,7 +2504,7 @@
           <MacroType>60</MacroType>
           <LoopAction>
             <LoopStartStop>true</LoopStartStop>
-            <LoopCount>60</LoopCount>
+            <LoopCount>450</LoopCount>
           </LoopAction>
         </MacroAction>
         <MacroAction>

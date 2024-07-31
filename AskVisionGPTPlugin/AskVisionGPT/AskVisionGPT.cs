@@ -1,5 +1,5 @@
 ﻿// AskVisionGPT VM plugin: Get response_p from prompt using LLM Vision AI
-// Bruce Alexander 2024 v1
+// Bruce Alexander 2024 v2
 
 using vmAPI;
 using System.Drawing;
@@ -25,7 +25,7 @@ namespace AskVisionGPTPlugin
     {
         public string DisplayName => "AskVisionGPT";
 
-        public string Description => "Get response_p from prompt using LLM Vision AI\r\nArgument 1: OpenAI API key\r\nArgument 2: RTSP URL or leave blank\r\nArgument 3: Prompt text";
+        public string Description => "Get response_p from prompt using LLM Vision AI\r\nArgument 1: OpenAI API key\r\nArgument 2: RTSP URL (blank for first camera device)\r\nArgument 3: Prompt text";
 
         public string ID => "3bcdd962-292c-4507-9818-504dc7b1ecce";
 

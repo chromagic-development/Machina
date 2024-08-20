@@ -6,7 +6,7 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Responds in a natural voice after a question answered by ChatGPT or have a conversation
 - Uses multimodal vision with either a local or IP camera so you can ask about what it sees
-- Seeded with an origin story and context long-term and short-term "memory" updated by ChatGPT conversations
+- Seeded with an origin story and context short-term and long-term "memory" updated by ChatGPT conversations
 - Can give you local weather forecast or for any city from the National Weather Service
 - Can give you stock quote information for a publicly listed company
 - Can give you news headlines

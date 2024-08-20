@@ -6,15 +6,15 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Responds in a natural voice after a question answered by ChatGPT or have a conversation
 - Uses multimodal vision with either a local or IP camera so you can ask about what it sees
-- Seeded with an origin story while the context "persistent memory" updates with ChatGPT conversations
+- Seeded with an origin story and context long-term and short-term "memory" updated by ChatGPT conversations
 - Can give you local weather forecast or for any city from the National Weather Service
 - Can give you stock quote information for a publicly listed company
 - Can give you news headlines
 - Can start your Roomba
 - Remote control web app when you're out of audio range
-- Deprecated Picovoice Porcupine is still an alternative runtime option to the default wake word engine and binaries are included in the zip file
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
-- You can keep incrementally customizing it with fun functions on the fly!
+- Deprecated Picovoice Porcupine is still an alternative runtime option to the default wake word engine and binaries are included in the zip file
+- You can keep incrementally customizing it with fun macro functions on the fly!
 
 <p align="center">
   <img src="https://repository-images.githubusercontent.com/811629505/ba9e6961-bbdc-488c-8760-97e0d3ad67d7" />

@@ -591,6 +591,13 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
+            <Name>picovoice_api_key</Name>
+            <Value></Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
             <Name>deepgram_api_key_p</Name>
             <Value></Value>
           </SetVariable>
@@ -625,7 +632,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide your location in the form of City, State&quot;</Comment>
+          <Comment>Provide your location in the form of City, State</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -636,7 +643,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide ChatGPT model [gpt-3.5-turbo or gpt-4o]</Comment>
+          <Comment>Provide ChatGPT model (gpt-4o-mini)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -647,18 +654,18 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>RTSP URL for IP camera</Comment>
+          <Comment>RTSP URL for IP camera (or leave blank to use first attached camera device)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>rtspurl_p</Name>
-            <Value>rtsp://USERNAME:PASSWORD@192.168.1.2:554/stream2</Value>
+            <Value>rtsp://chromagic:Machinamachina1%21@192.168.1.20:554/stream2</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide Deepgram AI voice instead of Windows voice [luna, stella, athena (uk), hera, orion, arcas, angus (ie), orpheus, helios (uk), zeus]</Comment>
+          <Comment>Provide Deepgram AI voice instead of Windows voice</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -680,6 +687,99 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Origin story using ChatGPT context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>background_p</Name>
+            <Value>Respond to this question as if Bruce Alexander is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is Mary. Their smart and wonderful adult daughters are both named Zoe and live out West while working for software companies. You are an artificial intelligence voice assistant that uses a LLM GPT Neural Network with vision integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024. Your name is Machina.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Provide primary persons, places, or things and events for triggering memories using ChatGPT context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>- You can add memories about what is listed by starting a prompt the noun as the first word</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>- Just start with &quot;Remember&quot; for anything secondary that is associated with the nouns</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun1_p</Name>
+            <Value>bruce</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun2_p</Name>
+            <Value>mary</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun3_p</Name>
+            <Value>zoe</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun4_p</Name>
+            <Value>joe</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun5_p</Name>
+            <Value>nan</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun6_p</Name>
+            <Value>deb</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun7_p</Name>
+            <Value>matt</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun8_p</Name>
+            <Value>mob</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun9_p</Name>
+            <Value>xxx</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>noun10_p</Name>
+            <Value>xxx</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Reset memory context, audio output, and disable Windows Speech Recogntion</Comment>
         </MacroAction>
         <MacroAction>
@@ -692,30 +792,6 @@
         <MacroAction>
           <MacroType>8</MacroType>
           <StartStopShortCuts>1</StartStopShortCuts>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice Speakers</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>700</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setsysvolume 65535</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -750,7 +826,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Start listening for Machina wake word [Argument: Wake word model path (default is Machina.table)]</Comment>
+          <Comment>Listen  for Machina, as in Mah-kinah, with wake word engine </Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -764,31 +840,32 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>*** CUSTOM ***</Comment>
+          <Comment>Listen for Machina, as in Machine-ah, with Picovoice Porcupine (after making the above line INACTIVE)</Comment>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
+            <FileName>C:\Machina\Wakeword\Porcupine\Machina.exe</FileName>
+            <Arguments>--access_key {picovoice_api_key} --keyword_paths C:\Machina\Wakeword\Porcupine\Machina_en_windows_v3_0_0.ppn --sensitivities 0.7</Arguments>
+            <WorkingDirectory>C:\Machina\Wakeword\Porcupine</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>700</Pause>
+          <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setsysvolume 21845</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\tos-computer-01.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -861,11 +938,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\groovesalad.m3u</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Groove salad&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -941,11 +1032,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\radioparadise.m3u</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Radio paradise&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -1021,11 +1126,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\LoFi.pls</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Lofi</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -1101,11 +1220,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\Jazz.pls</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Jazz</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -1151,6 +1284,7 @@
         </Scheduler>
       </Schedulers>
       <UseShortCut>true</UseShortCut>
+      <Repeat>true</Repeat>
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
         <MacroAction>
@@ -1271,7 +1405,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice Speakers</Arguments>
+            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1293,34 +1427,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>10</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>*** CUSTOM ***</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setdefaultsounddevice &quot;Speakerphone Out&quot;</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>700</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
-            <Arguments>setsysvolume 21845</Arguments>
-            <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
-            <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -1393,11 +1499,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\classical.m3u</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Classical</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -1473,11 +1593,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\Lounge.m3u</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Lounge</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -1553,11 +1687,25 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
             <Arguments>{path_p}\Machina\Streams\reggae.m3u</Arguments>
             <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Reggae</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
@@ -2187,21 +2335,133 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Create a persistent memory</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p} OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p}</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Creating a persistent memory</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>{command_p} Summarize the content of the previous sentence or sentences into a single sentence that also indicates it was told to you on {DateTime} in the same sentence.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p </Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>450</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>4000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Thanks for letting me know.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>persistent_s</Name>
+            <Value>{persistent_s} {response_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Origin story question</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;your&quot; OR command_p &gt;&lt; &quot;are you&quot; OR command_p &gt;&lt; &quot;you are&quot; OR command_p &gt;&lt; &quot;bruce&quot; OR command_p &gt;&lt; &quot;mary&quot; OR command_p &gt;&lt; &quot;mary m&quot; OR command_p &gt;&lt; &quot;machina&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;you&quot; OR command_p &gt;&lt; {noun1_p} OR command_p &gt;&lt; {noun2_p} OR command_p &gt;&lt; {noun3_p} OR command_p &gt;&lt; {noun4_p} OR command_p &gt;&lt; {noun5_p} OR command_p &gt;&lt; {noun6_p} OR command_p &gt;&lt; {noun7_p} OR command_p &gt;&lt; {noun8_p} OR command_p &gt;&lt; {noun9_p} OR command_p &gt;&lt; {noun10_p}</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
-            <Value>{command_p} Respond to this question as if Bruce Alexander is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is Mary. You are an artificial intelligence voice assistant that uses a GPT Neural Network integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024.</Value>
+            <Value>{command_p} {background_p}</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>{command_p} {persistent_s} Do not bring up anything told to you about something that happened more than three days ago, but feel free to comment on any events or descriptions told to you that are current or pertinent to the prompt.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -2420,7 +2680,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} Respond with the the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing!&quot; or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2442,7 +2702,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>prompt &gt;&lt; &quot;look&quot; OR prompt &gt;&lt; &quot;see&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;look&quot; OR command_p &gt;&lt; &quot;see&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -2458,8 +2718,8 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>context</Name>
-            <Value>{context} You also have the ability to see what&apos;s in front of you.</Value>
+            <Name>prompt</Name>
+            <Value>{prompt} You also have vision and can see.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -3133,6 +3393,13 @@
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>speaking_p</Name>
+            <Value>TRUE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Reset audio out when not speakers, speakerphone or outside</Comment>
         </MacroAction>
@@ -3776,6 +4043,13 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>speaking_p</Name>
+            <Value>FALSE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>***** Execute command *****</Comment>
         </MacroAction>
@@ -3794,7 +4068,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;never mind&quot; OR command_p &gt;&lt; &quot;forget it&quot; OR command_p &gt;&lt; &quot;whoops&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;never mind&quot; OR command_p &gt;&lt; &quot;forget it&quot; OR command_p &gt;&lt; &quot;ignore&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3802,6 +4076,34 @@
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
             <MacroGUID>8bbdffd6-3300-4515-9055-e41d43ab4c1b</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Stop audio and macros</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &lt;&lt; &quot;stop&quot; OR command_p &lt;&lt; &quot;shutup&quot; OR command_p &lt;&lt; &quot;quiet&quot; OR command_p &lt;&lt; &quot;abort&quot; OR command_p &gt;&lt; &quot;turn off&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>89391554-70a0-4015-a8b9-93513a9e1a62</MacroGUID>
             <Variable></Variable>
             <RunOnlyOneThread>true</RunOnlyOneThread>
             <Sync>false</Sync>
@@ -4236,34 +4538,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Stop audio and macros</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;stop&quot; OR command_p &lt;&lt; &quot;shutup&quot; OR command_p &lt;&lt; &quot;quiet&quot; OR command_p &lt;&lt; &quot;abort&quot; OR command_p &gt;&lt; &quot;turn off&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>22</MacroType>
-          <RunOtherMacro>
-            <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>89391554-70a0-4015-a8b9-93513a9e1a62</MacroGUID>
-            <Variable></Variable>
-            <RunOnlyOneThread>true</RunOnlyOneThread>
-            <Sync>false</Sync>
-          </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>101</MacroType>
-          <GotoLabel>Command accepted</GotoLabel>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
           <Comment>Reset audio configuration</Comment>
         </MacroAction>
         <MacroAction>
@@ -4400,6 +4674,20 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot; in &quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>- Let ChatGPT answer for other places</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
             <Condition>command_p &gt;&lt; &quot;time is it&quot; OR &lt;&lt; command_p &gt;&lt; &quot;what time is&quot;</Condition>
           </IfElseIf>
         </MacroAction>
@@ -4416,6 +4704,9 @@
         <MacroAction>
           <MacroType>101</MacroType>
           <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -4613,6 +4904,90 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Translate to Italian</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;italian&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>ec90c649-485b-4f26-baf8-7ba02c3a63e6</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Repeat translation</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;repeat&quot; AND command_p &gt;&lt; &quot;translation&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Repeating translation to Italian</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>4</MacroType>
+          <FindWindowAndActivate>Google Translate *</FindWindowAndActivate>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_RETURN</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>6000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_RETURN</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Get weather forecast</Comment>
         </MacroAction>
         <MacroAction>
@@ -4731,7 +5106,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; &quot;you&quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p}  OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p} OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -4853,12 +5228,26 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>changeappvolume winamp.exe 0.20</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Increase volume&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -4943,12 +5332,26 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\NirCmd\nircmd.exe</FileName>
             <Arguments>changeappvolume winamp.exe -0.20</Arguments>
             <WorkingDirectory>C:\Machina\NirCmd</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Decrease volume&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -5064,10 +5467,24 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>15</MacroType>
+          <MacroType>1015</MacroType>
           <KillProcess>
             <ProcessName>winamp</ProcessName>
           </KillProcess>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>23</MacroType>
@@ -5752,7 +6169,7 @@
       <GUID>078a954a-3452-4dd6-a9f0-26264140293b</GUID>
       <Group>Misc</Group>
       <Description>Get top three national news headlines</Description>
-      <RecocnitionText>GeHeadlines</RecocnitionText>
+      <RecocnitionText>GetHeadlines</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -6694,7 +7111,7 @@
           <WaitForWindow>
             <WindowName>Inbox * - Gmail — Mozilla Firefox</WindowName>
             <AbortTimeOut>true</AbortTimeOut>
-            <Timeout>10000</Timeout>
+            <Timeout>45000</Timeout>
           </WaitForWindow>
         </MacroAction>
         <MacroAction>
@@ -6872,52 +7289,16 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>2</MacroType>
-          <Mouse>
-            <Move>true</Move>
-            <Click>true</Click>
-            <Position>
-              <X>560</X>
-              <Y>250</Y>
-            </Position>
-            <lButton>-1</lButton>
-            <mButton>0</mButton>
-            <rButton>0</rButton>
-            <xButton1>0</xButton1>
-            <xButton2>0</xButton2>
-            <Clicks>1</Clicks>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>Return</Key>
+            <ClickDownUp>0</ClickDownUp>
             <ClickDuration>20</ClickDuration>
-            <ScrollDistance>0</ScrollDistance>
-            <RelativePosCorner>0</RelativePosCorner>
-          </Mouse>
+          </Keyboard>
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1000</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>2</MacroType>
-          <Mouse>
-            <Move>true</Move>
-            <Click>true</Click>
-            <Position>
-              <X>875</X>
-              <Y>420</Y>
-            </Position>
-            <lButton>-1</lButton>
-            <mButton>0</mButton>
-            <rButton>0</rButton>
-            <xButton1>0</xButton1>
-            <xButton2>0</xButton2>
-            <Clicks>1</Clicks>
-            <ClickDuration>20</ClickDuration>
-            <ScrollDistance>0</ScrollDistance>
-            <RelativePosCorner>0</RelativePosCorner>
-          </Mouse>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>1000</Pause>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -6944,26 +7325,6 @@
         <MacroAction>
           <MacroType>3</MacroType>
           <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>2</MacroType>
-          <Mouse>
-            <Move>true</Move>
-            <Click>true</Click>
-            <Position>
-              <X>1649</X>
-              <Y>273</Y>
-            </Position>
-            <lButton>-1</lButton>
-            <mButton>0</mButton>
-            <rButton>0</rButton>
-            <xButton1>0</xButton1>
-            <xButton2>0</xButton2>
-            <Clicks>1</Clicks>
-            <ClickDuration>20</ClickDuration>
-            <ScrollDistance>0</ScrollDistance>
-            <RelativePosCorner>0</RelativePosCorner>
-          </Mouse>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -7022,6 +7383,216 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>ec90c649-485b-4f26-baf8-7ba02c3a63e6</GUID>
+      <Group>Misc</Group>
+      <Description>Translate extracted phrase to Italian</Description>
+      <RecocnitionText>TranslateToIT</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <OnlyOneThread>true</OnlyOneThread>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Translating phrase to Italian</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let me get Mario.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>{command_p} If the previous sentence or sentences ask to translate a phrase into Italian, extract and respond with only the Italian phrase.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p </Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>450</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>{CurrentWinTitle} &gt;&lt; &quot;Google Translate&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Do nothing</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>https://translate.google.com/?sl=it&amp;tl=en&amp;op=translate</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>12</MacroType>
+          <WaitForWindow>
+            <WindowName>Google Translate *</WindowName>
+            <AbortTimeOut>true</AbortTimeOut>
+            <Timeout>30000</Timeout>
+          </WaitForWindow>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>4</MacroType>
+          <FindWindowAndActivate>Google Translate *</FindWindowAndActivate>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>4000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_SHIFT;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_RETURN;VK_DELAY:0.15;VK_CONTROL_D;VK_A;VK_CONTROL_U;VK_DELAY:0.05;VK_BACK</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Here is the Italian translation.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Here is the Italian translation</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>55</MacroType>
+          <InsertText>
+            <Text>{response_p}</Text>
+            <UseKeyboard>true</UseKeyboard>
+            <UseAlternative>false</UseAlternative>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </InsertText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_TAB;VK_TAB;VK_DELAY:0.15;VK_RETURN</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -8839,6 +9410,25 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>0d5f29e6-50bc-4daa-bde6-59e902b29e28</GUID>
+      <Group>Misc</Group>
+      <RecocnitionText>Forget</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>persistent_s</Name>
+            <Value></Value>
+          </SetVariable>
         </MacroAction>
       </MacroActions>
     </Commands>

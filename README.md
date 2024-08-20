@@ -17,7 +17,7 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - You can keep incrementally customizing it with fun macro functions on the fly!
 
 <p align="center">
-  <img src="https://repository-images.githubusercontent.com/811629505/ba9e6961-bbdc-488c-8760-97e0d3ad67d7" />
+  <img src="https://repository-images.githubusercontent.com/811629505/7ef1a12b-2b9e-41ba-8d43-ad1158129630" />
 </p>
 
 System Requirements

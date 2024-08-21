@@ -13,7 +13,7 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
-- Deprecated Picovoice Porcupine is still an alternative runtime option to the default wake word engine and binaries are included in the zip file
+- Deprecated Picovoice Porcupine is still an alternative option to the default wake word engine and binaries are included in the zip file
 - You can keep incrementally customizing it with fun macro functions on the fly!
 
 <p align="center">

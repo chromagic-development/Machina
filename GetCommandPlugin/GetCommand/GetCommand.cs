@@ -1,8 +1,8 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// Implements simple RMS VAD
-// The durationSeconds parameter now becomes maxDurationSeconds
+// Implements combined Energy (RMS) and Zero-Crossing Rate (ZCR) in simple VAD
+// Set maxDurationSeconds for maximum listen time 
 // Set silenceThreshold in seconds
-// Bruce Alexander 2024 v4
+// Bruce Alexander 2024 v5
 
 using vmAPI;
 using System;
@@ -205,7 +205,8 @@ namespace GetCommandPlugin
                     bool voiceDetected = false;
                     int silenceCounter = 0;
                     const int checkIntervalMs = 100; // Check for silence every 100 ms
-                    const double voiceActivityThreshold = 0.02; // Threshold for voice activity detection
+                    const double voiceActivityThreshold = 0.04; // Threshold for RMS-based VAD
+                    const double zcrThreshold = 0.4; // Threshold for ZCR-based VAD
 
                     waveIn.DataAvailable += (sender, e) =>
                     {
@@ -213,9 +214,11 @@ namespace GetCommandPlugin
                         {
                             memoryStream.Write(e.Buffer, 0, e.BytesRecorded);
 
-                            // Calculate RMS to determine if voice activity is present
+                            // Calculate RMS and ZCR to determine if voice activity is present
                             double rms = CalculateRms(e.Buffer, e.BytesRecorded);
-                            if (rms > voiceActivityThreshold)
+                            double zcr = CalculateZcr(e.Buffer, e.BytesRecorded);
+
+                            if (rms > voiceActivityThreshold || zcr > zcrThreshold)
                             {
                                 voiceDetected = true;
                                 silenceCounter = 0;
@@ -282,6 +285,30 @@ namespace GetCommandPlugin
             }
 
             return Math.Sqrt(sumSquares / sampleCount);
+        }
+
+        private static double CalculateZcr(byte[] buffer, int bytesRecorded)
+        {
+            int zeroCrossings = 0;
+            int sampleCount = bytesRecorded / 2;
+
+            short previousSample = BitConverter.ToInt16(buffer, 0);
+
+            for (int i = 2; i < bytesRecorded; i += 2)
+            {
+                short currentSample = BitConverter.ToInt16(buffer, i);
+
+                // Check if there's a zero-crossing
+                if ((previousSample > 0 && currentSample < 0) || (previousSample < 0 && currentSample > 0))
+                {
+                    zeroCrossings++;
+                }
+
+                previousSample = currentSample;
+            }
+
+            // ZCR is the number of zero crossings per sample
+            return (double)zeroCrossings / sampleCount;
         }
     }
 

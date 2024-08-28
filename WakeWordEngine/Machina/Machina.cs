@@ -1,10 +1,12 @@
 ﻿// Wake Word Engine: Trigger virtual Alt-Z key combination for keyword model match
 // Argument 1: Wake word model path (default is Machina.table)
-// Bruce Alexander 2024 v1
+// Argument 2: Path to VoiceMacro.exe (default is C:\Program Files (x86)\VoiceMacro\VoiceMacro.exe)
+// Triggers VM macro with executable
+// Bruce Alexander 2024 v2
 
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
-using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace KeywordRecognition
 {
@@ -14,6 +16,9 @@ namespace KeywordRecognition
         {
             // Path to the keyword recognition model file
             var wakewordModelPath = args.Length > 0 ? args[0] : @"Machina.table";
+
+            // Path to VoiceMacro executable
+            var voiceMacroPath = args.Length > 1 ? args[1] : @"C:\Program Files (x86)\VoiceMacro\VoiceMacro.exe";
 
             // Load the keyword recognition model
             var wakewordModel = KeywordRecognitionModel.FromFile(wakewordModelPath);
@@ -46,19 +51,22 @@ namespace KeywordRecognition
                     if (result.Reason == ResultReason.RecognizedKeyword)
                     {
                         // Console.WriteLine("Wake word detected!");
-                        // Trigger virtual Alt-Z key combination
-                        const int VK_Z = 0x5A;
-                        const int VK_MENU = 0x12;
-                        const int KEYEVENTF_KEYDOWN = 0x0000;
-                        const int KEYEVENTF_KEYUP = 0x0002;
+                        // Execute VM Command macro
+                        ProcessStartInfo startInfo = new ProcessStartInfo
+                        {
+                            FileName = voiceMacroPath,
+                            Arguments = "/ExecuteMacro=\"Machina/Command\"",
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = true,
+                            UseShellExecute = false
+                        };
 
-                        [DllImport("user32.dll")]
-                        static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
+                        Process process = new Process
+                        {
+                            StartInfo = startInfo
+                        };
 
-                        keybd_event((byte)VK_MENU, 0, KEYEVENTF_KEYDOWN, 0);
-                        keybd_event((byte)VK_Z, 0, KEYEVENTF_KEYDOWN, 0);
-                        keybd_event((byte)VK_Z, 0, KEYEVENTF_KEYUP, 0);
-                        keybd_event((byte)VK_MENU, 0, KEYEVENTF_KEYUP, 0);
+                        process.Start();
                     }
                 }
                 catch (Exception ex)

@@ -710,13 +710,13 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "2.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\Machina\\Machina.csproj",
+      "projectUniqueName": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\Machina\\Machina.csproj",
       "projectName": "Machina",
-      "projectPath": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\Machina\\Machina.csproj",
+      "projectPath": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\Machina\\Machina.csproj",
       "packagesPath": "C:\\Users\\Bruce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\Machina\\obj\\",
+      "outputPath": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\Machina\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

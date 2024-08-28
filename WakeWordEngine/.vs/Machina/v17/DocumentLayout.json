@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\",
+  "WorkspaceRootPath": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{249C4870-50E5-412F-A799-301A3A5D86F1}|Machina\\Machina.csproj|c:\\users\\bruce\\source\\repos\\wakeword\\machina\\machina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{249C4870-50E5-412F-A799-301A3A5D86F1}|Machina\\Machina.csproj|c:\\users\\bruce\\source\\repos\\wakewordengine\\machina\\machina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{249C4870-50E5-412F-A799-301A3A5D86F1}|Machina\\Machina.csproj|solutionrelative:machina\\machina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Machina.cs",
-              "DocumentMoniker": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\Machina\\Machina.cs",
+              "DocumentMoniker": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\Machina\\Machina.cs",
               "RelativeDocumentMoniker": "Machina\\Machina.cs",
-              "ToolTip": "C:\\Users\\Bruce\\source\\repos\\WakeWord\\Machina\\Machina.cs",
+              "ToolTip": "C:\\Users\\Bruce\\source\\repos\\WakeWordEngine\\Machina\\Machina.cs",
               "RelativeToolTip": "Machina\\Machina.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T01:56:19.518Z",
               "EditorCaption": ""

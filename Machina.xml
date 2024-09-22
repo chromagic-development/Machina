@@ -591,13 +591,6 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>picovoice_api_key</Name>
-            <Value></Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
             <Name>deepgram_api_key_p</Name>
             <Value></Value>
           </SetVariable>
@@ -631,6 +624,13 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>picovoice_api_key</Name>
+            <Value></Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Provide your location in the form of City, State</Comment>
         </MacroAction>
@@ -638,7 +638,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>location_p</Name>
-            <Value>Denver, Colorado</Value>
+            <Value>Kittery, Maine</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -885,10 +885,10 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
-            <Arguments>https://mail.google.com</Arguments>
+            <Arguments>about:blank</Arguments>
             <WorkingDirectory></WorkingDirectory>
             <WindowStyle>3</WindowStyle>
-            <WaitForExit>true</WaitForExit>
+            <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
       </MacroActions>
@@ -979,7 +979,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Groove salad&quot;</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Groove salad&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1073,7 +1073,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Radio paradise&quot;</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Radio paradise&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1167,7 +1167,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Relax</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Relax</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1261,7 +1261,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Jazz</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Jazz</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1355,7 +1355,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Classical</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Classical</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1449,7 +1449,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Lounge</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Lounge</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1543,7 +1543,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=Machina/Reggae</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Reggae</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -2379,7 +2379,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>10</Param2>
+            <Param2>15</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -3423,6 +3423,34 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Check tides</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot; tide&quot; OR command_p &gt;&lt; &quot; tidal&quot; OR command_p &gt;&lt; &quot;low tide&quot; OR command_p &gt;&lt; &quot;high tide&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>73d24c53-eb32-484f-bd29-b36a63d4ebfd</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Translate to Italian</Comment>
         </MacroAction>
         <MacroAction>
@@ -3513,7 +3541,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;weather&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;weather&quot; OR command_p &gt;&lt; &quot;rain&quot; OR command_p &gt;&lt; &quot;snow&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3967,7 +3995,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Increase volume&quot;</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Increase volume&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -4071,7 +4099,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Decrease volume&quot;</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Decrease volume&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -4082,7 +4110,7 @@
     <Commands>
       <GUID>f4197a16-ffd9-44b1-b2cd-9dd29cd0760f</GUID>
       <Group>Misc</Group>
-      <Description>Start Firefox</Description>
+      <Description>Restart Firefox resources</Description>
       <RecocnitionText>Start Firefox</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
@@ -4097,7 +4125,7 @@
           <Weekday>0</Weekday>
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
-          <EveryUnit>0</EveryUnit>
+          <EveryUnit>1</EveryUnit>
           <StartTimeChecked>true</StartTimeChecked>
           <StartTime>2024-09-05T05:00:00.0000000</StartTime>
           <FromToChecked>false</FromToChecked>
@@ -4121,10 +4149,10 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
-            <Arguments>https://mail.google.com</Arguments>
+            <Arguments>about:blank</Arguments>
             <WorkingDirectory></WorkingDirectory>
             <WindowStyle>3</WindowStyle>
-            <WaitForExit>true</WaitForExit>
+            <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
       </MacroActions>
@@ -4132,7 +4160,7 @@
     <Commands>
       <GUID>0249e981-4cd2-4af7-8e4e-296c5e8c73ab</GUID>
       <Group>Misc</Group>
-      <Description>Kill Firefox</Description>
+      <Description>Restart Firefox resources</Description>
       <RecocnitionText>Kill Firefox</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
@@ -4147,7 +4175,7 @@
           <Weekday>0</Weekday>
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
-          <EveryUnit>0</EveryUnit>
+          <EveryUnit>1</EveryUnit>
           <StartTimeChecked>true</StartTimeChecked>
           <StartTime>2024-09-05T02:00:00.0000000</StartTime>
           <FromToChecked>false</FromToChecked>
@@ -4872,7 +4900,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>15</Param2>
+            <Param2>20</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -4940,7 +4968,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses unless specifically asked. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -4979,7 +5007,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{prompt} You also have vision and can see.</Value>
+            <Value>{prompt} You also have vision and can see. If asked what you see or to look, review the  image presented to you and respond as if the scene is actually what you see directly with your own eyes.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5308,7 +5336,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>replycount &lt; 8</Condition>
+            <Condition>replycount &lt; 12</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5730,7 +5758,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.15:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -5815,10 +5843,20 @@
           <MacroType>23</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>15</MacroType>
+          <MacroType>1015</MacroType>
           <KillProcess>
             <ProcessName>winamp</ProcessName>
           </KillProcess>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>10</MacroType>
@@ -6320,7 +6358,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p = &quot;weather.&quot; OR command_p &gt;&lt; &quot;local&quot; OR command_p &gt;&lt; location_p</Condition>
+            <Condition>command_p = &quot;weather.&quot; OR command_p &gt;&lt; &quot;local&quot; OR command_p &gt;&lt; location_p OR command_p &gt;&lt; &quot;rain&quot; OR command_p &gt;&lt; &quot;snow&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -6630,6 +6668,51 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
+            <Condition>forecast_p &gt;&lt; &quot;Error&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Sorry, for some reason.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Sorry, for some reason the national weather service is not giving me an update right now. Can you please ask me again later?</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>false</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
             <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
           </IfElseIf>
         </MacroAction>
@@ -6655,7 +6738,7 @@
             <Volume>100</Volume>
             <Speed>0</Speed>
             <Voice>Default</Voice>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
           </SpeakText>
         </MacroAction>
         <MacroAction>
@@ -7464,8 +7547,8 @@
             <RelativeToWindowPos>false</RelativeToWindowPos>
             <RelativePosCorner>0</RelativePosCorner>
             <Position>
-              <X>150</X>
-              <Y>220</Y>
+              <X>155</X>
+              <Y>215</Y>
             </Position>
             <ColorRed>211</ColorRed>
             <ColorGreen>227</ColorGreen>
@@ -7494,7 +7577,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7530,6 +7613,16 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
           <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
@@ -7555,7 +7648,7 @@
             <AudioFile>C:\Machina\Voices\you have no new email.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -7580,12 +7673,22 @@
         <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
       </MacroActions>
     </Commands>
     <Commands>
       <GUID>1092d1e1-672a-45cd-8279-0889ad289a17</GUID>
       <Group>Misc</Group>
-      <Description>Check events in portsmouthnh.com calendar</Description>
+      <Description>Check events at portsmouthnh.com calendar</Description>
       <RecocnitionText>Check events</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
@@ -7617,7 +7720,7 @@
             <AudioFile>C:\Machina\Voices\Ok, give me a moment to search.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -7644,7 +7747,7 @@
             <Volume>100</Volume>
             <Speed>0</Speed>
             <Voice>Default</Voice>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
           </SpeakText>
         </MacroAction>
         <MacroAction>
@@ -7695,14 +7798,14 @@
             <RelativeToWindowPos>false</RelativeToWindowPos>
             <RelativePosCorner>0</RelativePosCorner>
             <Position>
-              <X>430</X>
-              <Y>612</Y>
+              <X>435</X>
+              <Y>610</Y>
             </Position>
             <ColorRed>0</ColorRed>
             <ColorGreen>0</ColorGreen>
             <ColorBlue>0</ColorBlue>
             <Timeout>15000</Timeout>
-            <Radius>0</Radius>
+            <Radius>9</Radius>
             <RestrictXorY>0</RestrictXorY>
             <RestrictPixel>0</RestrictPixel>
             <Pollrate>200</Pollrate>
@@ -7713,7 +7816,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>10000</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7725,7 +7828,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7751,7 +7854,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>3000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -7759,6 +7862,16 @@
             <Name>events_p</Name>
             <Value>{Clipboard}</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -7919,6 +8032,334 @@
       </MacroActions>
     </Commands>
     <Commands>
+      <GUID>73d24c53-eb32-484f-bd29-b36a63d4ebfd</GUID>
+      <Group>Misc</Group>
+      <Description>Check Kittery tides at usharbors.co</Description>
+      <RecocnitionText>Check tides</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <OnlyOneThread>true</OnlyOneThread>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Summarizing today&apos;s tides at Kittery Point</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Give me a moment to look up the tide schedule.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Give me a moment to look up the tide schedule.</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>{CurrentWinTitle} &gt;&lt; &quot;Kittery&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Do nothing</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>https://www.usharbors.com/harbor/maine/kittery-point-me/tides</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>12</MacroType>
+          <WaitForWindow>
+            <WindowName>Kittery *</WindowName>
+            <AbortTimeOut>true</AbortTimeOut>
+            <Timeout>45000</Timeout>
+          </WaitForWindow>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>4</MacroType>
+          <FindWindowAndActivate>Kittery *</FindWindowAndActivate>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1070</MacroType>
+          <WaitForPixel>
+            <RelativeToWindowPos>false</RelativeToWindowPos>
+            <RelativePosCorner>0</RelativePosCorner>
+            <Position>
+              <X>1350</X>
+              <Y>580</Y>
+            </Position>
+            <ColorRed>29</ColorRed>
+            <ColorGreen>85</ColorGreen>
+            <ColorBlue>127</ColorBlue>
+            <Timeout>15000</Timeout>
+            <Radius>0</Radius>
+            <RestrictXorY>0</RestrictXorY>
+            <RestrictPixel>0</RestrictPixel>
+            <Pollrate>200</Pollrate>
+            <Tolerance>0</Tolerance>
+            <WaitForDisappear>false</WaitForDisappear>
+            <ExitLoop>false</ExitLoop>
+          </WaitForPixel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>Return</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>A</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <lCTRL>true</lCTRL>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>C</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <lCTRL>true</lCTRL>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>tides</Name>
+            <Value>{Clipboard}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Let&apos;s take a look</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>Summarize the Kittery point tide times from the following text by indicating whether the tide is rising or falling and the next high tide time and next low tide time. Say the full state instead of abbreviation. Also, remove all quotation marks, carriage returns and line feeds:  {tides}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>400</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>200</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>{response_p}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{Clipboard}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
       <GUID>ec90c649-485b-4f26-baf8-7ba02c3a63e6</GUID>
       <Group>Misc</Group>
       <Description>Translate extracted phrase to Italian</Description>
@@ -8006,10 +8447,6 @@
             <LoopStartStop>false</LoopStartStop>
             <LoopCount></LoopCount>
           </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Do nothing</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -8103,7 +8540,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1000</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>55</MacroType>
@@ -8139,7 +8576,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>3000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>81</MacroType>

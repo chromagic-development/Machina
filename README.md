@@ -13,8 +13,9 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - Can start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
+- Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls
+- You can keep incrementally customizing it with fun macro functions on the fly to automate anything a human can do on a Windows PC!
 - Deprecated Picovoice Porcupine is still an alternative option to the default wake word engine and binaries are included in the zip file
-- You can keep incrementally customizing it with fun macro functions on the fly!
 
 <p align="center">
   <img src="https://repository-images.githubusercontent.com/811629505/aaa9476f-8ee9-49a2-91e2-549b6dbcd110" />

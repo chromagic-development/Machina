@@ -1,3 +1,8 @@
+C:\Users\Bruce\source\repos\SpeakTextPluginStop\SpeakText\obj\Release\SpeakText.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\SpeakTextPluginStop\SpeakText\obj\Release\SpeakText.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\SpeakTextPluginStop\SpeakText\obj\Release\SpeakText.csproj.Up2Date
+C:\Users\Bruce\source\repos\SpeakTextPluginStop\SpeakText\obj\Release\SpeakText.dll
+C:\Users\Bruce\source\repos\SpeakTextPluginStop\SpeakText\obj\Release\SpeakText.pdb
 C:\Machina\Plugins\SpeakText.dll
 C:\Machina\Plugins\SpeakText.pdb
 C:\Users\Bruce\source\repos\SpeakTextPlugin\SpeakText\obj\Release\SpeakText.csproj.AssemblyReference.cache

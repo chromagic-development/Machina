@@ -813,6 +813,13 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
+            <Name>speakstop_p</Name>
+            <Value>FALSE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
             <Name>chatting_p</Name>
             <Value>FALSE</Value>
           </SetVariable>
@@ -840,7 +847,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Listen for Machina, as in Mah-kinah, with wake word engine </Comment>
+          <Comment>Listen for Machina, as in Mah-kinah, with wake word engine on default mic</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -849,12 +856,12 @@
             <Arguments>Machina_HighSensitivity.table</Arguments>
             <WorkingDirectory>C:\Machina\Wakeword</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
-            <WaitForExit>false</WaitForExit>
+            <WaitForExit>true</WaitForExit>
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Listen for Machina, as in Machine-ah, with Picovoice Porcupine (after making the above line INACTIVE)</Comment>
+          <Comment>Listen for Machina, as in Machine-ah, with Picovoice Porcupine (after making the above Machina.exe lines INACTIVE)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>1050</MacroType>
@@ -1905,7 +1912,6 @@
         <Alt>true</Alt>
         <Clicks>1</Clicks>
       </ShortCut>
-      <UseShortCut>true</UseShortCut>
       <RepeatCount>10</RepeatCount>
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
@@ -1927,14 +1933,11 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Unable to interrupt response</Text>
-            <Label>!</Label>
-            <ColorR>255</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>stopspeak_p</Name>
+            <Value>TRUE</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -3597,7 +3600,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;weather&quot; OR command_p &gt;&lt; &quot;rain&quot; OR command_p &gt;&lt; &quot;snow&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;weather&quot; OR command_p &gt;&lt; &quot; rain&quot; OR command_p &gt;&lt; &quot; snow&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -7778,7 +7781,7 @@
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Summarizing today&apos;s events around the Seacoast area</Text>
+            <Text>Summarizing AP reported tech news</Text>
             <Label>i</Label>
             <ColorR>0</ColorR>
             <ColorG>255</ColorG>
@@ -7818,17 +7821,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>1053</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Sounds\news_intro_48s.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -7845,17 +7837,6 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>1053</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Sounds\news_intro_30s.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
-            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -8099,7 +8080,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize the top listed news headlines including business news and remove all quotation marks, carriage returns and line feeds: {events_p}</Value>
+            <Value>Summarize the following news and remove all quotation marks, carriage returns and line feeds: {events_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -8233,7 +8214,7 @@
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Summarizing today&apos;s events around the Seacoast area</Text>
+            <Text>Summarizing AP reported news</Text>
             <Label>i</Label>
             <ColorR>0</ColorR>
             <ColorG>255</ColorG>
@@ -8273,17 +8254,6 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>1053</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Sounds\news_intro_48s.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
@@ -8300,17 +8270,6 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>1053</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Sounds\news_intro_30s.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
-            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -9615,7 +9574,7 @@
           <MacroType>57</MacroType>
           <ShowDialog>
             <Title>Machina said:</Title>
-            <Text>{response_p}</Text>
+            <Text>{audioDeviceName_p} AND {response_p}</Text>
             <Button1>Ok</Button1>
             <Button2></Button2>
             <Button3></Button3>

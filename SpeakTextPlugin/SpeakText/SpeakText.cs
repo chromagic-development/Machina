@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// Bruce Alexander 2024 v4
+// Bruce Alexander 2024 v5
 
 using vmAPI;
 using System;
@@ -38,7 +38,7 @@ namespace SpeakTextPlugin
         {
             get
             {
-                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: TRUE when speaking";
+                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: TRUE when speaking\r\nstopspeak_p: TRUE when user stops speech";
             }
         }
 
@@ -151,15 +151,29 @@ namespace SpeakTextPlugin
                                 waveOut.Volume = 1.0f; // Set volume to maximum
                                 waveOut.Play();
 
-                                // Wait for the audio to finish playing
+                                // Initialize stopspeak variable to FALSE
+                                vmCommand.SetVariable("stopspeak_p", "FALSE");
+
+                                // Periodically check if stopspeak_p is set to TRUE
                                 while (waveOut.PlaybackState == PlaybackState.Playing)
                                 {
                                     await Task.Delay(100);
+
+                                    // If stopspeak_p is TRUE, stop the audio
+                                    if (vmCommand.GetVariable("stopspeak_p") == "TRUE")
+                                    {
+                                        waveOut.Stop();
+                                        vmCommand.AddLogEntry("Speech stopped by user", Color.Red, ID, "!", "TTS playback stopped");
+                                        break;
+                                    }
                                 }
                             }
                         }
+						if (vmCommand.GetVariable("stopspeak_p") == "FALSE")
+                        {
                         // Show TTS completed in VoiceMacro's log in purple as information
                         vmCommand.AddLogEntry("Speech completed", Color.Blue, ID, "S", "TTS completed");
+						}
                     }
                     else
                     {

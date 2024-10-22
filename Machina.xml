@@ -643,7 +643,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide ChatGPT model (gpt-4o-mini)</Comment>
+          <Comment>Provide ChatGPT model (e.g. gpt-4o-mini)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -665,7 +665,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide Deepgram AI voice instead of Windows voice</Comment>
+          <Comment>Provide Deepgram AI voice instead of Windows voice (e.g. aura-asteria-en)</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -702,11 +702,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>- You can add memories about what is listed by starting a prompt the noun as the first word</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>- Just start with &quot;Remember&quot; for anything secondary that is associated with the nouns</Comment>
+          <Comment>- You can add memories about what is listed by starting a prompt with the noun as the first word OR start with &quot;Remember&quot; for anything secondary that is associated with the nouns</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -856,7 +852,7 @@
             <Arguments>Machina_HighSensitivity.table</Arguments>
             <WorkingDirectory>C:\Machina\Wakeword</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
-            <WaitForExit>true</WaitForExit>
+            <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
@@ -1940,6 +1936,28 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Oh_.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Umm.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
@@ -2003,6 +2021,13 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>speaking_p</Name>
+            <Value>FALSE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
@@ -2030,35 +2055,14 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>filler</Name>
-            <Value>(RANDOM 1-15) </Value>
+            <Value>(RANDOM 1-18) </Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1 AND Hours &lt; 11</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Good morning.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
+            <Condition>filler = 1 OR filler = 2 OR filler = 3</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -2079,49 +2083,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
+            <Condition>filler = 4 OR filler = 5</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -2344,6 +2306,51 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>Hours &lt; 11 AND (filler = 16 OR filler = 17 OR filler = 18)</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Good morning.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 16 OR filler = 17 OR filler = 18</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -8029,7 +8036,7 @@
           <PlaySound>
             <AudioFile>C:\Machina\Sounds\news_intro_48s.mp3</AudioFile>
             <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
+            <Volume>7</Volume>
             <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
@@ -8050,7 +8057,7 @@
           <PlaySound>
             <AudioFile>C:\Machina\Sounds\news_intro_30s.mp3</AudioFile>
             <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
+            <Volume>7</Volume>
             <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
@@ -8462,7 +8469,7 @@
           <PlaySound>
             <AudioFile>C:\Machina\Sounds\news_intro_48s.mp3</AudioFile>
             <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
+            <Volume>7</Volume>
             <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
@@ -8483,7 +8490,7 @@
           <PlaySound>
             <AudioFile>C:\Machina\Sounds\news_intro_30s.mp3</AudioFile>
             <SoundDevice></SoundDevice>
-            <Volume>10</Volume>
+            <Volume>7</Volume>
             <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
@@ -8513,7 +8520,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize the top listed news headlines including business news and remove all quotation marks, carriage returns and line feeds: {events_p}</Value>
+            <Value>Summarize the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods: {events_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -10708,7 +10715,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p = &quot;err!&quot; OR command_p = &quot;Nothing.&quot;</Condition>
+            <Condition>command_p = &quot;err!&quot; OR command_p = &quot;ERR!&quot; OR command_p = &quot;Nothing.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>

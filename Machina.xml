@@ -698,17 +698,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Origin story using ChatGPT context</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>background_p</Name>
-            <Value>Respond to this question as if Bruce Alexander is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is Mary. Their smart and wonderful adult daughters are both named Zoe and live out West while working for software companies. You are an artificial intelligence voice assistant that uses a LLM GPT Neural Network with vision integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024. Your name is Mahkeenah.</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
           <Comment>Provide primary persons, places, or things and events for triggering memories using ChatGPT context</Comment>
         </MacroAction>
         <MacroAction>
@@ -783,6 +772,17 @@
           <SetVariable>
             <Name>noun10_p</Name>
             <Value>xxx</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Origin story using ChatGPT context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>background_p</Name>
+            <Value>Respond to this question as if {noun1_p} is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is {noun2_p}. Their smart and wonderful adult daughters are both named Zoe and live out West while working for software companies. You are an artificial intelligence voice assistant that uses a LLM GPT Neural Network with vision integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024. Your name is Mahkeenah. If {noun2_p} is mentioned, respond as if you are speaking to {noun1_p} and give him a greeting. If {noun2_p} is mentioned, respond as if you are speaking to {noun1_p} and give him a greeting.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -3702,7 +3702,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; &quot;you&quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p}  OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p} OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; &quot;you&quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p}  OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p} OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot;  OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5500,7 +5500,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;I&quot; OR command_p &lt;&lt; &quot;Do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;i &quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -10441,7 +10441,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1500</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -10466,7 +10466,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -10491,7 +10491,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -10516,7 +10516,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -10541,7 +10541,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -10561,6 +10561,34 @@
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;fail&quot; OR command_p &gt;&lt; &quot;error&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>API is down: {command_p}</Text>
+            <Label>?</Label>
+            <ColorR>255</ColorR>
+            <ColorG>0</ColorG>
+            <ColorB>0</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Oh Dear.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
             <Text>Unrecognized command: {command_p}</Text>
@@ -10569,6 +10597,9 @@
             <ColorG>0</ColorG>
             <ColorB>0</ColorB>
           </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -10728,6 +10759,9 @@
             <Voice>Default</Voice>
             <Sync>true</Sync>
           </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>

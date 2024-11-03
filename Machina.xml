@@ -638,7 +638,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>location_p</Name>
-            <Value>Denver, Colorado</Value>
+            <Value>Denver, Colordado</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -782,7 +782,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>background_p</Name>
-            <Value>Respond to this question as if {noun1_p} is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is {noun2_p}. Their smart and wonderful adult daughters are both named Zoe and live out West while working for software companies. You are an artificial intelligence voice assistant that uses a LLM GPT Neural Network with vision integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024. Your name is Mahkeenah. If {noun2_p} is mentioned, respond as if you are speaking to {noun1_p} and give him a greeting. If {noun2_p} is mentioned, respond as if you are speaking to {noun1_p} and give him a greeting.</Value>
+            <Value>Respond to this question as if {noun1_p} is your creator and inventor. He is in his 50s and is a Systems Engineer. His beautiful wife is {noun2_p}. Their smart and wonderful adult daughters are both named Zoe and live out West while working for software companies. You are an artificial intelligence voice assistant that uses a LLM GPT Neural Network with vision integrating a custom wake word recognition, Deepgram Nova Speech-to-Text and Aura Text-to-Speech APIs, and VoiceMacro engine solutions.You were created and became operational in 2024. Your name is Mahkeenah. If {noun2_p} is mentioned, respond as if you are speaking to {noun1_p} and give a greeting.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -6463,6 +6463,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>100</MacroType>
+          <Label>Get local location</Label>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>response_p</Name>
@@ -6550,49 +6554,8 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Location required for reporting the weather forecast</Text>
-            <Label>?</Label>
-            <ColorR>255</ColorR>
-            <ColorG>0</ColorG>
-            <ColorB>0</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\I&apos;m not sure what location.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>54</MacroType>
-          <SpeakText>
-            <Text>i&apos;m not sure what location you want the weather forecast. please ask me again for local weather or weather for a specific city and state</Text>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Speed>0</Speed>
-            <Voice>Default</Voice>
-            <Sync>true</Sync>
-          </SpeakText>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
+          <MacroType>101</MacroType>
+          <GotoLabel>Get local location</GotoLabel>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -6634,6 +6597,10 @@
             <ColorG>255</ColorG>
             <ColorB>128</ColorB>
           </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak forecast</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -6760,10 +6727,6 @@
             <LoopStartStop>false</LoopStartStop>
             <LoopCount></LoopCount>
           </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Speak response</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -7533,6 +7496,10 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -7688,7 +7655,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>3000</Pause>
+          <Pause>5000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -9223,41 +9190,6 @@
             <ColorG>255</ColorG>
             <ColorB>128</ColorB>
           </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>54</MacroType>
-          <SpeakText>
-            <Text>Let&apos;s take a look</Text>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Speed>0</Speed>
-            <Voice>Microsoft Zira Desktop</Voice>
-            <Sync>true</Sync>
-          </SpeakText>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>

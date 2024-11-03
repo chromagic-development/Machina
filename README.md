@@ -17,6 +17,7 @@ The use case is a personal AI voice assistant with [VoiceMacro](https://www.voic
 - Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls
 - You can keep incrementally customizing it with fun macro functions on the fly to automate anything a human can do on a Windows PC!
 - Deprecated Picovoice Porcupine is still an alternative option to the default wake word engine and binaries are included in the zip file
+- Prometheus is an alternative personality that responds with his wise voice and plays Zen sounds
 
 <p align="center">
   <img src="https://repository-images.githubusercontent.com/811629505/aaa9476f-8ee9-49a2-91e2-549b6dbcd110" />

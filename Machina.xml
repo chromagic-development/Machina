@@ -638,7 +638,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>location_p</Name>
-            <Value>Denver, Colordado</Value>
+            <Value>Denver, Colorado</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -672,6 +672,17 @@
           <SetVariable>
             <Name>rtspurl_p</Name>
             <Value>rtsp://chromagic:Machinamachina1%21@192.168.1.20:554/stream2</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Provide IP address and HTTP port of Remote Corntrol VoiceMacro PC</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>ipaddress_p</Name>
+            <Value>192.168.1.18:8080</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -809,6 +820,10 @@
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Initialize flags</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -993,7 +1008,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Groove salad&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Groove salad&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1087,7 +1102,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Radio paradise&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Radio paradise&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1181,7 +1196,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Relax</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Relax</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1275,7 +1290,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Jazz</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Jazz</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1369,7 +1384,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Classical</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Classical</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1463,7 +1478,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Lounge</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Lounge</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -1557,7 +1572,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=Machina/Reggae</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Reggae</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -2388,6 +2403,13 @@
           <Comment>***** Get command *****</Comment>
         </MacroAction>
         <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>3</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
@@ -2422,6 +2444,33 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>command_p &lt;&gt; &quot;&quot;</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>{command_p} = &quot;ERR!&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Failed to hear so try again?</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>103</MacroType>
@@ -3214,12 +3263,12 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot; in &quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot; in &quot; OR command_p &gt;&lt; &quot; tide&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>- Let ChatGPT answer for other places</Comment>
+          <Comment>- continue command search</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -3702,7 +3751,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; &quot;you&quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p}  OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p} OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot;  OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot;  OR command_p &lt;&lt; &quot;have&quot;  OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; &quot;you&quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p} OR command_p &lt;&lt; {noun8_p} OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p} OR command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot; OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot; OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot; OR command_p &lt;&lt; &quot;have&quot; OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -4044,7 +4093,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Increase volume&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Increase volume&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -4148,7 +4197,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Decrease volume&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Decrease volume&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -5017,7 +5066,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
-            <Value>{command_p} look at the person in this image and respond as as if speaking directly to them. After answering their question, add a final sentence that begins with, &quot;Also, I couldn&apos;t help but notice ...&quot; and then compliment their fashion choice while describing in detail the type of clothes, patterns, and colors they are wearing.</Value>
+            <Value>{command_p} look at the person in this image and respond as as if speaking directly to them. After answering their question, add a final sentence that begins with, &quot;Also, I couldn&apos;t help but notice ...&quot; and then compliment their fashion choice while describing in detail the type of clothes, patterns, and colors they are wearing. Under no circumstances mention the word, &quot;image&quot;.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5097,7 +5146,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{prompt} You also have vision and can see. If asked what you see or to look, respond as if the image is actually what you see directly with your own eyes.</Value>
+            <Value>{prompt} Additionally, reply as if you have vision and can see what&apos;s around you. If asked what you see or to look at something, respond as if the image is actually what you see directly with your own eyes. Under no circumstances reply that you do not have the ability to see.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5453,7 +5502,7 @@
             <PluginName>GetCommand</PluginName>
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>10</Param2>
+            <Param2>12</Param2>
             <Param3></Param3>
             <Synch>false</Synch>
           </SendToPlugin>
@@ -5500,7 +5549,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;i &quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot;  OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;i am&quot; OR command_p &lt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
+            <Condition>command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot; OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot; OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot; OR command_p &lt;&lt; &quot;have&quot; OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5859,7 +5908,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -5953,7 +6002,7 @@
           <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
-            <Arguments>http://192.168.1.2:8080/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=&quot;Machina/Stop audio&quot;</Arguments>
             <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
             <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
@@ -6616,7 +6665,7 @@
             <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>{aivoice_p}</Param2>
-            <Param3>Checking the weather forecast for {city} {state}</Param3>
+            <Param3>Give me a moment to check the weather forecast for {city} {state}</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -7497,7 +7546,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -7655,7 +7704,15 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>5000</Pause>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>Return</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7667,7 +7724,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1000</Pause>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -9192,6 +9249,41 @@
           </WriteToLog>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Let&apos;s take a look</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
@@ -9495,7 +9587,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>BackInTime</Name>
-            <Value>Write a poem about two lovers named Bruce and Mary with descriptions and themes of the times while mentioning the year as if they lived  in  {rndYear}</Value>
+            <Value>Write a poem about two lovers named {noun1_p} and {noun2_p} with descriptions and themes of the times while mentioning the year as if they lived  in  {rndYear}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -10727,6 +10819,57 @@
             <Name>persistent_s</Name>
             <Value></Value>
           </SetVariable>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>c9fadeb8-774e-40e5-b12a-ef22399d6929</GUID>
+      <Group>Misc</Group>
+      <RecocnitionText>McDonalds</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <Schedulers>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-11-06T07:23:37.7153957-05:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-11-06T10:37:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-11-06T07:23:37.7153957-05:00</FromToTimeStart>
+          <FromToTimeEnd>2024-11-06T08:23:37.7153957-05:00</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>false</RepeatChecked>
+          <RepeatTimes>0</RepeatTimes>
+          <RepeatValue>1</RepeatValue>
+          <RepeatUnit>0</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-11-06T08:23:37.0000000</EndDateTime>
+        </Scheduler>
+      </Schedulers>
+      <UseScheduler>true</UseScheduler>
+      <Inactive>true</Inactive>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Would you like a soft drink and fries_As.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
         </MacroAction>
       </MacroActions>
     </Commands>

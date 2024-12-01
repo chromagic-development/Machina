@@ -3465,6 +3465,34 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Check good news</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;good news&quot; OR command_p &gt;&lt; &quot;happy news&quot; OR command_p &gt;&lt; &quot;nice news&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>3457d61a-93d4-4dd0-9c43-92b062f447f3</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Check news</Comment>
         </MacroAction>
         <MacroAction>
@@ -4432,7 +4460,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let me think .mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Nice.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -5109,6 +5137,16 @@
             <Name>prompt</Name>
             <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses unless specifically asked. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Providing chat prompt: {prompt}</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -6858,6 +6896,17 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Retain memory of conversation context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>previous_p</Name>
+            <Value>{forecast_p} Use this specific weather information to answer any following questions or calculations about the weather.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
       </MacroActions>
@@ -7829,6 +7878,439 @@
             <WindowStyle>3</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>3457d61a-93d4-4dd0-9c43-92b062f447f3</GUID>
+      <Group>Misc</Group>
+      <Description>Check good news at apnews.com</Description>
+      <RecocnitionText>Check good news</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <OnlyOneThread>true</OnlyOneThread>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Summarizing AP reported good news</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>filler</Name>
+            <Value>(RANDOM 1-2) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Ok, Let me check the latest news stories.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>filler = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Sure, Let me see what&apos;s been happening.</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>{CurrentWinTitle} &gt;&lt; &quot;Events&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Do nothing</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>https://apnews.com/</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>12</MacroType>
+          <WaitForWindow>
+            <WindowName>*News*</WindowName>
+            <AbortTimeOut>true</AbortTimeOut>
+            <Timeout>45000</Timeout>
+          </WaitForWindow>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>4</MacroType>
+          <FindWindowAndActivate>*News*</FindWindowAndActivate>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1070</MacroType>
+          <WaitForPixel>
+            <RelativeToWindowPos>false</RelativeToWindowPos>
+            <RelativePosCorner>0</RelativePosCorner>
+            <Position>
+              <X>435</X>
+              <Y>610</Y>
+            </Position>
+            <ColorRed>0</ColorRed>
+            <ColorGreen>0</ColorGreen>
+            <ColorBlue>0</ColorBlue>
+            <Timeout>15000</Timeout>
+            <Radius>9</Radius>
+            <RestrictXorY>0</RestrictXorY>
+            <RestrictPixel>0</RestrictPixel>
+            <Pollrate>200</Pollrate>
+            <Tolerance>0</Tolerance>
+            <WaitForDisappear>false</WaitForDisappear>
+            <ExitLoop>false</ExitLoop>
+          </WaitForPixel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>6000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>Return</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>A</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <lCTRL>true</lCTRL>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>1000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>C</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <lCTRL>true</lCTRL>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>events_p</Name>
+            <Value>{Clipboard}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>bkgmusic</Name>
+            <Value>(RANDOM 1-2) </Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>bkgmusic = 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\news_intro_48s.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>7</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>bkgmusic = 2</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\news_intro_30s.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>7</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Let&apos;s take a look</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>Summarize only the good news, not unpleasant news, form the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods: {events_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>200</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Here&apos;s what&apos;s happening.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>{response_p}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Here&apos;s what&apos;s happening ...</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{Clipboard}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -9587,7 +10069,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>BackInTime</Name>
-            <Value>Write a poem about two lovers named {noun1_p} and {noun2_p} with descriptions and themes of the times while mentioning the year as if they lived  in  {rndYear}</Value>
+            <Value>Write a poem about two lovers named {noun1_p} and {noun2_p} with descriptions and themes of the times while mentioning the year as if they lived  in {rndYear}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -10341,7 +10823,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p = &quot;err!&quot; OR command_p = &quot;ERR!&quot; OR command_p = &quot;Nothing.&quot;</Condition>
+            <Condition>command_p = &quot;Nothing.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -10588,7 +11070,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;fail&quot; OR command_p &gt;&lt; &quot;error&quot;</Condition>
+            <Condition>command_p = &quot;err!&quot; OR command_p = &quot;ERR!&quot; OR command_p &gt;&lt; &quot;fail&quot; OR command_p &gt;&lt; &quot;error&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>

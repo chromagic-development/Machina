@@ -85,18 +85,18 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>Countdown_p</Name>
-            <Value>True</Value>
+            <Value>TRUE</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>&quot;Defuse&quot; abort variable</Comment>
+          <Comment>&quot;Defuse&quot; abort flag</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>AbortCountdown_p</Name>
-            <Value>False</Value>
+            <Value>FALSE</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -240,7 +240,7 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>CurrentTimer</Name>
+            <Name>CurrentTimer_p</Name>
             <Value>{totalMinutes} - {LoopCounter} + 1</Value>
           </SetVariable>
         </MacroAction>
@@ -250,7 +250,7 @@
             <OSDName>Countdown</OSDName>
             <OSDTextElements>
               <OSDTextElement>
-                <Text>{CurrentTimer} minutes left</Text>
+                <Text>{CurrentTimer_p} minutes left</Text>
                 <Align>32</Align>
                 <Font>
                   <Name>Tahoma</Name>
@@ -288,7 +288,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>AbortCountdown_p = True</Condition>
+            <Condition>AbortCountdown_p = TRUE</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -306,7 +306,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>time is up...</Comment>
+          <Comment>Time is up</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>45</MacroType>
@@ -349,6 +349,13 @@
             <DisplayTime>2</DisplayTime>
             <Transparency>5</Transparency>
           </ShowOSD>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>Countdown_p</Name>
+            <Value>FALSE</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
@@ -403,6 +410,148 @@
       </MacroActions>
     </Commands>
     <Commands>
+      <GUID>3bd3dfba-927d-4915-b89a-e08b852b88cc</GUID>
+      <Group>Timer</Group>
+      <Description>time left</Description>
+      <RecocnitionText>Time left</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>Countdown_p = TRUE</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>There are {CurrentTimer_p} minutes left for the timer</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>There are {CurrentTimer_p} minutes left for the timer</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>There are {CurrentTimer_p} minutes left for the timer</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>The timer is not on</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile> C:\Machina\Voices\The timer is not on.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>The timer is not on</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
       <GUID>70ca0869-b82f-4278-bc4e-acc2dc205e7b</GUID>
       <Group>Timer</Group>
       <Description>Stop timer</Description>
@@ -416,7 +565,7 @@
         <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
-            <Text>Cancelling timer</Text>
+            <Text>Canceling timer</Text>
             <Label>i</Label>
             <ColorR>0</ColorR>
             <ColorG>255</ColorG>
@@ -427,7 +576,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>Countdown_p = True</Condition>
+            <Condition>Countdown_p = TRUE</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -454,7 +603,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Cancelling timer.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Canceling timer.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -479,7 +628,7 @@
         <MacroAction>
           <MacroType>54</MacroType>
           <SpeakText>
-            <Text>cancelling timer</Text>
+            <Text>canceling timer</Text>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Speed>0</Speed>
@@ -525,15 +674,15 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>AbortCountdown_p</Name>
-            <Value>True</Value>
+            <Name>Countdown_p</Name>
+            <Value>FALSE</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>Countdown_p</Name>
-            <Value>False</Value>
+            <Name>AbortCountdown_p</Name>
+            <Value>TRUE</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -676,7 +825,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Provide IP address and HTTP port of Remote Corntrol VoiceMacro PC</Comment>
+          <Comment>Provide IP address and HTTP port of Remote Control VoiceMacro PC</Comment>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -837,6 +986,13 @@
           <SetVariable>
             <Name>look_p</Name>
             <Value>TRUE</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>Countdown_p</Name>
+            <Value>FALSE</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -3229,6 +3385,34 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Time left</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>(command_p &gt;&lt; &quot;time&quot; OR command_p &gt;&lt; &quot;minute&quot;) AND (command_p &gt;&lt; &quot;left&quot; OR command_p &gt;&lt; &quot;remain&quot;)</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>3bd3dfba-927d-4915-b89a-e08b852b88cc</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Cancel timer</Comment>
         </MacroAction>
         <MacroAction>
@@ -5135,18 +5319,8 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses unless specifically asked. Limit your response output to 350 characters at most.</Value>
+            <Value>{context} Respond with the language and behavior that a smart Millennial woman would have and do not include emojis and avoid always beginning with expressions like &quot;Sure thing! or &quot;Abolutely&quot;. The current date and time in {location_p} is {DateTime}, but don&apos;t state that information in your responses unless specifically asked for a date or date calculation. Limit your response output to 350 characters at most.</Value>
           </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Providing chat prompt: {prompt}</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -5628,20 +5802,6 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>comlen</Name>
-            <Value>STRLEN[command_p]</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>comlen &gt; 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
             <Name>filler</Name>
             <Value>(RANDOM 1-5) </Value>
           </SetVariable>
@@ -5723,8 +5883,8 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
+            <PlayStart>425</PlayStart>
+            <PlayEnd>3553</PlayEnd>
           </PlaySound>
         </MacroAction>
         <MacroAction>
@@ -5744,12 +5904,9 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
+            <PlayStart>500</PlayStart>
+            <PlayEnd>4389</PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -6923,10 +7080,6 @@
       </ShortCut>
       <MacroActions>
         <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Speak response</Comment>
-        </MacroAction>
-        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -8093,7 +8246,7 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>events_p</Name>
+            <Name>headlines_p</Name>
             <Value>{Clipboard}</Value>
           </SetVariable>
         </MacroAction>
@@ -8195,7 +8348,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize only the good news, not unpleasant news, form the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods: {events_p}</Value>
+            <Value>Summarize only the good news, not unpleasant news, form the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 1500 characters at most: {headlines_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -8526,7 +8679,7 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>events_p</Name>
+            <Name>headlines_p</Name>
             <Value>{Clipboard}</Value>
           </SetVariable>
         </MacroAction>
@@ -8628,7 +8781,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods: {events_p}</Value>
+            <Value>Summarize the top listed news headlines including business news and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 1500 characters at most: {headlines_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -8974,7 +9127,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize the following events that will happen for today&apos;s date of {DateTime} that have not yet ended and remove all quotation marks, carriage returns and line feeds: {events_p}</Value>
+            <Value>Summarize the following events that will happen for today&apos;s date of {DateTime} that have not yet ended and remove all quotation marks, carriage returns and line feeds. Limit your response output to 2250 characters at most: {events_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -9709,7 +9862,7 @@
       <GUID>d0c0c737-1210-411e-9fa6-5021729322ec</GUID>
       <Group>Misc</Group>
       <Description>Summarize last email read</Description>
-      <RecocnitionText>Summarize</RecocnitionText>
+      <RecocnitionText>Summarize email</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>

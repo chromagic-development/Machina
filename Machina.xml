@@ -2111,6 +2111,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speaking interrupted by wake word</Comment>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>stopspeak_p</Name>

@@ -10980,7 +10980,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p = &quot;Nothing.&quot;</Condition>
+            <Condition>command_p = &quot;Nothing.&quot; OR command_p = &quot;err!&quot; OR command_p = &quot;ERR!&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -11227,7 +11227,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p = &quot;err!&quot; OR command_p = &quot;ERR!&quot; OR command_p &gt;&lt; &quot;fail&quot; OR command_p &gt;&lt; &quot;error&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;fail&quot; OR command_p &gt;&lt; &quot;error&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -11252,6 +11252,9 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
             <Text>Unrecognized command: {command_p}</Text>
@@ -11260,9 +11263,6 @@
             <ColorG>0</ColorG>
             <ColorB>0</ColorB>
           </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>

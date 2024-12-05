@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// Bruce Alexander 2024 v5
+// Bruce Alexander 2024 v6
 
 using vmAPI;
 using System;
@@ -38,7 +38,7 @@ namespace SpeakTextPlugin
         {
             get
             {
-                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: TRUE when speaking\r\nstopspeak_p: TRUE when user stops speech";
+                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: True when speaking\r\nstopspeak_p: TRUE when user stops speech";
             }
         }
 
@@ -65,15 +65,15 @@ namespace SpeakTextPlugin
             Param1 = Param1.Replace("\"", "");
             Param2 = Param2.Replace("\"", "");
 
-            // Initialize speakdone variable to FALSE before completion
-            vmCommand.SetVariable("speaking_p", "TRUE");
+            // Initialize speaking_p variable to True before completion
+            vmCommand.SetVariable("speaking_p", "True");
 
             Task.Run(async () =>
             {
                 await SpeakText(Param1, Param2, Param3);
 
-                // Set speakdone variable to TRUE after completion
-                vmCommand.SetVariable("speaking_p", "FALSE");
+                // Set speaking_p variable to False after completion
+                vmCommand.SetVariable("speaking_p", "False");
             });
         }
 
@@ -151,16 +151,16 @@ namespace SpeakTextPlugin
                                 waveOut.Volume = 1.0f; // Set volume to maximum
                                 waveOut.Play();
 
-                                // Initialize stopspeak variable to FALSE
-                                vmCommand.SetVariable("stopspeak_p", "FALSE");
+                                // Initialize stopspeak variable to False
+                                vmCommand.SetVariable("stopspeak_p", "False");
 
-                                // Periodically check if stopspeak_p is set to TRUE
+                                // Periodically check if stopspeak_p is set to True
                                 while (waveOut.PlaybackState == PlaybackState.Playing)
                                 {
                                     await Task.Delay(100);
 
                                     // If stopspeak_p is TRUE, stop the audio
-                                    if (vmCommand.GetVariable("stopspeak_p") == "TRUE")
+                                    if (vmCommand.GetVariable("stopspeak_p") == "True")
                                     {
                                         waveOut.Stop();
                                         vmCommand.AddLogEntry("Speech stopped by user", Color.Red, ID, "!", "TTS playback stopped");

@@ -85,7 +85,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>Countdown_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -96,7 +96,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>AbortCountdown_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -288,7 +288,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>AbortCountdown_p = TRUE</Condition>
+            <Condition>AbortCountdown_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -354,7 +354,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>Countdown_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -424,7 +424,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>Countdown_p = TRUE</Condition>
+            <Condition>Countdown_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -576,7 +576,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>Countdown_p = TRUE</Condition>
+            <Condition>Countdown_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -675,14 +675,14 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>Countdown_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>AbortCountdown_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -809,7 +809,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>vision_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -978,35 +978,35 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speakdone_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>look_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>Countdown_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speakstop_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -1835,14 +1835,14 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speaking_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2107,14 +2107,14 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = TRUE OR chatting_p = TRUE</Condition>
+            <Condition>speaking_p = True OR chatting_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>stopspeak_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2146,7 +2146,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speaking_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2206,7 +2206,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speaking_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -2791,7 +2791,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>speaking_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -4469,7 +4469,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>look_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
       </MacroActions>
@@ -4536,14 +4536,14 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>chatting_p = FALSE</Condition>
+            <Condition>chatting_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5250,7 +5250,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>vision_p = TRUE AND look_p = TRUE</Condition>
+            <Condition>vision_p = True AND look_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5271,7 +5271,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>look_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5341,7 +5341,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>vision_p = TRUE AND (command_p &gt;&lt; &quot;look &quot; OR command_p &gt;&lt; &quot;see &quot;)</Condition>
+            <Condition>vision_p = True AND (command_p &gt;&lt; &quot;look &quot; OR command_p &gt;&lt; &quot;see &quot;)</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5632,7 +5632,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5883,8 +5883,8 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
-            <PlayStart>425</PlayStart>
-            <PlayEnd>3553</PlayEnd>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
           </PlaySound>
         </MacroAction>
         <MacroAction>
@@ -5904,8 +5904,8 @@
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
-            <PlayStart>500</PlayStart>
-            <PlayEnd>4389</PlayEnd>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
           </PlaySound>
         </MacroAction>
         <MacroAction>
@@ -5972,7 +5972,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -6034,7 +6034,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -6879,7 +6879,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -7808,7 +7808,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -10395,7 +10395,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -10770,14 +10770,14 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>office_p = TRUE</Condition>
+            <Condition>office_p = True</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>office_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -10829,7 +10829,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>office_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -10969,7 +10969,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>TRUE</Value>
+            <Value>True</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -11308,7 +11308,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = FALSE</Condition>
+            <Condition>speaking_p = False</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -11432,7 +11432,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
-            <Value>FALSE</Value>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
       </MacroActions>

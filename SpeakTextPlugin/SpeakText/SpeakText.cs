@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// Bruce Alexander 2024 v6
+// Bruce Alexander 2024 v7
 
 using vmAPI;
 using System;
@@ -38,7 +38,7 @@ namespace SpeakTextPlugin
         {
             get
             {
-                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: True when speaking\r\nstopspeak_p: TRUE when user stops speech";
+                return "Speak text using voice AI TTS\r\nArgument 1: Deepgram API key\r\nArgument 2: Aura voice model\r\nArgument 3: Spoken text\r\nspeaking_p: True when speaking\r\nstopspeak_p: True when user stops speech";
             }
         }
 
@@ -169,7 +169,7 @@ namespace SpeakTextPlugin
                                 }
                             }
                         }
-						if (vmCommand.GetVariable("stopspeak_p") == "FALSE")
+						if (vmCommand.GetVariable("stopspeak_p") == "False")
                         {
                         // Show TTS completed in VoiceMacro's log in purple as information
                         vmCommand.AddLogEntry("Speech completed", Color.Blue, ID, "S", "TTS completed");

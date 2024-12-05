@@ -41,7 +41,8 @@ Speak text using voice AI TTS
 Argument 1: Deepgram API key  
 Argument 2: Aura voice model  
 Argument 3: Spoken text  
-speaking_p: TRUE when speaking  
+speaking_p: True when speaking  
+stopspeak_p: True when user stops speech  
 
 **AskChatGPT**  
 Get response_p from prompt using LLM AI  

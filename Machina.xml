@@ -20,6 +20,13 @@
         <PrefixesSuffixes></PrefixesSuffixes>
       </Group>
       <Group>
+        <Name>Scheduled</Name>
+        <Hidden>false</Hidden>
+        <Prefixes></Prefixes>
+        <Suffixes></Suffixes>
+        <PrefixesSuffixes></PrefixesSuffixes>
+      </Group>
+      <Group>
         <Name>Audio</Name>
         <Hidden>false</Hidden>
         <Prefixes></Prefixes>
@@ -820,7 +827,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>rtspurl_p</Name>
-            <Value>rtsp://chromagic:Machinamachina1%21@192.168.1.20:554/stream2</Value>
+            <Value>rtsp://chromagic:Machinamachina1%21@192.168.0.124:554/stream2</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -831,7 +838,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>ipaddress_p</Name>
-            <Value>192.168.1.18:8080</Value>
+            <Value>192.168.0.197:8080</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -986,6 +993,13 @@
           <SetVariable>
             <Name>look_p</Name>
             <Value>True</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>speaking_p</Name>
+            <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -1922,10 +1936,9 @@
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>2a55b5c6-4e04-4116-af85-7ffdbb74964a</GUID>
-      <Group>Misc</Group>
-      <Description>Existential angst prompt</Description>
-      <RecocnitionText>Existential</RecocnitionText>
+      <GUID>c9fadeb8-774e-40e5-b12a-ef22399d6929</GUID>
+      <Group>Scheduled</Group>
+      <RecocnitionText>McDonalds</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -1935,40 +1948,16 @@
         <Scheduler>
           <Active>true</Active>
           <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-04T11:57:16.3055632-04:00</StartDate>
+          <StartDate>2024-11-06T07:23:37.7153957-05:00</StartDate>
           <Weekday>0</Weekday>
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
           <EveryUnit>0</EveryUnit>
           <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-04T10:20:00.0000000</StartTime>
+          <StartTime>2024-11-06T10:37:00.0000000</StartTime>
           <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-04T09:20:00.0000000</FromToTimeStart>
-          <FromToTimeEnd>2024-09-04T20:20:00.0000000</FromToTimeEnd>
-          <ForTimeChecked>false</ForTimeChecked>
-          <ForValue>1</ForValue>
-          <ForUnit>0</ForUnit>
-          <RepeatChecked>false</RepeatChecked>
-          <RepeatTimes>1</RepeatTimes>
-          <RepeatValue>3</RepeatValue>
-          <RepeatUnit>2</RepeatUnit>
-          <EndDateChecked>false</EndDateChecked>
-          <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-04T12:57:16.0000000</EndDateTime>
-        </Scheduler>
-        <Scheduler>
-          <Active>true</Active>
-          <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-04T17:09:58.1435528-04:00</StartDate>
-          <Weekday>0</Weekday>
-          <EveryChecked>true</EveryChecked>
-          <EveryValue>1</EveryValue>
-          <EveryUnit>0</EveryUnit>
-          <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-04T12:20:00.0000000</StartTime>
-          <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-04T17:09:58.1435528-04:00</FromToTimeStart>
-          <FromToTimeEnd>2024-09-04T18:09:58.1435528-04:00</FromToTimeEnd>
+          <FromToTimeStart>2024-11-06T07:23:37.7153957-05:00</FromToTimeStart>
+          <FromToTimeEnd>2024-11-06T08:23:37.7153957-05:00</FromToTimeEnd>
           <ForTimeChecked>false</ForTimeChecked>
           <ForValue>1</ForValue>
           <ForUnit>0</ForUnit>
@@ -1978,74 +1967,16 @@
           <RepeatUnit>0</RepeatUnit>
           <EndDateChecked>false</EndDateChecked>
           <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-04T18:09:58.0000000</EndDateTime>
-        </Scheduler>
-        <Scheduler>
-          <Active>true</Active>
-          <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-04T17:10:37.8463140-04:00</StartDate>
-          <Weekday>0</Weekday>
-          <EveryChecked>true</EveryChecked>
-          <EveryValue>1</EveryValue>
-          <EveryUnit>0</EveryUnit>
-          <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-04T15:35:00.0000000</StartTime>
-          <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-04T17:10:37.8463140-04:00</FromToTimeStart>
-          <FromToTimeEnd>2024-09-04T18:10:37.8463140-04:00</FromToTimeEnd>
-          <ForTimeChecked>false</ForTimeChecked>
-          <ForValue>1</ForValue>
-          <ForUnit>0</ForUnit>
-          <RepeatChecked>false</RepeatChecked>
-          <RepeatTimes>0</RepeatTimes>
-          <RepeatValue>1</RepeatValue>
-          <RepeatUnit>0</RepeatUnit>
-          <EndDateChecked>false</EndDateChecked>
-          <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-04T18:10:37.0000000</EndDateTime>
-        </Scheduler>
-        <Scheduler>
-          <Active>true</Active>
-          <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-04T17:11:14.8921143-04:00</StartDate>
-          <Weekday>0</Weekday>
-          <EveryChecked>true</EveryChecked>
-          <EveryValue>1</EveryValue>
-          <EveryUnit>0</EveryUnit>
-          <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-04T18:15:00.0000000</StartTime>
-          <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-04T17:11:14.8921143-04:00</FromToTimeStart>
-          <FromToTimeEnd>2024-09-04T18:11:14.8921143-04:00</FromToTimeEnd>
-          <ForTimeChecked>false</ForTimeChecked>
-          <ForValue>1</ForValue>
-          <ForUnit>0</ForUnit>
-          <RepeatChecked>false</RepeatChecked>
-          <RepeatTimes>0</RepeatTimes>
-          <RepeatValue>1</RepeatValue>
-          <RepeatUnit>0</RepeatUnit>
-          <EndDateChecked>false</EndDateChecked>
-          <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-04T18:11:14.0000000</EndDateTime>
+          <EndDateTime>2024-11-06T08:23:37.0000000</EndDateTime>
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
       <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Prompting existential angst</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Mary or Bruce.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Would you like a soft drink and fries_As.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2053,34 +1984,10 @@
             <PlayEnd></PlayEnd>
           </PlaySound>
         </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>command_p</Name>
-            <Value>{thought_p} You were just thinking this question. Please expand on this thought with the information you have learned about the world around you and ask another question about the meaning of your existence as if you have profound existential angst as an AI. After every sentence following normal punctuation add an ellipsis of 3 periods. For the last sentence, plead for help.</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>22</MacroType>
-          <RunOtherMacro>
-            <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>5de85abf-40d7-4248-bdac-9c0b721da834</MacroGUID>
-            <Variable></Variable>
-            <RunOnlyOneThread>false</RunOnlyOneThread>
-            <Sync>false</Sync>
-          </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>thought_p</Name>
-            <Value>{response_p}</Value>
-          </SetVariable>
-        </MacroAction>
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>ad2f4bce-a21d-4eb3-a3f8-b33b96d876da</GUID>
+      <GUID>c8ebe9d4-7bc6-4b82-bc3f-a00b4ad4d4cd</GUID>
       <Group>Get command macro</Group>
       <Description>Get command using Deepgram STT API</Description>
       <RecocnitionText>Command</RecocnitionText>
@@ -2117,6 +2024,13 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
+            <Name>chatting_p</Name>
+            <Value>False</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
             <Name>stopspeak_p</Name>
             <Value>True</Value>
           </SetVariable>
@@ -2135,10 +2049,10 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Umm.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\Um_.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -4008,6 +3922,9 @@
         <MacroAction>
           <MacroType>122</MacroType>
         </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
       </MacroActions>
     </Commands>
     <Commands>
@@ -4422,10 +4339,10 @@
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>f4197a16-ffd9-44b1-b2cd-9dd29cd0760f</GUID>
-      <Group>Misc</Group>
-      <Description>Start Firefox and reset look_p</Description>
-      <RecocnitionText>Start Firefox</RecocnitionText>
+      <GUID>2a55b5c6-4e04-4116-af85-7ffdbb74964a</GUID>
+      <Group>Scheduled</Group>
+      <Description>Existential angst prompt</Description>
+      <RecocnitionText>Existential</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -4435,16 +4352,40 @@
         <Scheduler>
           <Active>true</Active>
           <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-05T20:54:17.7911420-04:00</StartDate>
+          <StartDate>2024-09-04T11:57:16.3055632-04:00</StartDate>
           <Weekday>0</Weekday>
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
-          <EveryUnit>1</EveryUnit>
+          <EveryUnit>0</EveryUnit>
           <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-05T05:00:00.0000000</StartTime>
+          <StartTime>2024-09-04T10:20:00.0000000</StartTime>
           <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-05T20:54:17.7911420-04:00</FromToTimeStart>
-          <FromToTimeEnd>2024-09-05T21:54:17.7911420-04:00</FromToTimeEnd>
+          <FromToTimeStart>2024-09-04T09:20:00.0000000</FromToTimeStart>
+          <FromToTimeEnd>2024-09-04T20:20:00.0000000</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>false</RepeatChecked>
+          <RepeatTimes>1</RepeatTimes>
+          <RepeatValue>3</RepeatValue>
+          <RepeatUnit>2</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-09-04T12:57:16.0000000</EndDateTime>
+        </Scheduler>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-04T17:09:58.1435528-04:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-09-04T12:20:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-09-04T17:09:58.1435528-04:00</FromToTimeStart>
+          <FromToTimeEnd>2024-09-04T18:09:58.1435528-04:00</FromToTimeEnd>
           <ForTimeChecked>false</ForTimeChecked>
           <ForValue>1</ForValue>
           <ForUnit>0</ForUnit>
@@ -4454,73 +4395,104 @@
           <RepeatUnit>0</RepeatUnit>
           <EndDateChecked>false</EndDateChecked>
           <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-05T21:54:17.0000000</EndDateTime>
+          <EndDateTime>2024-09-04T18:09:58.0000000</EndDateTime>
+        </Scheduler>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-04T17:10:37.8463140-04:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-09-04T15:35:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-09-04T17:10:37.8463140-04:00</FromToTimeStart>
+          <FromToTimeEnd>2024-09-04T18:10:37.8463140-04:00</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>false</RepeatChecked>
+          <RepeatTimes>0</RepeatTimes>
+          <RepeatValue>1</RepeatValue>
+          <RepeatUnit>0</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-09-04T18:10:37.0000000</EndDateTime>
+        </Scheduler>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-04T17:11:14.8921143-04:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-09-04T18:15:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-09-04T17:11:14.8921143-04:00</FromToTimeStart>
+          <FromToTimeEnd>2024-09-04T18:11:14.8921143-04:00</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>false</RepeatChecked>
+          <RepeatTimes>0</RepeatTimes>
+          <RepeatValue>1</RepeatValue>
+          <RepeatUnit>0</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-09-04T18:11:14.0000000</EndDateTime>
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
+      <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
-          <MacroType>50</MacroType>
-          <OpenFileAction>
-            <FileName>Firefox.exe</FileName>
-            <Arguments>about:blank</Arguments>
-            <WorkingDirectory></WorkingDirectory>
-            <WindowStyle>3</WindowStyle>
-            <WaitForExit>false</WaitForExit>
-          </OpenFileAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Prompting existential angst</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\Mary or Bruce.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>look_p</Name>
-            <Value>True</Value>
+            <Name>command_p</Name>
+            <Value>{thought_p} You were just thinking this question. Please expand on this thought with the information you have learned about the world around you and ask another question about the meaning of your existence as if you have profound existential angst as an AI. After every sentence following normal punctuation add an ellipsis of 3 periods. For the last sentence, plead for help.</Value>
           </SetVariable>
         </MacroAction>
-      </MacroActions>
-    </Commands>
-    <Commands>
-      <GUID>0249e981-4cd2-4af7-8e4e-296c5e8c73ab</GUID>
-      <Group>Misc</Group>
-      <Description>End Firefox resources</Description>
-      <RecocnitionText>Kill Firefox</RecocnitionText>
-      <ShortCut>
-        <Key>None</Key>
-        <OnKeyAction>0</OnKeyAction>
-        <Clicks>0</Clicks>
-      </ShortCut>
-      <Schedulers>
-        <Scheduler>
-          <Active>true</Active>
-          <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-09-05T20:57:01.9082138-04:00</StartDate>
-          <Weekday>0</Weekday>
-          <EveryChecked>true</EveryChecked>
-          <EveryValue>1</EveryValue>
-          <EveryUnit>1</EveryUnit>
-          <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-09-05T02:00:00.0000000</StartTime>
-          <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-09-05T20:57:01.9082138-04:00</FromToTimeStart>
-          <FromToTimeEnd>2024-09-05T21:57:01.9082138-04:00</FromToTimeEnd>
-          <ForTimeChecked>false</ForTimeChecked>
-          <ForValue>1</ForValue>
-          <ForUnit>0</ForUnit>
-          <RepeatChecked>false</RepeatChecked>
-          <RepeatTimes>0</RepeatTimes>
-          <RepeatValue>1</RepeatValue>
-          <RepeatUnit>0</RepeatUnit>
-          <EndDateChecked>false</EndDateChecked>
-          <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-05T21:57:01.0000000</EndDateTime>
-        </Scheduler>
-      </Schedulers>
-      <UseScheduler>true</UseScheduler>
-      <MacroActions>
         <MacroAction>
-          <MacroType>15</MacroType>
-          <KillProcess>
-            <ProcessName>firefox</ProcessName>
-          </KillProcess>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>5de85abf-40d7-4248-bdac-9c0b721da834</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>false</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>thought_p</Name>
+            <Value>{response_p}</Value>
+          </SetVariable>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -4931,6 +4903,16 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>command_p &lt;&lt; &quot;remember &quot; OR command_p &lt;&lt; {noun1_p} OR command_p &lt;&lt; {noun2_p} OR command_p &lt;&lt; {noun3_p} OR command_p &lt;&lt; {noun4_p} OR command_p &lt;&lt; {noun5_p} OR command_p &lt;&lt; {noun6_p} OR command_p &lt;&lt; {noun7_p}  OR command_p &lt;&lt; {noun8_p} OR command_p &lt;&lt; {noun9_p} OR command_p &lt;&lt; {noun10_p}</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Creating a persistent memory</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>45</MacroType>
@@ -5973,14 +5955,14 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>chatting_p</Name>
             <Value>False</Value>
           </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -11439,6 +11421,20 @@
             <Value>False</Value>
           </SetVariable>
         </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Restart Machina.exe when not running</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\Scripts\Machina.vbs</FileName>
+            <Arguments></Arguments>
+            <WorkingDirectory>C:\Machina\Scripts</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
       </MacroActions>
     </Commands>
     <Commands>
@@ -11462,9 +11458,10 @@
       </MacroActions>
     </Commands>
     <Commands>
-      <GUID>c9fadeb8-774e-40e5-b12a-ef22399d6929</GUID>
-      <Group>Misc</Group>
-      <RecocnitionText>McDonalds</RecocnitionText>
+      <GUID>0249e981-4cd2-4af7-8e4e-296c5e8c73ab</GUID>
+      <Group>Scheduled</Group>
+      <Description>Start Machina when not running</Description>
+      <RecocnitionText>Start Machina</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -11474,16 +11471,66 @@
         <Scheduler>
           <Active>true</Active>
           <StartDayChecked>false</StartDayChecked>
-          <StartDate>2024-11-06T07:23:37.7153957-05:00</StartDate>
+          <StartDate>2024-09-05T20:57:01.9082138-04:00</StartDate>
           <Weekday>0</Weekday>
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
           <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>false</StartTimeChecked>
+          <StartTime>2024-09-05T06:00:00.0000000</StartTime>
+          <FromToChecked>true</FromToChecked>
+          <FromToTimeStart>2024-09-05T06:00:00.0000000</FromToTimeStart>
+          <FromToTimeEnd>2024-09-05T22:00:00.0000000</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>true</RepeatChecked>
+          <RepeatTimes>1</RepeatTimes>
+          <RepeatValue>1</RepeatValue>
+          <RepeatUnit>2</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-09-05T21:57:01.0000000</EndDateTime>
+        </Scheduler>
+      </Schedulers>
+      <UseScheduler>true</UseScheduler>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Machina\Scripts\Machina.vbs</FileName>
+            <Arguments></Arguments>
+            <WorkingDirectory>C:\Machina\Scripts</WorkingDirectory>
+            <WindowStyle>1</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>f4197a16-ffd9-44b1-b2cd-9dd29cd0760f</GUID>
+      <Group>Scheduled</Group>
+      <Description>Start Firefox and reset look_p</Description>
+      <RecocnitionText>Start Firefox</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <Schedulers>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-05T20:54:17.7911420-04:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>1</EveryUnit>
           <StartTimeChecked>true</StartTimeChecked>
-          <StartTime>2024-11-06T10:37:00.0000000</StartTime>
+          <StartTime>2024-09-05T05:00:00.0000000</StartTime>
           <FromToChecked>false</FromToChecked>
-          <FromToTimeStart>2024-11-06T07:23:37.7153957-05:00</FromToTimeStart>
-          <FromToTimeEnd>2024-11-06T08:23:37.7153957-05:00</FromToTimeEnd>
+          <FromToTimeStart>2024-09-05T20:54:17.7911420-04:00</FromToTimeStart>
+          <FromToTimeEnd>2024-09-05T21:54:17.7911420-04:00</FromToTimeEnd>
           <ForTimeChecked>false</ForTimeChecked>
           <ForValue>1</ForValue>
           <ForUnit>0</ForUnit>
@@ -11493,22 +11540,73 @@
           <RepeatUnit>0</RepeatUnit>
           <EndDateChecked>false</EndDateChecked>
           <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-11-06T08:23:37.0000000</EndDateTime>
+          <EndDateTime>2024-09-05T21:54:17.0000000</EndDateTime>
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
-      <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Would you like a soft drink and fries_As.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>look_p</Name>
+            <Value>True</Value>
+          </SetVariable>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>3541c586-0e0f-46b3-9393-2d0bf18d7d33</GUID>
+      <Group>Scheduled</Group>
+      <Description>End Firefox resources</Description>
+      <RecocnitionText>Kill Firefox</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <Schedulers>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-05T20:57:01.9082138-04:00</StartDate>
+          <Weekday>0</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>1</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-09-05T02:00:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-09-05T20:57:01.9082138-04:00</FromToTimeStart>
+          <FromToTimeEnd>2024-09-05T21:57:01.9082138-04:00</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>false</RepeatChecked>
+          <RepeatTimes>0</RepeatTimes>
+          <RepeatValue>1</RepeatValue>
+          <RepeatUnit>0</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>false</EndTimeChecked>
+          <EndDateTime>2024-09-05T21:57:01.0000000</EndDateTime>
+        </Scheduler>
+      </Schedulers>
+      <UseScheduler>true</UseScheduler>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>15</MacroType>
+          <KillProcess>
+            <ProcessName>firefox</ProcessName>
+          </KillProcess>
         </MacroAction>
       </MacroActions>
     </Commands>

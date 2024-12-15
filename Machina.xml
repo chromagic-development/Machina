@@ -179,7 +179,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure thing.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sure thing.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -389,7 +389,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Time is up.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Time is up.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -517,7 +517,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile> C:\Machina\Voices\The timer is not on.mp3</AudioFile>
+            <AudioFile> C:\Machina\Voices\aura-asteria-en\The timer is not on.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -610,7 +610,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Canceling timer.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Canceling timer.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1124,7 +1124,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing groove salad music.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing groove salad music.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1218,7 +1218,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing radio paradise.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing radio paradise.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1312,7 +1312,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing relax.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing relax.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1406,7 +1406,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing jazz.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing jazz.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1500,7 +1500,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing classical music.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing classical music.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1594,7 +1594,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing lounge music.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing lounge music.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1688,7 +1688,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing reggae music.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing reggae music.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -1976,7 +1976,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Would you like a soft drink and fries_As.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Would you like a soft drink and fries_As.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2038,7 +2038,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh_.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Oh_.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2049,7 +2049,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Um_.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Um_.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2152,275 +2152,16 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-18) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1 OR filler = 2 OR filler = 3</Condition>
+            <Condition>Hours &lt; 11 AND (RANDOM 1-5)  = 1</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yes.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4 OR filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 6</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah sharp.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 7</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yo.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 8</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh hi. What is it.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 9</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\How can I help you.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 10</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah, what&apos;s up.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 11</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\What&apos;s up.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 12</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hi there.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 13</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hello, how can I assist.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 14</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\yeah, what is it.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 15</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yo Whats up.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>Hours &lt; 11 AND (filler = 16 OR filler = 17 OR filler = 18)</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Good morning.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Good morning.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -2432,25 +2173,15 @@
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 16 OR filler = 17 OR filler = 18</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hey.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Yes.mp3;C:\Machina\Voices\aura-asteria-en\Yes.mp3;C:\Machina\Voices\aura-asteria-en\Yeah sharp.mp3;C:\Machina\Voices\aura-asteria-en\Yo.mp3;C:\Machina\Voices\aura-asteria-en\Oh hi. What is it.mp3;C:\Machina\Voices\aura-asteria-en\How can I help you.mp3;C:\Machina\Voices\aura-asteria-en\Yeah, what&apos;s up.mp3;C:\Machina\Voices\aura-asteria-en\What&apos;s up.mp3;C:\Machina\Voices\aura-asteria-en\Hi there.mp3;C:\Machina\Voices\aura-asteria-en\Hello, how can I assist.mp3;C:\Machina\Voices\aura-asteria-en\yeah, what is it.mp3;C:\Machina\Voices\aura-asteria-en\Yo Whats up.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -2571,23 +2302,9 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-10) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\K_.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\K_.mp3;C:\Machina\Voices\aura-asteria-en\Oh_.mp3;C:\Machina\Voices\aura-asteria-en\Well_.mp3;C:\Machina\Voices\aura-asteria-en\Um_.mp3;C:\Machina\Voices\aura-asteria-en\So_.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -2598,109 +2315,6 @@
         <MacroAction>
           <MacroType>3</MacroType>
           <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh_.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Well_.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Um_.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\So_.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>400</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -3220,7 +2834,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Resetting audio.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Resetting audio.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -4034,7 +3648,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sleep mode activated. Playing ocean waves in bedroom.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sleep mode activated. Playing ocean waves in bedroom.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -4161,7 +3775,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure thing.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sure thing.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -4265,7 +3879,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah, um.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Yeah, um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -4462,7 +4076,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Mary or Bruce.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Mary or Bruce.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -4541,296 +4155,16 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-60) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1</Condition>
+            <Condition>(RANDOM 1-4) = 1</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok ok.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Nice.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Allright.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 6</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Umm.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 7</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 8</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh uh.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 9</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh!.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 10</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\uh k.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 11</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure um.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 12</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Well um.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 13</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Right um.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 14</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\So um.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Yeah.mp3;C:\Machina\Voices\aura-asteria-en\Oh.mp3;C:\Machina\Voices\aura-asteria-en\Ok ok.mp3;C:\Machina\Voices\aura-asteria-en\Nice.mp3;C:\Machina\Voices\aura-asteria-en\Allright.mp3;C:\Machina\Voices\aura-asteria-en\Umm.mp3;C:\Machina\Voices\aura-asteria-en\Ok.mp3;C:\Machina\Voices\aura-asteria-en\Oh uh.mp3;C:\Machina\Voices\aura-asteria-en\Oh!.mp3;C:\Machina\Voices\aura-asteria-en\uh k.mp3;C:\Machina\Voices\aura-asteria-en\Sure um.mp3;C:\Machina\Voices\aura-asteria-en\Well um.mp3;C:\Machina\Voices\aura-asteria-en\Right um.mp3;C:\Machina\Voices\aura-asteria-en\So um.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -4915,16 +4249,6 @@
           </WriteToLog>
         </MacroAction>
         <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Creating a persistent memory</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
@@ -4987,7 +4311,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Thanks for letting me know.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Thanks for letting me know.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -5072,74 +4396,15 @@
           <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-3) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Hold on. ... Please repeat that.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Hold on. ... Please repeat that.mp3;C:\Machina\Voices\aura-asteria-en\Sorry, can you say that again.mp3;C:\Machina\Voices\aura-asteria-en\Please repeat that for me.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sorry, can you say that again.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Please repeat that for me.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -5240,17 +4505,10 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-2) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1 AND Hours &gt; 12</Condition>
+            <Condition>(RANDOM 1-2) = 1 AND Hours &gt; 12</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5350,7 +4608,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, well.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, well.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -5442,146 +4700,20 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>filler</Name>
-            <Value>(RANDOM 1-20) </Value>
+            <Value>(RANDOM 1-3) </Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1</Condition>
+            <Condition>(RANDOM 1-3) = 1</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\ok, so.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Well, um.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Right.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah, um.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\So.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 6</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Uh.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 7</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Well hmm.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\ok, so.mp3;C:\Machina\Voices\aura-asteria-en\Well, um.mp3;C:\Machina\Voices\aura-asteria-en\Right.mp3;C:\Machina\Voices\aura-asteria-en\Yeah, um.mp3;C:\Machina\Voices\aura-asteria-en\So.mp3;C:\Machina\Voices\aura-asteria-en\Uh.mp3;C:\Machina\Voices\aura-asteria-en\Well hmm.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -5786,107 +4918,9 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>filler</Name>
-            <Value>(RANDOM 1-5) </Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 1</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok then.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 2</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\All right.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 3</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\So, let me know.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 4</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\ok, great.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>false</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>filler = 5</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sounds good.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok then.mp3;C:\Machina\Voices\aura-asteria-en\All right.mp3;C:\Machina\Voices\aura-asteria-en\So, let me know.mp3;C:\Machina\Voices\aura-asteria-en\ok, great.mp3;C:\Machina\Voices\aura-asteria-en\Sounds good.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -5926,7 +4960,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\End it now.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\End it now.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -6134,7 +5168,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Stopping audio.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Stopping audio.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -6225,7 +5259,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Setting audio output to speakerphone.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Setting audio output to speakerphone.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -6302,7 +5336,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Audio output now on speakerphone.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Audio output now on speakerphone.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -6371,7 +5405,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Setting audio output to kitchen speakers.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Setting audio output to kitchen speakers.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -6482,7 +5516,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Setting audio output to outside.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Setting audio output to outside.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -6593,7 +5627,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Setting audio output to bedroom.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Setting audio output to bedroom.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -6975,7 +6009,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sorry, for some reason.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry, for some reason.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -7089,7 +6123,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let me check the stock market.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let me check the stock market.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7110,7 +6144,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let me look for a quote.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let me look for a quote.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7329,7 +6363,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I couldn&apos;t identify a stock symbol.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I couldn&apos;t identify a stock symbol.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -7398,7 +6432,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, Let me check the latest news stories.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, Let me check the latest news stories.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7430,7 +6464,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7633,7 +6667,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, let me check your email.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, let me check your email.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7816,7 +6850,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\One.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\One.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -7980,7 +7014,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\you have no new email.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\you have no new email.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8066,7 +7100,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, Let me check the latest news stories.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, Let me check the latest news stories.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8087,7 +7121,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8256,7 +7290,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -8404,7 +7438,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Here&apos;s what&apos;s happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Here&apos;s what&apos;s happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8499,7 +7533,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, Let me check the latest news stories.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, Let me check the latest news stories.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8520,7 +7554,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sure, Let me see what&apos;s been happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8689,7 +7723,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -8837,7 +7871,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Here&apos;s what&apos;s happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Here&apos;s what&apos;s happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -8918,7 +7952,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Ok, give me a moment to search.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Ok, give me a moment to search.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9084,7 +8118,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -9183,7 +8217,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Here&apos;s what&apos;s happening.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Here&apos;s what&apos;s happening.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9264,7 +8298,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Give me a moment to look up the tide schedule.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Give me a moment to look up the tide schedule.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9430,7 +8464,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -9585,7 +8619,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let me translate that for you.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let me translate that for you.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9681,7 +8715,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Here is the Italian translation.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Here is the Italian translation.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9879,7 +8913,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let&apos;s take a look.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -9978,7 +9012,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I am going to summarize.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I am going to summarize.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -10063,7 +9097,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Let me see.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let me see.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -10179,7 +9213,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Transporting our two lovers.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Transporting our two lovers.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -10404,7 +9438,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Yeah ....mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Yeah ....mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -10613,7 +9647,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Playing ocean waves.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing ocean waves.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -10702,7 +9736,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I have asked Rosie to vacuum the floor as you requested.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I have asked Rosie to vacuum the floor as you requested.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -10901,7 +9935,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\No worries.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\No worries.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -10992,7 +10026,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Did you say something.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Did you say something.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11013,7 +10047,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Were you asking me .mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Were you asking me .mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11034,7 +10068,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Were you telling me.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Were you telling me.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11066,7 +10100,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sorry, I didnt hear.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry, I didnt hear.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11091,7 +10125,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I didnt hear what you said.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I didnt hear what you said.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11116,7 +10150,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Missed that.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Missed that.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11141,7 +10175,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\You need to ask me again.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\You need to ask me again.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11166,7 +10200,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I didnt catch what you said.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I didnt catch what you said.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11191,7 +10225,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\I missed what you just said.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I missed what you just said.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11225,7 +10259,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Oh Dear.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Oh Dear.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>false</Sync>
@@ -11260,7 +10294,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\Sorry, I do not recognize the command.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry, I do not recognize the command.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11327,7 +10361,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\That doesn&apos;t really make sense.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\That doesn&apos;t really make sense.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11348,7 +10382,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\That, might not be what you meant to say.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\That, might not be what you meant to say.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11369,7 +10403,7 @@
         <MacroAction>
           <MacroType>53</MacroType>
           <PlaySound>
-            <AudioFile>C:\Machina\Voices\So, Yeah.mp3</AudioFile>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\So, Yeah.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
             <Sync>true</Sync>
@@ -11460,8 +10494,8 @@
     <Commands>
       <GUID>0249e981-4cd2-4af7-8e4e-296c5e8c73ab</GUID>
       <Group>Scheduled</Group>
-      <Description>Start Machina when not running</Description>
-      <RecocnitionText>Start Machina</RecocnitionText>
+      <Description>Restart Machina</Description>
+      <RecocnitionText>Restart Machina</RecocnitionText>
       <ShortCut>
         <Key>None</Key>
         <OnKeyAction>0</OnKeyAction>
@@ -11486,7 +10520,7 @@
           <ForUnit>0</ForUnit>
           <RepeatChecked>true</RepeatChecked>
           <RepeatTimes>1</RepeatTimes>
-          <RepeatValue>1</RepeatValue>
+          <RepeatValue>4</RepeatValue>
           <RepeatUnit>2</RepeatUnit>
           <EndDateChecked>false</EndDateChecked>
           <EndTimeChecked>false</EndTimeChecked>
@@ -11496,11 +10530,21 @@
       <UseScheduler>true</UseScheduler>
       <MacroActions>
         <MacroAction>
+          <MacroType>15</MacroType>
+          <KillProcess>
+            <ProcessName>Machina</ProcessName>
+          </KillProcess>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>10000</Pause>
+        </MacroAction>
+        <MacroAction>
           <MacroType>50</MacroType>
           <OpenFileAction>
-            <FileName>C:\Machina\Scripts\Machina.vbs</FileName>
-            <Arguments></Arguments>
-            <WorkingDirectory>C:\Machina\Scripts</WorkingDirectory>
+            <FileName>C:\Machina\Wakeword\Machina.exe</FileName>
+            <Arguments>Machina_HighSensitivity.table</Arguments>
+            <WorkingDirectory>C:\Machina\Wakeword</WorkingDirectory>
             <WindowStyle>1</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>

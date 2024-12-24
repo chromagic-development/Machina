@@ -838,7 +838,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>ipaddress_p</Name>
-            <Value>192.168.0.197:8080</Value>
+            <Value>192.168.0.59:8080</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -1087,6 +1087,100 @@
             <Arguments>about:blank</Arguments>
             <WorkingDirectory></WorkingDirectory>
             <WindowStyle>3</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>4994c473-fe34-43f1-9f3c-d6eae5cd2bba</GUID>
+      <Group>Music</Group>
+      <Description>Play christmas music</Description>
+      <RecocnitionText>Christmas</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <OnlyOneThread>true</OnlyOneThread>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Playing christmas music</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Playing Christmas music.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Sounds\soundcomputersound5.wav</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>30</Volume>
+            <Sync>false</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>playing classical music</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>false</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1050</MacroType>
+          <OpenFileAction>
+            <FileName>C:\Program Files (x86)\Winamp\winamp.exe</FileName>
+            <Arguments>{path_p}\Machina\Streams\classical.m3u</Arguments>
+            <WorkingDirectory>C:\Program Files (x86)\Winamp</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
+            <WaitForExit>false</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Remote execution</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>C:\\Machina\Streams\VMRemote.exe</FileName>
+            <Arguments>http://{ipaddress_p}/ExecuteMacro=Machina/Christmas</Arguments>
+            <WorkingDirectory>C:\\Machina\Streams</WorkingDirectory>
+            <WindowStyle>2</WindowStyle>
             <WaitForExit>false</WaitForExit>
           </OpenFileAction>
         </MacroAction>
@@ -2058,6 +2152,20 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>10</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
@@ -2549,6 +2657,34 @@
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
             <MacroGUID>9a1913fe-ba76-4f4a-9664-5c7ceb0a3c2f</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Play christmas</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;mas m&quot; OR (command_p &gt;&lt; &quot;play&quot; AND command_p &gt;&lt; &quot;chris&quot;)</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>4994c473-fe34-43f1-9f3c-d6eae5cd2bba</MacroGUID>
             <Variable></Variable>
             <RunOnlyOneThread>true</RunOnlyOneThread>
             <Sync>false</Sync>
@@ -5816,6 +5952,16 @@
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>response_p &gt;&lt; &quot;.&quot; OR result &lt; 8</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Using default location</Text>
+            <Label>i</Label>
+            <ColorR>255</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>101</MacroType>
@@ -10510,9 +10656,9 @@
           <EveryChecked>true</EveryChecked>
           <EveryValue>1</EveryValue>
           <EveryUnit>0</EveryUnit>
-          <StartTimeChecked>false</StartTimeChecked>
+          <StartTimeChecked>true</StartTimeChecked>
           <StartTime>2024-09-05T06:00:00.0000000</StartTime>
-          <FromToChecked>true</FromToChecked>
+          <FromToChecked>false</FromToChecked>
           <FromToTimeStart>2024-09-05T06:00:00.0000000</FromToTimeStart>
           <FromToTimeEnd>2024-09-05T22:00:00.0000000</FromToTimeEnd>
           <ForTimeChecked>false</ForTimeChecked>
@@ -10523,8 +10669,8 @@
           <RepeatValue>4</RepeatValue>
           <RepeatUnit>2</RepeatUnit>
           <EndDateChecked>false</EndDateChecked>
-          <EndTimeChecked>false</EndTimeChecked>
-          <EndDateTime>2024-09-05T21:57:01.0000000</EndDateTime>
+          <EndTimeChecked>true</EndTimeChecked>
+          <EndDateTime>2024-09-05T22:00:00.0000000</EndDateTime>
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
@@ -10537,7 +10683,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>10000</Pause>
+          <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>

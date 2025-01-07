@@ -978,6 +978,13 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>ARwelcome_p</Name>
+            <Value>You&apos;re Welcome! I&apos;m glad I could assist you with information.</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Initialize flags</Comment>
         </MacroAction>
@@ -1113,7 +1120,7 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
             <Arguments>about:blank</Arguments>
@@ -1123,7 +1130,7 @@
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\Scripts\SetPriority.bat</FileName>
             <Arguments></Arguments>
@@ -2225,6 +2232,16 @@
             <Name>ARinterrupt_p</Name>
             <Value>{last_p}</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Interrupted: {ARinterrupt_p}</Text>
+            <Label>i</Label>
+            <ColorR>128</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>10</MacroType>
@@ -5151,6 +5168,44 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &lt;&lt; &quot;great&quot; OR command_p &lt;&lt; &quot;good&quot;  OR command_p &lt;&lt; &quot;ok then&quot; OR command_p &gt;&lt; &quot;thank&quot; OR command_p &gt;&lt; &quot;that&apos;s all&quot; OR command_p &gt;&lt; &quot;that&apos;s it&quot; OR command_p &gt;&lt; &quot;that answers&quot; OR command_p &gt;&lt; &quot;no more&quot; OR command_p &gt;&lt; &quot;be done&quot; OR command_p &gt;&lt; &quot;nothing else&quot; OR command_p &gt;&lt; &quot;i&apos;m done&quot; </Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Adaptive response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>last_p</Name>
+            <Value>{ARwelcome_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>d3bfb22d-b12d-469f-89d8-bd2c295b27d8</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>false</RunOnlyOneThread>
+            <Sync>true</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>ARwelcome_p</Name>
+            <Value>{last_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>replycount</Name>
@@ -5160,6 +5215,9 @@
         <MacroAction>
           <MacroType>101</MacroType>
           <GotoLabel>Continue conversation</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>

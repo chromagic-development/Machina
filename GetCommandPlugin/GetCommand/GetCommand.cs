@@ -1,8 +1,12 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
+// v1.0.0.6
+// Uses Deepgram Nova-3 model
 // Implements combined Energy (RMS) and Zero-Crossing Rate (ZCR) in simple VAD
 // Set maxDurationSeconds for maximum listen time 
 // Set silenceThreshold in seconds
-// Bruce Alexander 2024 v5
+// Copyright © 2024 Bruce Alexander
+// vmAPI Library Copyright © 2018-2019 FSC-SOFT
+// This software is licensed under the MIT License. See LICENSE file for details.
 
 using vmAPI;
 using System;
@@ -135,7 +139,7 @@ namespace GetCommandPlugin
         static async Task<string> GetSTT(string apiKey, int maxDurationSeconds, int silenceThreshold)
         {
             // Deepgram API endpoint
-            string url = "https://api.deepgram.com/v1/listen?model=nova-2&smart_format=true";
+            string url = "https://api.deepgram.com/v1/listen?model=nova-3&smart_format=true";
 
             // Record audio from the microphone
             byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds, silenceThreshold);

@@ -1,5 +1,8 @@
 // GetStockQuote VM plugin: Get stock price_p from symbol
-// Bruce Alexander 2024 v2
+// v1.0.0.2
+// Copyright © 2024 Bruce Alexander
+// vmAPI Library Copyright © 2018-2019 FSC-SOFT
+// This software is licensed under the MIT License. See LICENSE file for details.
 
 using vmAPI;
 using System;

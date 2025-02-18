@@ -1,8 +1,10 @@
 ﻿// Wake Word Engine: Trigger virtual Alt-Z key combination for keyword model match
 // Argument 1: Wake word model path (default is Machina.table)
 // Argument 2: Path to VoiceMacro.exe (default is C:\Program Files (x86)\VoiceMacro\VoiceMacro.exe)
+// v2.0.0.1
 // Triggers VM macro with executable
-// Bruce Alexander 2024 v2
+// Copyright © 2024 Bruce Alexander
+// This software is licensed under the MIT License. See LICENSE file for details.
 
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;

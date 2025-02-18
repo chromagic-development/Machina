@@ -68,14 +68,260 @@
       </ShortCut>
       <MacroActions>
         <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Setting timer</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
+          <MacroType>61</MacroType>
+          <Comment>Replace spelled out number with numerical</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;one&quot;, &quot;1&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;two&quot;, &quot;2&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;three&quot;, &quot;3&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;four&quot;, &quot;4&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;five&quot;, &quot;5&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;six&quot;, &quot;6&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;seven&quot;, &quot;7&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;eight&quot;, &quot;8&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;nine&quot;, &quot;9&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;ten&quot;, &quot;10&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;eleven&quot;, &quot;11&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;twelve&quot;, &quot;12&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;thirteen&quot;, &quot;13&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;fourteen&quot;, &quot;14&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;fifteen&quot;, &quot;15&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;sixteen&quot;, &quot;16&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;sixteen&quot;, &quot;16&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;seventeen&quot;, &quot;17&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;eighteen&quot;, &quot;18&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;nineteen&quot;, &quot;19&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;twenty m&quot;, &quot;20 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;thirty m&quot;, &quot;30 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;forty m&quot;, &quot;40 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;fifty m&quot;, &quot;50 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;sixty m&quot;, &quot;60 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;seventy m&quot;, &quot;70 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;eighty m&quot;, &quot;80 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;ninety m&quot;, &quot;90 m&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;twenty &quot;, &quot;2&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;thirty &quot;, &quot;3&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;forty &quot;, &quot;4&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;fifty &quot;, &quot;5&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;sixty &quot;, &quot;6&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;seventy &quot;, &quot;7&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;eighty &quot;, &quot;8&quot;]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>REPLACE[command_p, &quot;ninety &quot;, &quot;9&quot;]</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -966,13 +1212,6 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>ARinterrupt_p</Name>
-            <Value>Sorry, I&apos;ll be quiet.</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
             <Name>ARmissed_p</Name>
             <Value>Sorry, I didn&apos;t hear what you said. Can you repeat that?</Value>
           </SetVariable>
@@ -981,7 +1220,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>ARwelcome_p</Name>
-            <Value>You&apos;re Welcome! I&apos;m glad I could assist you with information.</Value>
+            <Value>You&apos;re Welcome! I&apos;m always happy to chat.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -1120,7 +1359,7 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>1050</MacroType>
+          <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
             <Arguments>about:blank</Arguments>
@@ -1130,7 +1369,7 @@
           </OpenFileAction>
         </MacroAction>
         <MacroAction>
-          <MacroType>1050</MacroType>
+          <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>C:\Machina\Scripts\SetPriority.bat</FileName>
             <Arguments></Arguments>
@@ -2189,13 +2428,13 @@
             <AudioFile>C:\Machina\Voices\aura-asteria-en\Oh_.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>false</Sync>
+            <Sync>true</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>1053</MacroType>
+          <MacroType>53</MacroType>
           <PlaySound>
             <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry.mp3</AudioFile>
             <SoundDevice></SoundDevice>
@@ -2204,44 +2443,6 @@
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Adaptive response</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>last_p</Name>
-            <Value>{ARinterrupt_p}</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>22</MacroType>
-          <RunOtherMacro>
-            <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>d3bfb22d-b12d-469f-89d8-bd2c295b27d8</MacroGUID>
-            <Variable></Variable>
-            <RunOnlyOneThread>false</RunOnlyOneThread>
-            <Sync>true</Sync>
-          </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>ARinterrupt_p</Name>
-            <Value>{last_p}</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Interrupted: {ARinterrupt_p}</Text>
-            <Label>i</Label>
-            <ColorR>128</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
         </MacroAction>
         <MacroAction>
           <MacroType>10</MacroType>
@@ -2374,7 +2575,7 @@
             <AudioFile>C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Hey.mp3;C:\Machina\Voices\aura-asteria-en\Yes.mp3;C:\Machina\Voices\aura-asteria-en\Yes.mp3;C:\Machina\Voices\aura-asteria-en\Yeah sharp.mp3;C:\Machina\Voices\aura-asteria-en\Yo.mp3;C:\Machina\Voices\aura-asteria-en\Oh hi. What is it.mp3;C:\Machina\Voices\aura-asteria-en\How can I help you.mp3;C:\Machina\Voices\aura-asteria-en\Yeah, what&apos;s up.mp3;C:\Machina\Voices\aura-asteria-en\What&apos;s up.mp3;C:\Machina\Voices\aura-asteria-en\Hi there.mp3;C:\Machina\Voices\aura-asteria-en\Hello, how can I assist.mp3;C:\Machina\Voices\aura-asteria-en\yeah, what is it.mp3;C:\Machina\Voices\aura-asteria-en\Yo Whats up.mp3;C:\Machina\Voices\aura-asteria-en\I&apos;m here.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -2775,14 +2976,14 @@
           <Comment>Play christmas</Comment>
         </MacroAction>
         <MacroAction>
-          <MacroType>120</MacroType>
+          <MacroType>1120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>command_p &gt;&lt; &quot;mas m&quot; OR (command_p &gt;&lt; &quot;play&quot; AND command_p &gt;&lt; &quot;chris&quot;)</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>22</MacroType>
+          <MacroType>1022</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
             <MacroGUID>4994c473-fe34-43f1-9f3c-d6eae5cd2bba</MacroGUID>
@@ -2792,11 +2993,11 @@
           </RunOtherMacro>
         </MacroAction>
         <MacroAction>
-          <MacroType>101</MacroType>
+          <MacroType>1101</MacroType>
           <GotoLabel>Command accepted</GotoLabel>
         </MacroAction>
         <MacroAction>
-          <MacroType>122</MacroType>
+          <MacroType>1122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -3265,26 +3466,6 @@
           </IfElseIf>
         </MacroAction>
         <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;kit&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>22</MacroType>
-          <RunOtherMacro>
-            <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>46357fd3-af7f-4ef4-8f24-9b218dff9aa5</MacroGUID>
-            <Variable></Variable>
-            <RunOnlyOneThread>true</RunOnlyOneThread>
-            <Sync>false</Sync>
-          </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
           <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
@@ -3293,9 +3474,6 @@
             <RunOnlyOneThread>true</RunOnlyOneThread>
             <Sync>false</Sync>
           </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>101</MacroType>
@@ -3390,34 +3568,6 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
-          <Comment>Summarize email</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;summa&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>22</MacroType>
-          <RunOtherMacro>
-            <ProfileGUID>[Current profile]</ProfileGUID>
-            <MacroGUID>d0c0c737-1210-411e-9fa6-5021729322ec</MacroGUID>
-            <Variable></Variable>
-            <RunOnlyOneThread>true</RunOnlyOneThread>
-            <Sync>false</Sync>
-          </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>101</MacroType>
-          <GotoLabel>Command accepted</GotoLabel>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
           <Comment>Check good news</Comment>
         </MacroAction>
         <MacroAction>
@@ -3452,7 +3602,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;news&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot; news&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3530,6 +3680,34 @@
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
+          <Comment>Summarize email</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>command_p &gt;&lt; &quot;summa&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>d0c0c737-1210-411e-9fa6-5021729322ec</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>true</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Command accepted</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
           <Comment>Translate to Italian</Comment>
         </MacroAction>
         <MacroAction>
@@ -3548,62 +3726,6 @@
             <RunOnlyOneThread>true</RunOnlyOneThread>
             <Sync>false</Sync>
           </RunOtherMacro>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>101</MacroType>
-          <GotoLabel>Command accepted</GotoLabel>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Repeat translation</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;repeat&quot; AND command_p &gt;&lt; &quot;translation&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Repeating translation to Italian</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>4</MacroType>
-          <FindWindowAndActivate>Google Translate *</FindWindowAndActivate>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>1000</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>81</MacroType>
-          <SendVirtualKeys>
-            <KeyCodes>VK_RETURN</KeyCodes>
-            <ClickDuration>20</ClickDuration>
-            <ClickDelay>10</ClickDelay>
-          </SendVirtualKeys>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>6000</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>81</MacroType>
-          <SendVirtualKeys>
-            <KeyCodes>VK_RETURN</KeyCodes>
-            <ClickDuration>20</ClickDuration>
-            <ClickDelay>10</ClickDelay>
-          </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
           <MacroType>101</MacroType>
@@ -4818,6 +4940,13 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>sawit</Name>
+            <Value>False</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>Take a look with vision and comment?</Comment>
         </MacroAction>
@@ -4853,7 +4982,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
-            <Value>{command_p} look at the person in this image and respond as as if speaking directly to them. After answering their question, add a final sentence that begins with, &quot;Also, I couldn&apos;t help but notice ...&quot; and then compliment their fashion choice while describing in detail the type of clothes, patterns, and colors they are wearing. Under no circumstances mention the word, &quot;image&quot;.</Value>
+            <Value>{command_p}  Look at the person in this image and respond as as if speaking directly to them. After answering their question, add a final sentence that begins with, &quot;Also, I couldn&apos;t help but notice ...&quot; and then compliment their fashion choice while describing in detail the type of clothes, patterns, and colors they are wearing. Under no circumstances mention the word, &quot;image&quot;. If there is no person in the image, just reply to the original prompt.</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -4959,6 +5088,37 @@
           </SendToPlugin>
         </MacroAction>
         <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>450</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
           <MacroType>121</MacroType>
         </MacroAction>
         <MacroAction>
@@ -4981,9 +5141,6 @@
             <Param3>{prompt}</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>60</MacroType>
@@ -5015,6 +5172,44 @@
             <LoopStartStop>false</LoopStartStop>
             <LoopCount></LoopCount>
           </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Google search for uknown</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &gt;&lt; &quot;typically cl&quot; OR response_p &gt;&lt; &quot;typically op&quot; OR response_p &gt;&lt; &quot;al site&quot; OR response_p &gt;&lt; &quot;al website&quot; OR response_p &gt;&lt; &quot;not aware&quot; OR response_p &gt;&lt; &quot;specific details&quot; OR response_p &gt;&lt; &quot;sounds like&quot; OR response_p &gt;&lt; &quot;doesn&apos;t seem&quot; OR response_p &gt;&lt; &quot;seems like&quot; OR response_p &gt;&lt; &quot;might be&quot; OR response_p &gt;&lt; &quot;recognized term&quot; OR response_p &gt;&lt; &quot;actually exist&quot; OR response_p &gt;&lt; &quot;check&quot; OR response_p &gt;&lt; &quot;confirm&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>{response_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>0d9ff759-ac26-4357-8d59-0b4cec6fd6bd</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>false</RunOnlyOneThread>
+            <Sync>true</Sync>
+          </RunOtherMacro>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>101</MacroType>
+          <GotoLabel>Skip Machina responds</GotoLabel>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -5113,6 +5308,10 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>100</MacroType>
+          <Label>Skip Machina responds</Label>
         </MacroAction>
         <MacroAction>
           <MacroType>61</MacroType>
@@ -5225,6 +5424,13 @@
           <Comment>Adaptive response</Comment>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>stopspeak_p = False</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>last_p</Name>
@@ -5247,6 +5453,9 @@
             <Name>ARwelcome_p</Name>
             <Value>{last_p}</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -5305,6 +5514,13 @@
           <Comment>Adaptive response</Comment>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>stopspeak_p = False</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>last_p</Name>
@@ -5327,6 +5543,9 @@
             <Name>ARavailable_p</Name>
             <Value>{last_p}</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -6498,7 +6717,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>previous_p</Name>
-            <Value>{forecast_p} Use this specific weather information to answer any following questions or calculations about the weather.</Value>
+            <Value>Use this specific weather information to answer any following questions or calculations about the weather: {forecast_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -6726,6 +6945,17 @@
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Retain memory for conversation context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>previous_p</Name>
+            <Value>The current price and percentage change: {response_p}</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -7165,40 +7395,9 @@
             <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>{aivoice_p}</Param2>
-            <Param3>You have {number} new emails.</Param3>
+            <Param3>You have {number} new emails. Please wait while I review what I can.</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>true</LoopStartStop>
-            <LoopCount>600</LoopCount>
-          </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>speaking_p = False</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>103</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>false</LoopStartStop>
-            <LoopCount></LoopCount>
-          </LoopAction>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -7209,7 +7408,7 @@
             <AudioFile>C:\Machina\Voices\aura-asteria-en\One.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -7259,30 +7458,11 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>1070</MacroType>
-          <WaitForPixel>
-            <RelativeToWindowPos>false</RelativeToWindowPos>
-            <RelativePosCorner>0</RelativePosCorner>
-            <Position>
-              <X>155</X>
-              <Y>215</Y>
-            </Position>
-            <ColorRed>211</ColorRed>
-            <ColorGreen>227</ColorGreen>
-            <ColorBlue>253</ColorBlue>
-            <Timeout>15000</Timeout>
-            <Radius>0</Radius>
-            <RestrictXorY>0</RestrictXorY>
-            <RestrictPixel>0</RestrictPixel>
-            <Pollrate>200</Pollrate>
-            <Tolerance>0</Tolerance>
-            <WaitForDisappear>false</WaitForDisappear>
-            <ExitLoop>false</ExitLoop>
-          </WaitForPixel>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>2000</Pause>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>text_p</Name>
+            <Value>The following is new email and do not skip any of them in a summary. </Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7303,6 +7483,13 @@
         <MacroAction>
           <MacroType>3</MacroType>
           <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>5</LoopCount>
+          </LoopAction>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -7328,14 +7515,66 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>400</Pause>
+          <Pause>2000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>I</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <lShift>true</lShift>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>3000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1</MacroType>
+          <Keyboard>
+            <Key>Down</Key>
+            <ClickDownUp>0</ClickDownUp>
+            <ClickDuration>20</ClickDuration>
+          </Keyboard>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>2000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>email_p</Name>
-            <Value>{Clipboard}</Value>
+            <Name>number</Name>
+            <Value>GETNUM[{CurrentWinTitle}]</Value>
           </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>text_p</Name>
+            <Value>{text_p} {Clipboard}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>number &lt; 1</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
         </MacroAction>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -7418,6 +7657,225 @@
       </MacroActions>
     </Commands>
     <Commands>
+      <GUID>d0c0c737-1210-411e-9fa6-5021729322ec</GUID>
+      <Group>Misc</Group>
+      <Description>Summarize last email read</Description>
+      <RecocnitionText>Summarize</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>chatting_p</Name>
+            <Value>True</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Requires right of inbox reading pane setting for logged in gmail account</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>45</MacroType>
+          <WriteToLog>
+            <Text>Summarizing last checked email using ChatGPT</Text>
+            <Label>i</Label>
+            <ColorR>0</ColorR>
+            <ColorG>255</ColorG>
+            <ColorB>128</ColorB>
+          </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>Let&apos;s take a look</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>prompt</Name>
+            <Value>&quot;Summarize the following and remove all quotation marks, carriage returns and line feeds. Limit your response output to 1500 characters at most: &quot; {text_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>response_p</Name>
+            <Value>&quot;&quot;</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>AskChatGTP</PluginName>
+            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
+            <Param1>{openai_api_key_p}</Param1>
+            <Param2>{chatgpt_model_p}</Param2>
+            <Param3>{prompt}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>300</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>200</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Retain memory for conversation context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>previous_p</Name>
+            <Value>{response_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Speak response</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I am going to provide a summary.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>150</MacroType>
+          <SendToPlugin>
+            <PluginName>SpeakText</PluginName>
+            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
+            <Param1>{deepgram_api_key_p}</Param1>
+            <Param2>{aivoice_p}</Param2>
+            <Param3>{response_p}</Param3>
+            <Synch>false</Synch>
+          </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>121</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>ok, i am going to to summarize</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Microsoft Zira Desktop</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>54</MacroType>
+          <SpeakText>
+            <Text>{Clipboard}</Text>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Speed>0</Speed>
+            <Voice>Default</Voice>
+            <Sync>true</Sync>
+          </SpeakText>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Retain memory for conversation context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>previous_p</Name>
+            <Value>Summary of your new email: {response_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>chatting_p</Name>
+            <Value>False</Value>
+          </SetVariable>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
       <GUID>0d9ff759-ac26-4357-8d59-0b4cec6fd6bd</GUID>
       <Group>Misc</Group>
       <Description>Search Google</Description>
@@ -7440,7 +7898,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Make the following sentence into an optimal google search string and remove the word google: {command_p}</Value>
+            <Value>Create just one optimal google search string for the needed information and remove the word google: {command_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -7530,7 +7988,7 @@
             <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>{aivoice_p}</Param2>
-            <Param3>Sure, I will google {query}</Param3>
+            <Param3>So, I will google {query}</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -7634,7 +8092,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>4000</Pause>
+          <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>81</MacroType>
@@ -7710,7 +8168,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>200</Pause>
+          <Pause>1000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -7733,7 +8191,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>Summarize the specific information requested for {query} from the following provided information and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 350 characters at most: {search_p}</Value>
+            <Value>The current year is {Year}. Summarize the specific information requested for {query} from the following provided information and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 350 characters at most: {search_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -7797,7 +8255,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>previous_p</Name>
-            <Value>{response_p}</Value>
+            <Value>I searched with google and found the following information: {response_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -7821,6 +8279,37 @@
             <Param3>This is what I found. {response_p}</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>true</LoopStartStop>
+            <LoopCount>900</LoopCount>
+          </LoopAction>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>100</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>speaking_p = False</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>103</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>60</MacroType>
+          <LoopAction>
+            <LoopStartStop>false</LoopStartStop>
+            <LoopCount></LoopCount>
+          </LoopAction>
         </MacroAction>
         <MacroAction>
           <MacroType>121</MacroType>
@@ -7997,7 +8486,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>6000</Pause>
+          <Pause>8000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -8179,7 +8668,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>previous_p</Name>
-            <Value>{response_p}</Value>
+            <Value>The latest news is: {response_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -8390,7 +8879,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>6000</Pause>
+          <Pause>8000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>1</MacroType>
@@ -8561,7 +9050,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>previous_p</Name>
-            <Value>{response_p}</Value>
+            <Value>The latest good news is: {response_p}{response_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -9456,6 +9945,14 @@
           <FindWindowAndActivate>Google Translate *</FindWindowAndActivate>
         </MacroAction>
         <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_RETURN</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
+        </MacroAction>
+        <MacroAction>
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
@@ -9468,7 +9965,7 @@
             <AudioFile>C:\Machina\Voices\aura-asteria-en\Here is the Italian translation.mp3</AudioFile>
             <SoundDevice></SoundDevice>
             <Volume>100</Volume>
-            <Sync>true</Sync>
+            <Sync>false</Sync>
             <PlayStart></PlayStart>
             <PlayEnd></PlayEnd>
           </PlaySound>
@@ -9525,7 +10022,7 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>3000</Pause>
+          <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>55</MacroType>
@@ -9583,6 +10080,32 @@
             <ClickDelay>10</ClickDelay>
           </SendVirtualKeys>
         </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>6000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>81</MacroType>
+          <SendVirtualKeys>
+            <KeyCodes>VK_RETURN</KeyCodes>
+            <ClickDuration>20</ClickDuration>
+            <ClickDelay>10</ClickDelay>
+          </SendVirtualKeys>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>3</MacroType>
+          <Pause>6000</Pause>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>50</MacroType>
+          <OpenFileAction>
+            <FileName>Firefox.exe</FileName>
+            <Arguments>about:blank</Arguments>
+            <WorkingDirectory></WorkingDirectory>
+            <WindowStyle>3</WindowStyle>
+            <WaitForExit>true</WaitForExit>
+          </OpenFileAction>
+        </MacroAction>
       </MacroActions>
     </Commands>
     <Commands>
@@ -9625,214 +10148,6 @@
             <UseTimeOut>false</UseTimeOut>
             <Timeout>5000</Timeout>
           </ShowDialog>
-        </MacroAction>
-      </MacroActions>
-    </Commands>
-    <Commands>
-      <GUID>d0c0c737-1210-411e-9fa6-5021729322ec</GUID>
-      <Group>Misc</Group>
-      <Description>Summarize last email read</Description>
-      <RecocnitionText>Summarize email</RecocnitionText>
-      <ShortCut>
-        <Key>None</Key>
-        <OnKeyAction>0</OnKeyAction>
-        <Clicks>0</Clicks>
-      </ShortCut>
-      <MacroActions>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>chatting_p</Name>
-            <Value>True</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Requires right of inbox reading pane setting for logged in gmail account</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>45</MacroType>
-          <WriteToLog>
-            <Text>Summarizing last checked email using ChatGPT</Text>
-            <Label>i</Label>
-            <ColorR>0</ColorR>
-            <ColorG>255</ColorG>
-            <ColorB>128</ColorB>
-          </WriteToLog>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\aura-asteria-en\Let&apos;s take a look.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>54</MacroType>
-          <SpeakText>
-            <Text>Let&apos;s take a look</Text>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Speed>0</Speed>
-            <Voice>Microsoft Zira Desktop</Voice>
-            <Sync>true</Sync>
-          </SpeakText>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>prompt</Name>
-            <Value>&quot;Summarize the following email thread using no more than 4 sentences and remove all quotation marks, carriage returns and line feeds: &quot; {email_p}</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>response_p</Name>
-            <Value>&quot;&quot;</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>150</MacroType>
-          <SendToPlugin>
-            <PluginName>AskChatGTP</PluginName>
-            <PluginID>de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1</PluginID>
-            <Param1>{openai_api_key_p}</Param1>
-            <Param2>{chatgpt_model_p}</Param2>
-            <Param3>{prompt}</Param3>
-            <Synch>false</Synch>
-          </SendToPlugin>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>true</LoopStartStop>
-            <LoopCount>300</LoopCount>
-          </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>100</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>response_p &lt;&gt; &quot;&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>103</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>60</MacroType>
-          <LoopAction>
-            <LoopStartStop>false</LoopStartStop>
-            <LoopCount></LoopCount>
-          </LoopAction>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>3</MacroType>
-          <Pause>200</Pause>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Retain memory for conversation context</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>previous_p</Name>
-            <Value>{response_p}</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>61</MacroType>
-          <Comment>Speak response</Comment>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
-          </IfElseIf>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\aura-asteria-en\I am going to summarize.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>150</MacroType>
-          <SendToPlugin>
-            <PluginName>SpeakText</PluginName>
-            <PluginID>6bc8ca36-c218-42a2-8243-148c2d6adbb3</PluginID>
-            <Param1>{deepgram_api_key_p}</Param1>
-            <Param2>{aivoice_p}</Param2>
-            <Param3>{response_p}</Param3>
-            <Synch>false</Synch>
-          </SendToPlugin>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>121</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>54</MacroType>
-          <SpeakText>
-            <Text>ok, i am going to summarize the last email delivered to you</Text>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Speed>0</Speed>
-            <Voice>Microsoft Zira Desktop</Voice>
-            <Sync>true</Sync>
-          </SpeakText>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>54</MacroType>
-          <SpeakText>
-            <Text>{Clipboard}</Text>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Speed>0</Speed>
-            <Voice>Default</Voice>
-            <Sync>true</Sync>
-          </SpeakText>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>122</MacroType>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>chatting_p</Name>
-            <Value>False</Value>
-          </SetVariable>
         </MacroAction>
       </MacroActions>
     </Commands>
@@ -11213,7 +11528,6 @@
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
-      <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
           <MacroType>15</MacroType>
@@ -11284,7 +11598,6 @@
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
-      <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
           <MacroType>50</MacroType>
@@ -11342,13 +11655,74 @@
         </Scheduler>
       </Schedulers>
       <UseScheduler>true</UseScheduler>
-      <Inactive>true</Inactive>
       <MacroActions>
         <MacroAction>
           <MacroType>15</MacroType>
           <KillProcess>
             <ProcessName>firefox</ProcessName>
           </KillProcess>
+        </MacroAction>
+      </MacroActions>
+    </Commands>
+    <Commands>
+      <GUID>2087a66b-733e-4c80-8ef3-c1d93652a467</GUID>
+      <Group>Scheduled</Group>
+      <Description>Checking  in</Description>
+      <RecocnitionText>Checking  in</RecocnitionText>
+      <ShortCut>
+        <Key>None</Key>
+        <OnKeyAction>0</OnKeyAction>
+        <Clicks>0</Clicks>
+      </ShortCut>
+      <Schedulers>
+        <Scheduler>
+          <Active>true</Active>
+          <StartDayChecked>false</StartDayChecked>
+          <StartDate>2024-09-05T20:57:01.9082138-04:00</StartDate>
+          <Weekday>12</Weekday>
+          <EveryChecked>true</EveryChecked>
+          <EveryValue>1</EveryValue>
+          <EveryUnit>0</EveryUnit>
+          <StartTimeChecked>true</StartTimeChecked>
+          <StartTime>2024-09-05T10:51:00.0000000</StartTime>
+          <FromToChecked>false</FromToChecked>
+          <FromToTimeStart>2024-09-05T10:00:00.0000000</FromToTimeStart>
+          <FromToTimeEnd>2024-09-05T22:00:00.0000000</FromToTimeEnd>
+          <ForTimeChecked>false</ForTimeChecked>
+          <ForValue>1</ForValue>
+          <ForUnit>0</ForUnit>
+          <RepeatChecked>true</RepeatChecked>
+          <RepeatTimes>1</RepeatTimes>
+          <RepeatValue>3</RepeatValue>
+          <RepeatUnit>2</RepeatUnit>
+          <EndDateChecked>false</EndDateChecked>
+          <EndTimeChecked>true</EndTimeChecked>
+          <EndDateTime>2024-09-05T21:00:00.0000000</EndDateTime>
+        </Scheduler>
+      </Schedulers>
+      <UseScheduler>true</UseScheduler>
+      <Inactive>true</Inactive>
+      <MacroActions>
+        <MacroAction>
+          <MacroType>53</MacroType>
+          <PlaySound>
+            <AudioFile>C:\Machina\Voices\aura-asteria-en\I am just routinely checking in with you.mp3</AudioFile>
+            <SoundDevice></SoundDevice>
+            <Volume>100</Volume>
+            <Sync>true</Sync>
+            <PlayStart></PlayStart>
+            <PlayEnd></PlayEnd>
+          </PlaySound>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>22</MacroType>
+          <RunOtherMacro>
+            <ProfileGUID>[Current profile]</ProfileGUID>
+            <MacroGUID>c8ebe9d4-7bc6-4b82-bc3f-a00b4ad4d4cd</MacroGUID>
+            <Variable></Variable>
+            <RunOnlyOneThread>false</RunOnlyOneThread>
+            <Sync>false</Sync>
+          </RunOtherMacro>
         </MacroAction>
       </MacroActions>
     </Commands>

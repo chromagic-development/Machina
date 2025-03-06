@@ -2674,7 +2674,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>{command_p} = &quot;ERR!&quot;</Condition>
+            <Condition>{command_p} = ERR!</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -5181,14 +5181,32 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>rresponse_p &gt;&lt; &quot;vague&quot; OR esponse_p &gt;&lt; &quot;seems to bel&quot; OR response_p &gt;&lt; &quot;typically cl&quot; OR response_p &gt;&lt; &quot;typically op&quot; OR response_p &gt;&lt; &quot;al site&quot; OR response_p &gt;&lt; &quot;al website&quot; OR response_p &gt;&lt; &quot;not aware&quot; OR response_p &gt;&lt; &quot;specific details&quot; OR response_p &gt;&lt; &quot;sounds like&quot; OR response_p &gt;&lt; &quot;doesn&apos;t seem&quot; OR response_p &gt;&lt; &quot;seems like&quot; OR response_p &gt;&lt; &quot;might be&quot; OR response_p &gt;&lt; &quot;recognized term&quot; OR response_p &gt;&lt; &quot;actually exist&quot; OR response_p &gt;&lt; &quot;check&quot; OR response_p &gt;&lt; &quot;confirm&quot;</Condition>
+            <Condition>response_p &gt;&lt; &quot;vague&quot; OR response_p &gt;&lt; &quot;seems to bel&quot; OR response_p &gt;&lt; &quot;typically cl&quot; OR response_p &gt;&lt; &quot;typically op&quot; OR response_p &gt;&lt; &quot;al site&quot; OR response_p &gt;&lt; &quot;al website&quot; OR response_p &gt;&lt; &quot;not aware&quot; OR response_p &gt;&lt; &quot;specific details&quot; OR response_p &gt;&lt; &quot;doesn&apos;t seem&quot; OR response_p &gt;&lt; &quot;seems like&quot; OR response_p &gt;&lt; &quot;might be&quot; OR response_p &gt;&lt; &quot;recognized term&quot; OR response_p &gt;&lt; &quot;actually exist&quot; OR response_p &gt;&lt; &quot;check&quot; OR response_p &gt;&lt; &quot;confirm&quot;</Condition>
           </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>61</MacroType>
+          <Comment>Include previous conversation context</Comment>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>yousaid</Name>
+            <Value>You spoke to me: {previous_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>isaid</Name>
+            <Value> I said: {command_p}</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>command_p</Name>
-            <Value>{response_p}</Value>
+            <Value>{yousaid} {isaid}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -5406,10 +5424,24 @@
           </SetVariable>
         </MacroAction>
         <MacroAction>
-          <MacroType>120</MacroType>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>commlength</Name>
+            <Value>STRLEN[{command_p}]</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>1120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
             <Condition>command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot; OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot; OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot; OR command_p &lt;&lt; &quot;have&quot; OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>commlength &gt; 5</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -7902,7 +7934,14 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>The current year is {FullYear}. Create just one optimal google search string for the needed information and remove the word google: {command_p}</Value>
+            <Value>The current date is {FullDate}. Only reply with a single optimal google search string for the needed information and do not add quotes: {command_p}</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>command_p</Name>
+            <Value>&quot;&quot;</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
@@ -8195,7 +8234,7 @@
           <MacroType>200</MacroType>
           <SetVariable>
             <Name>prompt</Name>
-            <Value>The current year is {Year}. Summarize the specific information requested for {query} from the following provided information and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 350 characters at most: {search_p}</Value>
+            <Value>The current date is {FullDate}. Summarize the specific information requested for {query} from the following provided information and remove all quotation marks and replace carriage returns and line feeds with periods. Limit your response output to 350 characters at most: {search_p}</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>

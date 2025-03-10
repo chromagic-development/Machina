@@ -2635,7 +2635,7 @@
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>15</Param2>
-            <Param3></Param3>
+            <Param3>1</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -4852,7 +4852,7 @@
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>20</Param2>
-            <Param3></Param3>
+            <Param3>1</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -5381,7 +5381,7 @@
             <PluginID>f73e6ce3-ea89-484f-9516-1bc9c12d17bd</PluginID>
             <Param1>{deepgram_api_key_p}</Param1>
             <Param2>12</Param2>
-            <Param3></Param3>
+            <Param3>1</Param3>
             <Synch>false</Synch>
           </SendToPlugin>
         </MacroAction>
@@ -10057,22 +10057,22 @@
         </MacroAction>
         <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>25000</Pause>
+          <Pause>3000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>81</MacroType>
           <SendVirtualKeys>
-            <KeyCodes>VK_TAB;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_RETURN</KeyCodes>
+            <KeyCodes>VK_TAB;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
             <ClickDelay>10</ClickDelay>
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>1003</MacroType>
+          <MacroType>3</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>1081</MacroType>
+          <MacroType>81</MacroType>
           <SendVirtualKeys>
             <KeyCodes>VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
@@ -10080,11 +10080,11 @@
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>1003</MacroType>
+          <MacroType>3</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>1081</MacroType>
+          <MacroType>81</MacroType>
           <SendVirtualKeys>
             <KeyCodes>VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
@@ -10092,11 +10092,11 @@
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>1003</MacroType>
+          <MacroType>3</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>1050</MacroType>
+          <MacroType>50</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
             <Arguments>about:blank</Arguments>

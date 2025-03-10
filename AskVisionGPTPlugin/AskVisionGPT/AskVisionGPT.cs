@@ -1,5 +1,5 @@
 ﻿// AskVisionGPT VM plugin: Get response_p from prompt using LLM Vision AI
-// v1.0.0.2
+// v1.0.0.3
 // Copyright © 2024 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.

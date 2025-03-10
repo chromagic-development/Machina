@@ -1,5 +1,5 @@
 ﻿// SpeakText VM plugin: Speak text using voice AI TTS
-// v1.0.0.7
+// v1.0.0.8
 // Copyright © 2024 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.

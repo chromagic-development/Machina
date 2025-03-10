@@ -5181,7 +5181,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>response_p &gt;&lt; &quot;vague&quot; OR response_p &gt;&lt; &quot;seems to bel&quot; OR response_p &gt;&lt; &quot;typically cl&quot; OR response_p &gt;&lt; &quot;typically op&quot; OR response_p &gt;&lt; &quot;al site&quot; OR response_p &gt;&lt; &quot;al website&quot; OR response_p &gt;&lt; &quot;not aware&quot; OR response_p &gt;&lt; &quot;specific details&quot; OR response_p &gt;&lt; &quot;doesn&apos;t seem&quot; OR response_p &gt;&lt; &quot;seems like&quot; OR response_p &gt;&lt; &quot;might be&quot; OR response_p &gt;&lt; &quot;recognized term&quot; OR response_p &gt;&lt; &quot;actually exist&quot; OR response_p &gt;&lt; &quot;check&quot; OR response_p &gt;&lt; &quot;confirm&quot;</Condition>
+            <Condition>response_p &gt;&lt; &quot;ind out&quot; OR response_p &gt;&lt; &quot;earch for&quot; OR response_p &gt;&lt; &quot;oogle&quot; OR response_p &gt;&lt; &quot;typically cl&quot; OR response_p &gt;&lt; &quot;typically op&quot; OR response_p &gt;&lt; &quot;al site&quot; OR response_p &gt;&lt; &quot;website&quot; OR response_p &gt;&lt; &quot;not aware&quot; OR response_p &gt;&lt; &quot;specific details&quot; OR response_p &gt;&lt; &quot;doesn&apos;t seem&quot; OR response_p &gt;&lt; &quot;seems like&quot; OR response_p &gt;&lt; &quot;might be&quot; OR response_p &gt;&lt; &quot;recognized term&quot; OR response_p &gt;&lt; &quot;actually exist&quot; OR response_p &gt;&lt; &quot;heck &quot; OR response_p &gt;&lt; &quot;confirm&quot; OR response_p &gt;&lt; &quot;there hasn&apos;t&quot; OR response_p &gt;&lt; &quot;an eye&quot; OR response_p &gt;&lt; &quot;I don&apos;t&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -10042,28 +10042,6 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>1070</MacroType>
-          <WaitForPixel>
-            <RelativeToWindowPos>false</RelativeToWindowPos>
-            <RelativePosCorner>0</RelativePosCorner>
-            <Position>
-              <X>348</X>
-              <Y>413</Y>
-            </Position>
-            <ColorRed>181</ColorRed>
-            <ColorGreen>182</ColorGreen>
-            <ColorBlue>183</ColorBlue>
-            <Timeout>15000</Timeout>
-            <Radius>0</Radius>
-            <RestrictXorY>0</RestrictXorY>
-            <RestrictPixel>0</RestrictPixel>
-            <Pollrate>200</Pollrate>
-            <Tolerance>0</Tolerance>
-            <WaitForDisappear>false</WaitForDisappear>
-            <ExitLoop>false</ExitLoop>
-          </WaitForPixel>
-        </MacroAction>
-        <MacroAction>
           <MacroType>3</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
@@ -10078,45 +10056,23 @@
           </InsertText>
         </MacroAction>
         <MacroAction>
-          <MacroType>1070</MacroType>
-          <WaitForPixel>
-            <RelativeToWindowPos>false</RelativeToWindowPos>
-            <RelativePosCorner>0</RelativePosCorner>
-            <Position>
-              <X>395</X>
-              <Y>406</Y>
-            </Position>
-            <ColorRed>95</ColorRed>
-            <ColorGreen>99</ColorGreen>
-            <ColorBlue>104</ColorBlue>
-            <Timeout>5000</Timeout>
-            <Radius>0</Radius>
-            <RestrictXorY>0</RestrictXorY>
-            <RestrictPixel>0</RestrictPixel>
-            <Pollrate>200</Pollrate>
-            <Tolerance>0</Tolerance>
-            <WaitForDisappear>false</WaitForDisappear>
-            <ExitLoop>false</ExitLoop>
-          </WaitForPixel>
-        </MacroAction>
-        <MacroAction>
           <MacroType>3</MacroType>
-          <Pause>1000</Pause>
+          <Pause>25000</Pause>
         </MacroAction>
         <MacroAction>
           <MacroType>81</MacroType>
           <SendVirtualKeys>
-            <KeyCodes>VK_TAB;VK_TAB;VK_DELAY:0.15;VK_RETURN</KeyCodes>
+            <KeyCodes>VK_TAB;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_TAB;VK_DELAY:0.15;VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
             <ClickDelay>10</ClickDelay>
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
+          <MacroType>1003</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>81</MacroType>
+          <MacroType>1081</MacroType>
           <SendVirtualKeys>
             <KeyCodes>VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
@@ -10124,11 +10080,11 @@
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
+          <MacroType>1003</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>81</MacroType>
+          <MacroType>1081</MacroType>
           <SendVirtualKeys>
             <KeyCodes>VK_RETURN</KeyCodes>
             <ClickDuration>20</ClickDuration>
@@ -10136,11 +10092,11 @@
           </SendVirtualKeys>
         </MacroAction>
         <MacroAction>
-          <MacroType>3</MacroType>
+          <MacroType>1003</MacroType>
           <Pause>6000</Pause>
         </MacroAction>
         <MacroAction>
-          <MacroType>50</MacroType>
+          <MacroType>1050</MacroType>
           <OpenFileAction>
             <FileName>Firefox.exe</FileName>
             <Arguments>about:blank</Arguments>

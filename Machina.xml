@@ -1265,14 +1265,14 @@
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>tryagain_p</Name>
+            <Name>chatting_p</Name>
             <Value>False</Value>
           </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
           <SetVariable>
-            <Name>chatting_p</Name>
+            <Name>tryagain_p</Name>
             <Value>False</Value>
           </SetVariable>
         </MacroAction>
@@ -2384,6 +2384,13 @@
       <OnlyOneThread>true</OnlyOneThread>
       <MacroActions>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>tryagain_p = False</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
           <MacroType>45</MacroType>
           <WriteToLog>
             <Text>Machina wake word detected</Text>
@@ -2392,6 +2399,9 @@
             <ColorG>255</ColorG>
             <ColorB>128</ColorB>
           </WriteToLog>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>
@@ -2434,21 +2444,17 @@
           </PlaySound>
         </MacroAction>
         <MacroAction>
-          <MacroType>53</MacroType>
-          <PlaySound>
-            <AudioFile>C:\Machina\Voices\aura-asteria-en\Sorry.mp3</AudioFile>
-            <SoundDevice></SoundDevice>
-            <Volume>100</Volume>
-            <Sync>true</Sync>
-            <PlayStart></PlayStart>
-            <PlayEnd></PlayEnd>
-          </PlaySound>
-        </MacroAction>
-        <MacroAction>
           <MacroType>10</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>121</MacroType>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>tryagain_p</Name>
+            <Value>True</Value>
+          </SetVariable>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
           <MacroType>200</MacroType>
@@ -2604,13 +2610,6 @@
           <MacroType>122</MacroType>
         </MacroAction>
         <MacroAction>
-          <MacroType>200</MacroType>
-          <SetVariable>
-            <Name>tryagain_p</Name>
-            <Value>False</Value>
-          </SetVariable>
-        </MacroAction>
-        <MacroAction>
           <MacroType>61</MacroType>
           <Comment>***** Get command *****</Comment>
         </MacroAction>
@@ -2705,7 +2704,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>(RANDOM 1-4)  = 1 AND aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
+            <Condition>(RANDOM 1-6)  = 1 AND tryagain_p = False AND aivoice_p &gt;&lt; &quot;aura&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -2755,7 +2754,7 @@
           <MacroType>120</MacroType>
           <IfElseIf>
             <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &gt;&lt; &quot;never mind&quot; OR command_p &gt;&lt; &quot;forget it&quot; OR command_p &gt;&lt; &quot;ignore&quot;</Condition>
+            <Condition>command_p &gt;&lt; &quot;never mind&quot; OR command_p &gt;&lt; &quot;forget it&quot; OR command_p &gt;&lt; &quot;ignore&quot; OR command_p &gt;&lt; &quot;all done&quot; OR command_p &gt;&lt; &quot;shut up&quot; OR command_p &gt;&lt; &quot;be quiet&quot; OR command_p &lt;&lt; &quot;thank&quot; OR command_p &gt;&gt; &quot;thank you.&quot; OR command_p &gt;&gt; &quot;thanks.&quot;</Condition>
           </IfElseIf>
         </MacroAction>
         <MacroAction>
@@ -3907,6 +3906,13 @@
           <Comment>No command recognized</Comment>
         </MacroAction>
         <MacroAction>
+          <MacroType>120</MacroType>
+          <IfElseIf>
+            <IfOrElseIf>true</IfOrElseIf>
+            <Condition>tryagain_p = False</Condition>
+          </IfElseIf>
+        </MacroAction>
+        <MacroAction>
           <MacroType>22</MacroType>
           <RunOtherMacro>
             <ProfileGUID>[Current profile]</ProfileGUID>
@@ -3917,8 +3923,18 @@
           </RunOtherMacro>
         </MacroAction>
         <MacroAction>
+          <MacroType>122</MacroType>
+        </MacroAction>
+        <MacroAction>
           <MacroType>100</MacroType>
           <Label>Command accepted</Label>
+        </MacroAction>
+        <MacroAction>
+          <MacroType>200</MacroType>
+          <SetVariable>
+            <Name>tryagain_p</Name>
+            <Value>False</Value>
+          </SetVariable>
         </MacroAction>
         <MacroAction>
           <MacroType>122</MacroType>
@@ -5429,13 +5445,6 @@
             <Name>commlength</Name>
             <Value>STRLEN[{command_p}]</Value>
           </SetVariable>
-        </MacroAction>
-        <MacroAction>
-          <MacroType>1120</MacroType>
-          <IfElseIf>
-            <IfOrElseIf>true</IfOrElseIf>
-            <Condition>command_p &lt;&lt; &quot;i &quot; OR command_p &gt;&lt; &quot; i &quot; OR command_p &gt;&lt; &quot;i&apos;m&quot; OR command_p &lt;&lt; &quot;but&quot; OR command_p &lt;&lt; &quot;also&quot; OR command_p &lt;&lt; &quot;and&quot; OR command_p &lt;&lt; &quot;so &quot; OR command_p &gt;&lt; &quot;who&quot; OR command_p &gt;&lt; &quot;what&quot; OR command_p &gt;&lt; &quot;where&quot; OR command_p &gt;&lt; &quot;when&quot; OR command_p &gt;&lt; &quot;why&quot; OR command_p &gt;&lt; &quot;how&quot; OR command_p &gt;&lt; &quot;which&quot; OR command_p &gt;&lt; &quot;wonder&quot; OR command_p &gt;&lt; &quot;list&quot; OR command_p &gt;&lt; &quot;hope you&quot; OR command_p &gt;&lt; &quot;ask&quot; OR command_p &lt;&lt; &quot;is&quot; OR command_p &lt;&lt; &quot;are&quot; OR command_p &lt;&lt; &quot;do&quot; OR command_p &lt;&lt; &quot;does&quot; OR command_p &lt;&lt; &quot;did&quot; OR command_p &lt;&lt; &quot;can&quot; OR command_p &lt;&lt; &quot;would&quot; OR command_p &lt;&lt; &quot;tell&quot; OR command_p &lt;&lt; &quot;good&quot; OR command_p &lt;&lt; &quot;write&quot; OR command_p &lt;&lt; &quot;create&quot; OR command_p &lt;&lt; &quot;make&quot; OR command_p &lt;&lt; &quot;no&quot; OR command_p &lt;&lt; &quot;if&quot; OR command_p &lt;&lt; &quot;once&quot; OR command_p &lt;&lt; &quot;was&quot; OR command_p &lt;&lt; &quot;describe&quot; OR command_p &lt;&lt; &quot;will&quot; OR command_p &lt;&lt; &quot;well&quot; OR command_p &lt;&lt; &quot;should&quot; OR command_p &lt;&lt; &quot;were&quot; OR command_p &lt;&lt; &quot;give&quot; OR command_p &lt;&lt; &quot;name&quot; OR command_p &lt;&lt; &quot;could&quot; OR command_p &lt;&lt; &quot;explain&quot; OR command_p &lt;&lt; &quot;provide&quot; OR command_p &lt;&lt; &quot;have&quot; OR command_p &lt;&lt; &quot;as a&quot; OR command_p &gt;&lt; &quot;?&quot; OR command_p &gt;&gt; &quot;.&quot;</Condition>
-          </IfElseIf>
         </MacroAction>
         <MacroAction>
           <MacroType>120</MacroType>

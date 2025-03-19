@@ -152,7 +152,7 @@ Loop	            1_End
 
 Installation Steps
 --
-1. Download and install <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.33-windows-x64-installer?cid=getdotnetcore">Microsoft .NET 6.0 Runtime </a> and <a href="https://download.visualstudio.microsoft.com/download/pr/571ad766-28d1-4028-9063-0fa32401e78f/5D3D8C6779750F92F3726C70E92F0F8BF92D3AE2ABD43BA28C6306466DE8A144/VC_redist.x64.exe">Microsoft Visual C++ 2015-2022 Redistributable</a> to a Windows PC.
+1. Download and install <a href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.33-windows-x64-installer?cid=getdotnetcore">Microsoft .NET 6.0 Runtime</a> and <a href="https://download.visualstudio.microsoft.com/download/pr/571ad766-28d1-4028-9063-0fa32401e78f/5D3D8C6779750F92F3726C70E92F0F8BF92D3AE2ABD43BA28C6306466DE8A144/VC_redist.x64.exe">Microsoft Visual C++ 2015-2022 Redistributable</a> to a Windows PC.
 2. Download Machina.zip and Machina.xml files from Releases in this repository.
 3. Copy the entire Machina folder from Machina.zip to the root of C: so it appears as C:\Machina (Other drives require editing Machina.xml).
 4. Download and install <a href="https://www.voicemacro.net/download">VoiceMacro</a> and accept all defaults.
@@ -163,6 +163,6 @@ Installation Steps
 9. Select and double-click on the Initialize Machina macro and provide your API keys for web services.
 10. Make sure the Initialize Machina macro is set to (Auto).
 11. Restart VoiceMacro.
-12. To optionally run locally without cloud service API keys required after installing LM Studio and tiny-openai-whisper-api, follow the instructions in the "For local AI servers" comment in the Initialize Machina macro.
+12. To optionally run locally without cloud service API keys required after installing LM Studio and <a href="https://github.com/morioka/tiny-openai-whisper-api">tiny-openai-whisper-api</a>, follow the instructions in the "For local AI servers" comment in the Initialize Machina macro.
 
 2024 Bruce Alexander

@@ -1,0 +1,17 @@
+C:\Users\Bruce\source\repos\AskVisionGPTPlugin\AskVisionGPT\obj\Release\AskVisionGPT.csproj.AssemblyReference.cache
+C:\Users\Bruce\source\repos\AskVisionGPTPlugin\AskVisionGPT\obj\Release\AskVisionGPT.csproj.CoreCompileInputs.cache
+C:\Users\Bruce\source\repos\AskVisionGPTPlugin\AskVisionGPT\obj\Release\AskVisio.2DAF7044.Up2Date
+C:\Users\Bruce\source\repos\AskVisionGPTPlugin\AskVisionGPT\obj\Release\AskVisionGPT.dll
+C:\Users\Bruce\source\repos\AskVisionGPTPlugin\AskVisionGPT\obj\Release\AskVisionGPT.pdb
+C:\Machina\Plugins\dll\x86\OpenCvSharpExtern.dll
+C:\Machina\Plugins\dll\x86\opencv_videoio_ffmpeg420.dll
+C:\Machina\Plugins\dll\x64\OpenCvSharpExtern.dll
+C:\Machina\Plugins\dll\x64\opencv_videoio_ffmpeg420_64.dll
+C:\Machina\Plugins\AskVisionGPT.dll.config
+C:\Machina\Plugins\AskVisionGPT.dll
+C:\Machina\Plugins\AskVisionGPT.pdb
+C:\Users\chrom\source\repos\AskVisionGPTPlugin_endpt\AskVisionGPT\obj\Release\AskVisionGPT.csproj.AssemblyReference.cache
+C:\Users\chrom\source\repos\AskVisionGPTPlugin_endpt\AskVisionGPT\obj\Release\AskVisionGPT.csproj.CoreCompileInputs.cache
+C:\Users\chrom\source\repos\AskVisionGPTPlugin_endpt\AskVisionGPT\obj\Release\AskVisio.2DAF7044.Up2Date
+C:\Users\chrom\source\repos\AskVisionGPTPlugin_endpt\AskVisionGPT\obj\Release\AskVisionGPT.dll
+C:\Users\chrom\source\repos\AskVisionGPTPlugin_endpt\AskVisionGPT\obj\Release\AskVisionGPT.pdb

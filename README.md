@@ -163,6 +163,6 @@ Installation Steps
 9. Select and double-click on the Initialize Machina macro and provide your API keys for web services.
 10. Make sure the Initialize Machina macro is set to (Auto).
 11. Restart VoiceMacro.
-12. To optionally run locally without cloud service API keys required after installing LM Studio and <a href="https://github.com/morioka/tiny-openai-whisper-api">tiny-openai-whisper-api</a>, follow the instructions in the "For local AI servers" comment in the Initialize Machina macro.
+12. To optionally run locally without cloud service API keys required after installing LM Studio and <a href="https://github.com/morioka/tiny-openai-whisper-api">tiny-openai-whisper-api</a>, follow the instructions in the "For local AI servers" comment in the Initialize Machina macro. A document with steps for installing tiny-openai-whisper-api with WSL2 on your Windows PC is in the Installation folder.
 
 2024 Bruce Alexander

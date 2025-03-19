@@ -16,6 +16,7 @@ The use case is a personal AI voice assistant integrated with [VoiceMacro](https
 - Also can play music, set timers, summarize Google searches, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
 - Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls
 - You can keep incrementally customizing it with fun symbolic and AI macro functions on the fly to automate anything a human can do on a Windows PC
+- Can now be run entirely local if you also install LM Studio and and tiny-openai-whisper-api
 - Deprecated Picovoice Porcupine is still an option for the default wake word engine and binaries are included in the zip file
 
 <p align="center">
@@ -162,5 +163,6 @@ Installation Steps
 9. Select and double-click on the Initialize Machina macro and provide your API keys for web services.
 10. Make sure the Initialize Machina macro is set to (Auto).
 11. Restart VoiceMacro.
+12. To optionally run locally without cloud service API keys required after installing LM Studio and tiny-openai-whisper-api, follow the instructions in the "For local AI servers" comment in the Initialize Machina macro.
 
 2024 Bruce Alexander

@@ -1,7 +1,7 @@
 Machina
 ==
 
-The use case is a personal AI voice assistant integrated with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros contributing to a complete stack to give it life. When "Machina" (/ma.ki.na/) is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, AskVisionGPT, and GetWeather plugins. It requires using edge servers that can optionally run on a single PC or creating cloud service accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
+The use case is a personal AI voice assistant integrated with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros contributing to a complete stack to give it life. When "Machina" (/ma.ki.na/) is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, AskVisionGPT, and GetWeather plugins. It requires using edge servers that can optionally run as a single PC or creating cloud service accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
 
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
 - Macro scripting development environment easily facilitates design and implementation of AI agents and RAG
@@ -17,6 +17,7 @@ The use case is a personal AI voice assistant integrated with [VoiceMacro](https
 - Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls
 - You can keep incrementally customizing it with fun symbolic and AI macro functions on the fly to automate anything a human can do on a Windows PC
 - Can now be run entirely local if you also install LM Studio and tiny-openai-whisper-api
+- Piper TTS is also provided as a local option for a natural AI voice
 - Deprecated Picovoice Porcupine is still an option for the default wake word engine and binaries are included in the zip file
 
 <p align="center">

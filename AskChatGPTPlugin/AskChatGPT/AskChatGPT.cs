@@ -1,5 +1,5 @@
 ﻿// AskChatGPT VM plugin: Get response_p from prompt using LLM AI
-// v1.0.0.3
+// v1.1.0.3
 // Copyright © 2024 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -26,7 +26,7 @@ namespace AskChatGPTPlugin
     {
         public string DisplayName => "AskChatGTP";
 
-        public string Description => "Get response_p from prompt using LLM AI\r\nArgument 1: OpenAI API key\r\nArgument 2: ChatGPT model\r\nArgument 3: Prompt text";
+        public string Description => "Get response_p from prompt using LLM AI\r\nArgument 1: OpenAI API key or local endpoint (http)\r\nArgument 2: ChatGPT model\r\nArgument 3: Prompt text";
 
         public string ID => "de96fc6f-0409-4d3a-8d1a-dc7ba5e718c1";
 
@@ -64,12 +64,13 @@ namespace AskChatGPTPlugin
         }
 
         // Get response_p from prompt using LLM AI
-        // Argument 1: OpenAI API key
-        // Argument 2: ChatGPT mode
+        // Argument 1: OpenAI API key or local endpoint (http)
+        // Argument 2: ChatGPT model
         // Argument 3: Prompt text
         private static async Task<string> AskChatGPT(string apiKey, string model, string prompt)
         {
-            string apiUrl = "https://api.openai.com/v1/chat/completions";
+            // Use OpenAI service or local server
+            string apiUrl = apiKey.StartsWith("http") ? apiKey : "https://api.openai.com/v1/chat/completions";
 
             using (HttpClient client = new HttpClient())
             {

@@ -1,6 +1,6 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// v1.0.0.6
-// Uses Deepgram Nova-3 model
+// v1.1.0.7
+// Uses Deepgram Nova-3 model or OpenAI Whisper endpoint
 // Implements combined Energy (RMS) and Zero-Crossing Rate (ZCR) in simple VAD
 // Set maxDurationSeconds for maximum listen time 
 // Set silenceThreshold in seconds
@@ -46,7 +46,7 @@ namespace GetCommandPlugin
         {
             get
             {
-                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
+                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
             }
         }
 
@@ -101,7 +101,7 @@ namespace GetCommandPlugin
         #endregion
 
         // Get command_p text using voice AI STT
-        // Argument 1: DEEPGRAM_API_KEY
+        // Argument 1: DEEPGRAM_API_KEY or OpenAI Whisper endpoint (http prefix)
         // Argument 2: Maximum speech duration in seconds
         // Argument 3: Silence threshold in seconds
         async Task GetCommand(string param1, string param2, string param3)
@@ -121,13 +121,25 @@ namespace GetCommandPlugin
             int intParam3 = int.Parse(param3);
 
             // Enforce range for duration
-            if (intParam2 == 0 || intParam2 > 20)
+            if (intParam2 == 0 || intParam2 > 30)
             {
                 intParam2 = 5;
             }
 
             // Get command from STT
-            string transcription = await GetSTT(param1, intParam2, intParam3);
+            string transcription;
+
+            // Check if param1 is an http or DEEPGRAM_API_KEY
+            if (param1.StartsWith("http"))
+            {
+                // Use OpenAI Whisper endpoint
+                transcription = await GetSTTWhisper(param1, intParam2, intParam3);
+            }
+            else
+            {
+                // Use Deepgram API
+                transcription = await GetSTTDeepgram(param1, intParam2, intParam3);
+            }
 
             // Set command variable from STT result
             vmCommand.SetVariable("command_p", transcription);
@@ -136,7 +148,7 @@ namespace GetCommandPlugin
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        static async Task<string> GetSTT(string apiKey, int maxDurationSeconds, int silenceThreshold)
+        static async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold)
         {
             // Deepgram API endpoint
             string url = "https://api.deepgram.com/v1/listen?model=nova-3&smart_format=true";
@@ -188,6 +200,46 @@ namespace GetCommandPlugin
                     else
                     {
                         return "API request failed: " + response.StatusCode;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex.Message;
+                }
+            }
+        }
+
+        static async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold)
+        {
+            // OpenAI Whisper API endpoint
+            string url = apiUrl;
+
+            // Record audio from the microphone
+            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds, silenceThreshold);
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                try
+                {
+                    // Create a multipart form data content
+                    using (var content = new MultipartFormDataContent())
+                    {
+                        content.Add(new ByteArrayContent(audioData), "file", "audio.wav");
+                        content.Add(new StringContent("whisper-1"), "model");
+
+                        // Send the POST request
+                        HttpResponseMessage response = await httpClient.PostAsync(url, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            string jsonResponse = await response.Content.ReadAsStringAsync();
+                            JObject json = JObject.Parse(jsonResponse);
+                            return json["text"]?.ToString() ?? "Nothing.";
+                        }
+                        else
+                        {
+                            return "API request failed: " + response.StatusCode;
+                        }
                     }
                 }
                 catch (Exception ex)

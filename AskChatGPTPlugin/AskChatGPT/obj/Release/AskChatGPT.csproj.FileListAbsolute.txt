@@ -1,7 +1,0 @@
-C:\Machina\Plugins\AskChatGPT.dll
-C:\Machina\Plugins\AskChatGPT.pdb
-C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Release\AskChatGPT.csproj.AssemblyReference.cache
-C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Release\AskChatGPT.csproj.CoreCompileInputs.cache
-C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Release\AskChatGPT.csproj.Up2Date
-C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Release\AskChatGPT.dll
-C:\Users\Bruce\source\repos\AskChatGPTPlugin\AskChatGPT\obj\Release\AskChatGPT.pdb

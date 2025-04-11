@@ -1,5 +1,5 @@
 ﻿// AskVisionGPT VM plugin: Get response_p from prompt using LLM Vision AI
-// v1.0.0.3
+// v1.1.0.3
 // Copyright © 2024 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -28,7 +28,7 @@ namespace AskVisionGPTPlugin
     {
         public string DisplayName => "AskVisionGPT";
 
-        public string Description => "Get response_p from prompt using LLM Vision AI\r\nArgument 1: OpenAI API key\r\nArgument 2: RTSP URL (blank for first camera device)\r\nArgument 3: Prompt text";
+        public string Description => "Get response_p from prompt using LLM Vision AI\r\nArgument 1: OpenAI API key or local endpoint (http)\r\nArgument 2: RTSP URL (blank for first camera device)\r\nArgument 3: Prompt text";
 
         public string ID => "3bcdd962-292c-4507-9818-504dc7b1ecce";
 
@@ -67,11 +67,14 @@ namespace AskVisionGPTPlugin
         }
 
         // Get response_p from prompt using LLM Vision AI
-        // Argument 1: OpenAI API key
+        // Argument 1: OpenAI API key or local endpoint (http)
         // Argument 2: RTSP URL or leave blank
         // Argument 3: Prompt text
         private static async Task<string> AskVisionGPT(string apiKey, string rtspUrl, string text)
         {
+            // Use OpenAI service or local server
+            string apiUrl = apiKey.StartsWith("http") ? apiKey : "https://api.openai.com/v1/chat/completions";
+
             // Capture an image from the RTSP stream
             byte[] imageBytes = CaptureImage(rtspUrl);
 
@@ -104,7 +107,7 @@ namespace AskVisionGPTPlugin
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
                 StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync("https://api.openai.com/v1/chat/completions", content);
+                HttpResponseMessage response = await client.PostAsync(apiUrl, content);
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 // Parse the response JSON and extract the content key

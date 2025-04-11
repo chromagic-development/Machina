@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bruce\\source\\repos\\GetCommandPlugin\\",
+  "WorkspaceRootPath": "C:\\Users\\chrom\\source\\repos\\GetCommandPlugin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|GetCommand\\GetCommand.csproj|c:\\users\\bruce\\source\\repos\\getcommandplugin\\getcommand\\getcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|GetCommand\\GetCommand.csproj|c:\\users\\chrom\\source\\repos\\getcommandplugin\\getcommand\\getcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|GetCommand\\GetCommand.csproj|solutionrelative:getcommand\\getcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GetCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Bruce\\source\\repos\\GetCommandPlugin\\GetCommand\\GetCommand.cs",
+              "DocumentMoniker": "C:\\Users\\chrom\\source\\repos\\GetCommandPlugin\\GetCommand\\GetCommand.cs",
               "RelativeDocumentMoniker": "GetCommand\\GetCommand.cs",
-              "ToolTip": "C:\\Users\\Bruce\\source\\repos\\GetCommandPlugin\\GetCommand\\GetCommand.cs",
+              "ToolTip": "C:\\Users\\chrom\\source\\repos\\GetCommandPlugin\\GetCommand\\GetCommand.cs",
               "RelativeToolTip": "GetCommand\\GetCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwHsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-28T14:47:13.162Z",
               "EditorCaption": ""

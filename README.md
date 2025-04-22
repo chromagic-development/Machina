@@ -157,7 +157,7 @@ Installation Steps
 2. Download Machina.zip and Machina.xml files from <a href="https://github.com/chromagic-development/Machina/releases">Releases</a> in this repository.
 3. Copy the entire Machina folder from Machina.zip to the root of C: so it appears as C:\Machina (Other drives require editing Machina.xml).
 4. Download and install <a href="https://www.voicemacro.net/download">VoiceMacro</a> and accept all defaults.
-5. Install Firefox and Winamp with all defaults accepted to use RAG and stream music (optional; all macros can be edited to suit your needs).
+5. Install Firefox and Winamp with all defaults accepted to use included RAG with web and stream music (optional; all macros can be edited to suit your needs).
 6. Copy all the files in C:\Machina\Plugins to overwrite files in the default VM Plugins folder (e.g. C:\Program Files (x86)\VoiceMacro\Plugins).
 7. Start VoiceMacro and click Edit and Import the Machina.xml file you downloaded for the latest macros.
 8. Make sure Machina is selected as the Profile and click Edit.

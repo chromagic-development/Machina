@@ -33,7 +33,7 @@ Plugin Descriptions
 
 **GetCommand**  
 Get command_p text using voice AI STT  
-Argument 1: Deepgram API key  
+Argument 1: Deepgram API key or OpenAI Whisper endpoint (http) 
 Argument 2: Maximum speech duration in seconds  
 Argument 3: Silence threshold in seconds (optional, default is 2s)  
 
@@ -47,13 +47,13 @@ stopspeak_p: True when user stops speech
 
 **AskChatGPT**  
 Get response_p from prompt using LLM AI  
-Argument 1: OpenAI API key  
+Argument 1: OpenAI API key or local endpoint (http)  
 Argument 2: ChatGPT model  
 Argument 3: Prompt text  
 
 **AskVisionGPT**  
 Get response_p from prompt using LLM Vision AI  
-Argument 1: OpenAI API key  
+Argument 1: OpenAI API key or local endpoint (http)  
 Argument 2: RTSP URL or leave blank  
 Argument 3: Prompt text  
 

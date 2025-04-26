@@ -4,7 +4,7 @@ Machina
 The use case is a personal AI voice assistant integrated with [VoiceMacro](https://www.voicemacro.net). I developed in C# an AI wake word engine running *locally* in the background and several VM plugins as well as macros contributing to a complete stack to give it life. When "Machina" (/ma.ki.na/) is spoken it activates the command macro that uses the GetCommand AI STT plugin. VM then conditionally responds to voice commands copied to the command_p speech transcription variable and can reply with a SpeakText TTS plugin natural AI voice to have an easily customizable, private "Alexa". Make it "smarter" by adding the AskChatGPT, AskVisionGPT, and GetWeather plugins. It requires using edge servers that can optionally run as a single PC or creating cloud service accounts with Deepgram, OpenAI, and Open Cage for API keys set in the "Initialize Machina" macro.
 
 - VM with UI access and control serves as a flexible, symbolic layer integrating the AI plugins
-- Macro scripting development environment easily facilitates design and implementation of AI agents and RAG
+- Macro scripting development environment easily facilitates design and implementation of AI agents and ReAG
 - Responds in a natural voice after a question answered by ChatGPT or have a conversation
 - Uses multimodal vision with either a local or IP camera so you can ask about what it sees
 - Seeded with an origin story and context short-term and long-term "memory" updated by ChatGPT conversations
@@ -157,7 +157,7 @@ Installation Steps
 2. Download Machina.zip and Machina.xml files from <a href="https://github.com/chromagic-development/Machina/releases">Releases</a> in this repository.
 3. Copy the entire Machina folder from Machina.zip to the root of C: so it appears as C:\Machina (Other drives require editing Machina.xml).
 4. Download and install <a href="https://www.voicemacro.net/download">VoiceMacro</a> and accept all defaults.
-5. Install Firefox and Winamp with all defaults accepted to use included RAG with web and stream music (optional; all macros can be edited to suit your needs).
+5. Install Firefox and Winamp with all defaults accepted to use included ReAG with web and stream music (optional; all macros can be edited to suit your needs).
 6. Copy all the files in C:\Machina\Plugins to overwrite files in the default VM Plugins folder (e.g. C:\Program Files (x86)\VoiceMacro\Plugins).
 7. Start VoiceMacro and click Edit and Import the Machina.xml file you downloaded for the latest macros.
 8. Make sure Machina is selected as the Profile and click Edit.

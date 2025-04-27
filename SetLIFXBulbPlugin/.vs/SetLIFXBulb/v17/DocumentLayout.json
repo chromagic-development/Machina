@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chrom\\source\\repos\\SetLIFXBulbPlugin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|SetLIFXBulb\\SetLIFXBulb.csproj|c:\\users\\chrom\\source\\repos\\setlifxbulbplugin\\setlifxbulb\\setlifxbulb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97D00930-FA90-49C8-84AD-D8CC39BC056C}|SetLIFXBulb\\SetLIFXBulb.csproj|solutionrelative:setlifxbulb\\setlifxbulb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SetLIFXBulb.cs",
+              "DocumentMoniker": "C:\\Users\\chrom\\source\\repos\\SetLIFXBulbPlugin\\SetLIFXBulb\\SetLIFXBulb.cs",
+              "RelativeDocumentMoniker": "SetLIFXBulb\\SetLIFXBulb.cs",
+              "ToolTip": "C:\\Users\\chrom\\source\\repos\\SetLIFXBulbPlugin\\SetLIFXBulb\\SetLIFXBulb.cs",
+              "RelativeToolTip": "SetLIFXBulb\\SetLIFXBulb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T00:49:31.173Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

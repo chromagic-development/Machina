@@ -1,0 +1,7 @@
+C:\Machina\Plugins\SetLIFXBulb.dll
+C:\Machina\Plugins\SetLIFXBulb.pdb
+C:\Users\chrom\source\repos\SetLIFXBulbPlugin\SetLIFXBulb\obj\Release\SetLIFXBulb.csproj.AssemblyReference.cache
+C:\Users\chrom\source\repos\SetLIFXBulbPlugin\SetLIFXBulb\obj\Release\SetLIFXBulb.csproj.CoreCompileInputs.cache
+C:\Users\chrom\source\repos\SetLIFXBulbPlugin\SetLIFXBulb\obj\Release\SetLIFXB.8DFDB1D4.Up2Date
+C:\Users\chrom\source\repos\SetLIFXBulbPlugin\SetLIFXBulb\obj\Release\SetLIFXBulb.dll
+C:\Users\chrom\source\repos\SetLIFXBulbPlugin\SetLIFXBulb\obj\Release\SetLIFXBulb.pdb

@@ -72,6 +72,12 @@ Argument 2: Stock symbol
 Get top three national news headlines_p  
 Argument 1: News API key  
 
+**SetLIFXBulb** 
+Set LIFX light bulb on or off  
+Argument 1: LIFX Access Token  
+Argument 2: Bulb Label  
+Argument 3: Power (on/off)  
+
 Plugin Example Usage
 --
 
@@ -149,6 +155,10 @@ Condition	          If headlines_p <> ""
 ExitLoop	          ---------- exit loop here ----------
 Condition	          EndIf
 Loop	            1_End
+```
+
+```VoiceMacro
+SendToPlugin	SetLIFXBulb, {LIFX_api_key_p}, {light_p}, on
 ```
 
 Installation Steps

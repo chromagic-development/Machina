@@ -11,7 +11,7 @@ The use case is a personal AI voice assistant integrated with [VoiceMacro](https
 - Can give you local weather forecast or for any city from the National Weather Service
 - Can give you stock quote information for a publicly listed company
 - Can give you news headlines
-- Can start your Roomba
+- Can turn lights on and off and start your Roomba
 - Remote control web app when you're out of audio range
 - Also can play music, set timers, summarize Google searches, check email and summarize threads, create poems, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
 - Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls

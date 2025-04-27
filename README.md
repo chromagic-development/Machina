@@ -72,7 +72,7 @@ Argument 2: Stock symbol
 Get top three national news headlines_p  
 Argument 1: News API key  
 
-**SetLIFXBulb** 
+**SetLIFXBulb**  
 Set LIFX light bulb on or off  
 Argument 1: LIFX Access Token  
 Argument 2: Bulb Label  

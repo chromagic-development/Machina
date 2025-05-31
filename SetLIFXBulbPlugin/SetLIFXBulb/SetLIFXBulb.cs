@@ -1,5 +1,5 @@
 // SetLIFXBulb VM plugin: Set LIFX light bulb on or off
-// v1.0.0.0
+// v1.0.1.1
 // Copyright © 2025 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -44,7 +44,7 @@ namespace SetLIFXBulbPlugin
                 string response = await SetLIFXState(Param1, Param2, Param3);
 
                 // Set response string to VM variable
-                vmCommand.SetVariable("lifx_response", response);
+                vmCommand.SetVariable("LIFX_p", response);
 
                 // Log in blue if success, red if error
                 Color logColor = response.StartsWith("Power") ? Color.Blue : Color.Red;

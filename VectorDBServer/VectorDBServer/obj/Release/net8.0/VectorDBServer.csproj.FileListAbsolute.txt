@@ -1,0 +1,17 @@
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\VectorDBServer.exe
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\VectorDBServer.deps.json
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\VectorDBServer.runtimeconfig.json
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\VectorDBServer.dll
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\VectorDBServer.pdb
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\bin\Release\net8.0\Build5Nines.SharpVector.dll
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.csproj.AssemblyReference.cache
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.AssemblyInfoInputs.cache
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.AssemblyInfo.cs
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.csproj.CoreCompileInputs.cache
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDB.282B863C.Up2Date
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.dll
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\refint\VectorDBServer.dll
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.pdb
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\VectorDBServer.genruntimeconfig.cache
+C:\Users\chrom\source\repos\VectorDBServer\VectorDBServer\obj\Release\net8.0\ref\VectorDBServer.dll

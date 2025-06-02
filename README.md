@@ -131,6 +131,17 @@ Loop	            1_End
 ```
 
 ```VoiceMacro
+SetVariable	results_p = ""
+SendToPlugin	GetSemantic, {openai_api_key_p}, {persistent_s}, Initialize
+Loop	            1_Start (200x)
+Pause	              0.100 sec
+Condition	          If results_p <> ""
+ExitLoop	          ---------- exit loop here ----------
+Condition	          EndIf
+Loop	            1_End
+```
+
+```VoiceMacro
 SetVariable	    forecast_p = ""
 SendToPlugin	    GetWeather, {opencage_api_key_p}, {city}, {state}
 Loop	            1_Start (300x)

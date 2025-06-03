@@ -1,5 +1,5 @@
 ﻿// GetSemantic VM plugin: Get results_p from semantic search of vector database
-// v1.0.0.0
+// v1.0.1.1
 // Uses OpenAI to generate embeddings when key is provided
 // First call with Argument 2 expects sentence delimited text for embeddings and subsequent calls performs search and returns results
 // Copyright © 2025 Bruce Alexander
@@ -12,6 +12,7 @@ using System.IO;
 using System.IO.Pipes;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using NAudio.Utils;
 
 namespace GetSemanticPlugin
 {
@@ -59,7 +60,7 @@ namespace GetSemanticPlugin
                 string results = await GetSemantic(Param1, Param2);
 
                 vmCommand.SetVariable("results_p", results);
-                vmCommand.AddLogEntry("Related memories: " + results, Color.Blue, ID, "S", "Semantic matches received");
+                vmCommand.AddLogEntry(results, Color.Blue, ID, "S", "Vector database return");
             });
         }
 
@@ -116,6 +117,10 @@ namespace GetSemanticPlugin
 
                 await writer.WriteLineAsync(text);
                 string initResponse = await reader.ReadLineAsync();
+                if (initResponse != null && initResponse.Contains("Vector database initialized"))
+                {
+                    initResponse = "Vector database initialized";
+                }
                 initialized = true;
                 return initResponse ?? "Error: No initialize database response from server.";
             }

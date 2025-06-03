@@ -1,5 +1,6 @@
 ﻿// VectorDBServer: Creates and initializes an in-memory vector database using named pipes for initialization and semantic search
-// v1.0.0.0
+// v1.0.1.0
+// Argument 1: pageCount returned (default is 5)
 // Copyright © 2025 Bruce Alexander
 // This software is licensed under the MIT License. See LICENSE file for details.
 
@@ -16,7 +17,14 @@ namespace VectorDBServer
 
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Vector database server is running...");
+            int pageCount = 5; // Default value
+
+            if (args.Length > 0 && int.TryParse(args[0], out int parsedPageCount))
+            {
+                pageCount = parsedPageCount;
+            }
+
+            Console.WriteLine($"Vector database server is running with pageCount = {pageCount}...");
 
             // Use PipeTransmissionMode.Byte if not on Windows
             PipeTransmissionMode mode = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
@@ -30,11 +38,9 @@ namespace VectorDBServer
 
             while (true)
             {
-                // Wait for data from named pipe
                 string? request = await reader.ReadLineAsync();
                 if (string.IsNullOrEmpty(request)) continue;
 
-                // Initialize the database with embeddings list
                 if (!isInitialized)
                 {
                     InitializeDatabase(request);
@@ -42,9 +48,8 @@ namespace VectorDBServer
                     await writer.WriteLineAsync("Vector database initialized.");
                 }
                 else
-                // Perform semantic search and return results once initialized
                 {
-                    string response = SearchDatabase(request);
+                    string response = SearchDatabase(request, pageCount);
                     await writer.WriteLineAsync(response);
                 }
             }
@@ -60,9 +65,9 @@ namespace VectorDBServer
             }
         }
 
-        static string SearchDatabase(string prompt)
+        static string SearchDatabase(string prompt, int pageCount)
         {
-            var result = vdb.Search(prompt, pageCount: 3);
+            var result = vdb.Search(prompt, pageCount: pageCount);
             if (result.IsEmpty) return "no results.";
             return string.Join("", result.Texts.Select(t => t.Text.TrimEnd('.') + ". "));
         }

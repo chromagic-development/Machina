@@ -630,7 +630,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.1.1",
     "restore": {
       "projectUniqueName": "C:\\Users\\chrom\\source\\repos\\VectorDBServerOpenAI\\VectorDBServerOpenAI\\VectorDBServerOpenAI.csproj",
       "projectName": "VectorDBServerOpenAI",

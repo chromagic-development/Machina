@@ -8,6 +8,7 @@
     <Copyright>Copyright © 2025 Bruce Alexander</Copyright>
     <Company>Chromagic Development</Company>
     <ApplicationIcon>VectorDBServer.ico</ApplicationIcon>
+    <Version>1.0.1.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

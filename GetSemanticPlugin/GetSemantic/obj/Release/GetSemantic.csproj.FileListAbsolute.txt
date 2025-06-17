@@ -1,7 +1,12 @@
-C:\Machina\Plugins\GetSemantic.dll
-C:\Machina\Plugins\GetSemantic.pdb
 C:\Users\chrom\source\repos\GetSemanticPlugin\GetSemantic\obj\Release\GetSemantic.csproj.AssemblyReference.cache
 C:\Users\chrom\source\repos\GetSemanticPlugin\GetSemantic\obj\Release\GetSemantic.csproj.CoreCompileInputs.cache
 C:\Users\chrom\source\repos\GetSemanticPlugin\GetSemantic\obj\Release\GetSeman.438CB3BD.Up2Date
 C:\Users\chrom\source\repos\GetSemanticPlugin\GetSemantic\obj\Release\GetSemantic.dll
 C:\Users\chrom\source\repos\GetSemanticPlugin\GetSemantic\obj\Release\GetSemantic.pdb
+C:\Machina\Plugins\GetSemantic.dll
+C:\Machina\Plugins\GetSemantic.pdb
+C:\Users\chrom\source\repos\GetSemanticPluginNEW\GetSemantic\obj\Release\GetSemantic.csproj.AssemblyReference.cache
+C:\Users\chrom\source\repos\GetSemanticPluginNEW\GetSemantic\obj\Release\GetSemantic.csproj.CoreCompileInputs.cache
+C:\Users\chrom\source\repos\GetSemanticPluginNEW\GetSemantic\obj\Release\GetSeman.438CB3BD.Up2Date
+C:\Users\chrom\source\repos\GetSemanticPluginNEW\GetSemantic\obj\Release\GetSemantic.dll
+C:\Users\chrom\source\repos\GetSemanticPluginNEW\GetSemantic\obj\Release\GetSemantic.pdb

@@ -8,7 +8,7 @@
     <Copyright>Copyright © 2025 Bruce Alexander</Copyright>
     <Company>Chromagic Development</Company>
     <ApplicationIcon>VectorDBServer.ico</ApplicationIcon>
-    <Version>1.0.1.1</Version>
+    <Version>1.0.2.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <PackageReference Include="Build5Nines.SharpVector" Version="2.1.1" />
+    <PackageReference Include="Build5Nines.SharpVector.OpenAI" Version="2.0.3" />
+    <PackageReference Include="OpenAI" Version="2.1.0" />
   </ItemGroup>
 
 </Project>

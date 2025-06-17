@@ -1,32 +1,42 @@
 ﻿// VectorDBServer: Creates and initializes an in-memory vector database using named pipes for initialization and semantic search
-// v1.0.1.0
+// v1.0.2.2
 // Argument 1: pageCount returned (default is 5)
+// Argument 2: OpenAI API key (optional) - if provided, uses OpenAI embeddings; otherwise, defaults to basic in-memory vector database.
 // Copyright © 2025 Bruce Alexander
 // This software is licensed under the MIT License. See LICENSE file for details.
 
 using System.IO.Pipes;
 using System.Runtime.InteropServices;
 using Build5Nines.SharpVector;
+using OpenAI;
+using Build5Nines.SharpVector.OpenAI;
 
 namespace VectorDBServer
 {
     class VectorDBServer
     {
-        static BasicMemoryVectorDatabase vdb = new();
+        static BasicMemoryVectorDatabase? basicVdb;
+        static BasicOpenAIMemoryVectorDatabase? openAIVdb;
         static bool isInitialized = false;
+        static bool useOpenAI = false;
 
         static async Task Main(string[] args)
         {
-            int pageCount = 5; // Default value
+            Console.WriteLine("Vector database server is running...");
 
+            int pageCount = 5; // Default value
             if (args.Length > 0 && int.TryParse(args[0], out int parsedPageCount))
             {
                 pageCount = parsedPageCount;
             }
 
-            Console.WriteLine($"Vector database server is running with pageCount = {pageCount}...");
+            string? openAIKey = null;
+            if (args.Length > 1)
+            {
+                openAIKey = args[1];
+                useOpenAI = true;
+            }
 
-            // Use PipeTransmissionMode.Byte if not on Windows
             PipeTransmissionMode mode = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
                 ? PipeTransmissionMode.Message
                 : PipeTransmissionMode.Byte;
@@ -36,40 +46,94 @@ namespace VectorDBServer
             using var reader = new StreamReader(server);
             using var writer = new StreamWriter(server) { AutoFlush = true };
 
+            if (useOpenAI)
+            {
+                if (string.IsNullOrWhiteSpace(openAIKey))
+                {
+                    await writer.WriteLineAsync("Missing OpenAI API key as second argument.");
+                    return;
+                }
+
+                try
+                {
+                    var openAIClient = new OpenAIClient(openAIKey);
+                    var embeddingClient = openAIClient.GetEmbeddingClient("text-embedding-3-small");
+                    openAIVdb = new BasicOpenAIMemoryVectorDatabase(embeddingClient);
+                    Console.WriteLine("Using OpenAI for embeddings.");
+                }
+                catch (Exception ex)
+                {
+                    await writer.WriteLineAsync($"Error initializing OpenAI client: {ex.Message}");
+                    return;
+                }
+            }
+            else
+            {
+                basicVdb = new BasicMemoryVectorDatabase();
+                Console.WriteLine("Using basic in-memory vector database.");
+            }
+
+            // Initialization text
+            string? initText = await reader.ReadLineAsync();
+            if (!string.IsNullOrWhiteSpace(initText))
+            {
+                InitializeDatabase(initText);
+                isInitialized = true;
+                await writer.WriteLineAsync("Vector database initialized.");
+            }
+            else
+            {
+                await writer.WriteLineAsync("Initialization text was empty.");
+            }
+
+            // Enter main loop for search queries
             while (true)
             {
                 string? request = await reader.ReadLineAsync();
                 if (string.IsNullOrEmpty(request)) continue;
 
-                if (!isInitialized)
-                {
-                    InitializeDatabase(request);
-                    isInitialized = true;
-                    await writer.WriteLineAsync("Vector database initialized.");
-                }
-                else
-                {
-                    string response = SearchDatabase(request, pageCount);
-                    await writer.WriteLineAsync(response);
-                }
+                string response = SearchDatabase(request, pageCount);
+                await writer.WriteLineAsync(response);
             }
         }
 
         static void InitializeDatabase(string input)
         {
             string[] parts = input.Split('.', StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < parts.Length - 1; i += 1)
+            foreach (string part in parts)
             {
-                string text = parts[i].Trim();
-                vdb.AddText(text);
+                string text = part.Trim();
+                if (!string.IsNullOrEmpty(text))
+                {
+                    if (useOpenAI && openAIVdb != null)
+                    {
+                        openAIVdb.AddText(text);
+                    }
+                    else if (!useOpenAI && basicVdb != null)
+                    {
+                        basicVdb.AddText(text);
+                    }
+                }
             }
         }
 
         static string SearchDatabase(string prompt, int pageCount)
         {
-            var result = vdb.Search(prompt, pageCount: pageCount);
-            if (result.IsEmpty) return "no results.";
-            return string.Join("", result.Texts.Select(t => t.Text.TrimEnd('.') + ". "));
+            if (!isInitialized) return "Database not initialized.";
+
+            if (useOpenAI && openAIVdb != null)
+            {
+                var result = openAIVdb.Search(prompt, pageCount: pageCount);
+                if (result.IsEmpty) return "no results";
+                return string.Join(" ", result.Texts.Select(t => t.Text.TrimEnd('.') + "."));
+            }
+            else if (!useOpenAI && basicVdb != null)
+            {
+                var result = basicVdb.Search(prompt, pageCount: pageCount);
+                if (result.IsEmpty) return "no results.";
+                return string.Join("", result.Texts.Select(t => t.Text.TrimEnd('.') + ". "));
+            }
+            return "Error: Database not properly set up.";
         }
     }
 }

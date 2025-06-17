@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "+TLCAVku6W4=",
+  "dgSpecHash": "3O7jgB/Ik8Q=",
   "success": true,
-  "projectFilePath": "C:\\Users\\chrom\\source\\repos\\VectorDBServer\\VectorDBServer\\VectorDBServer.csproj",
+  "projectFilePath": "C:\\Users\\chrom\\source\\repos\\VectorDBServerNEW\\VectorDBServer\\VectorDBServer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chrom\\.nuget\\packages\\build5nines.sharpvector\\2.1.1\\build5nines.sharpvector.2.1.1.nupkg.sha512"
+    "C:\\Users\\chrom\\.nuget\\packages\\build5nines.sharpvector\\2.1.1\\build5nines.sharpvector.2.1.1.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\build5nines.sharpvector.openai\\2.0.3\\build5nines.sharpvector.openai.2.0.3.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\openai\\2.1.0\\openai.2.1.0.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.clientmodel\\1.2.1\\system.clientmodel.1.2.1.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.memory.data\\6.0.0\\system.memory.data.6.0.0.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\chrom\\.nuget\\packages\\system.text.json\\6.0.10\\system.text.json.6.0.10.nupkg.sha512"
   ],
   "logs": []
 }

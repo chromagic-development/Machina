@@ -1,7 +1,8 @@
 ﻿// GetSemantic VM plugin: Get results_p from semantic search of vector database
-// v1.0.1.1
+// v1.0.2.2
 // Uses OpenAI to generate embeddings when key is provided
-// First call with Argument 2 expects sentence delimited text for embeddings and subsequent calls performs search and returns results
+// Argument 1: Period delimited text for embeddings and then subsequent calls performs search and returns results
+// Argument 2: Initialize
 // Copyright © 2025 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -24,7 +25,7 @@ namespace GetSemanticPlugin
     public class VoiceMacro : vmInterface
     {
         public string DisplayName => "GetSemantic";
-        public string Description => "Get results_p from semantic search of vector database\r\nArgument 1: OpenAI API key (if available)\r\nArgument 2: Initialization sentences or search text\r\nArgument 3: Initialize";
+        public string Description => "Get results_p from semantic search of vector database\r\nArgument 1: Initialization sentences or search text\r\nArgument 2: Initialize";
         public string ID => "bcf4600a-6c63-4182-b77d-59c39b473936";
 
         private static NamedPipeClientStream pipeClient;
@@ -43,8 +44,8 @@ namespace GetSemanticPlugin
             Param2 = Param2.Replace("\"", "");
             Param3 = Param3.Replace("\"", "");
 
-            // Check if Argument 3 has the value "initialize" (case-insensitive)
-            if (!string.IsNullOrEmpty(Param3) && Param3.Trim().ToLower() == "initialize")
+            // Check if Argument 2 has the value "initialize" (case-insensitive)
+            if (!string.IsNullOrEmpty(Param2) && Param2.Trim().ToLower() == "initialize")
             {
                 // Force reinitialization
                 initialized = false;
@@ -57,7 +58,7 @@ namespace GetSemanticPlugin
 
             Task.Run(async () =>
             {
-                string results = await GetSemantic(Param1, Param2);
+                string results = await GetSemantic(Param1);
 
                 vmCommand.SetVariable("results_p", results);
                 vmCommand.AddLogEntry(results, Color.Blue, ID, "S", "Vector database return");
@@ -84,22 +85,10 @@ namespace GetSemanticPlugin
                     if (!proc.WaitForExit(5000)) proc.Kill();
                 }
             }
-
-            processes = Process.GetProcessesByName("VectorDBServerOpenAI");
-            foreach (var proc in processes)
-            {
-                if (!proc.HasExited)
-                {
-                    proc.CloseMainWindow();
-                    if (!proc.WaitForExit(5000)) proc.Kill();
-                }
-            }
         }
         // Get results_p from semantic search of vector database
-        // Argument 1: OpenAI API key (if available)
-        // Argument 2: Initialization sentences or search text
-        // Argument 3: Reinitialize
-        private static async Task<string> GetSemantic(string apiKey, string text)
+        // Argument 1: Initialization sentences or search text
+        private static async Task<string> GetSemantic(string text)
         {
             if (pipeClient == null)
             {
@@ -109,12 +98,9 @@ namespace GetSemanticPlugin
                 reader = new StreamReader(pipeClient);
             }
 
-            // Use OpenAPI key from Argument 1 when available or locally initialize vector database by generating embeddings from Argument 2
+            // Initialize vector database by generating embeddings from Argument 1
             if (!initialized)
             {
-                if (!apiKey.StartsWith("http") && !string.IsNullOrEmpty(apiKey))
-                    await writer.WriteLineAsync(apiKey);
-
                 await writer.WriteLineAsync(text);
                 string initResponse = await reader.ReadLineAsync();
                 if (initResponse != null && initResponse.Contains("Vector database initialized"))

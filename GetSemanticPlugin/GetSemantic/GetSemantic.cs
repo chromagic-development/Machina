@@ -1,8 +1,8 @@
 ﻿// GetSemantic VM plugin: Get results_p from semantic search of vector database
-// v1.0.2.2
+// v1.0.3.3
 // Uses OpenAI to generate embeddings when key is provided
-// Argument 1: Period delimited text for embeddings and then subsequent calls performs search and returns results
-// Argument 2: Initialize
+// Argument 1: Period delimited text for embeddings initialization or updates and subsequent calls performs search and returns results
+// Argument 2: Initialize or Update (leave blank for search)
 // Copyright © 2025 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -25,7 +25,7 @@ namespace GetSemanticPlugin
     public class VoiceMacro : vmInterface
     {
         public string DisplayName => "GetSemantic";
-        public string Description => "Get results_p from semantic search of vector database\r\nArgument 1: Initialization sentences or search text\r\nArgument 2: Initialize";
+        public string Description => "Get results_p from semantic search of vector database\r\nArgument 1: Initialization text, update text, or search text\r\nArgument 2: Initialize or Update";
         public string ID => "bcf4600a-6c63-4182-b77d-59c39b473936";
 
         private static NamedPipeClientStream pipeClient;
@@ -58,7 +58,8 @@ namespace GetSemanticPlugin
 
             Task.Run(async () =>
             {
-                string results = await GetSemantic(Param1);
+                // Pass Param2 as a command to GetSemantic
+                string results = await GetSemantic(Param1, Param2);
 
                 vmCommand.SetVariable("results_p", results);
                 vmCommand.AddLogEntry(results, Color.Blue, ID, "S", "Vector database return");
@@ -88,7 +89,8 @@ namespace GetSemanticPlugin
         }
         // Get results_p from semantic search of vector database
         // Argument 1: Initialization sentences or search text
-        private static async Task<string> GetSemantic(string text)
+        // Argument 2: Command to execute (e.g., "Update")
+        private static async Task<string> GetSemantic(string text, string command)
         {
             if (pipeClient == null)
             {
@@ -98,8 +100,21 @@ namespace GetSemanticPlugin
                 reader = new StreamReader(pipeClient);
             }
 
+            // Handle "Update" command
+            if (!string.IsNullOrEmpty(command) && command.Trim().ToLower() == "update")
+            {
+                await writer.WriteLineAsync("Update");
+                await writer.WriteLineAsync(text);
+                string updateResponse = await reader.ReadLineAsync();
+                if (updateResponse != null && updateResponse.Contains("Vector database updated"))
+                {
+                    updateResponse = "Vector database updated";
+                }
+                initialized = true;
+                return updateResponse ?? "Error: No response from server on update.";
+            }
             // Initialize vector database by generating embeddings from Argument 1
-            if (!initialized)
+            else if (!initialized)
             {
                 await writer.WriteLineAsync(text);
                 string initResponse = await reader.ReadLineAsync();
@@ -110,8 +125,8 @@ namespace GetSemanticPlugin
                 initialized = true;
                 return initResponse ?? "Error: No initialize database response from server.";
             }
+            // Then perform a semantic search using Argument 1 and return results for subsequent calls
             else
-            // Then perform a semantic search using Argument 2 and return results for subsequent calls
             {
                 await writer.WriteLineAsync(text);
                 string results = await reader.ReadLineAsync();

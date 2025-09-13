@@ -59,7 +59,7 @@ Argument 3: Prompt text
 
 **GetSemantic**  
 Get results_p from semantic search of vector database  
-Argument 1: Initialization text, update text, or search text 
+Argument 1: Initialization text, update text, or search text  
 Argument 2: Initialize or Update  
 
 **GetWeather**  

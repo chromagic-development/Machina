@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GL8uSDI4eSI=",
+  "dgSpecHash": "t8ANb3Wp6Oc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\chrom\\source\\repos\\VectorDBServerNEW\\VectorDBServer\\VectorDBServer.csproj",
+  "projectFilePath": "C:\\Users\\chrom\\source\\repos\\VectorDBServerLocal\\VectorDBServer\\VectorDBServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chrom\\.nuget\\packages\\build5nines.sharpvector\\2.1.1\\build5nines.sharpvector.2.1.1.nupkg.sha512",
     "C:\\Users\\chrom\\.nuget\\packages\\build5nines.sharpvector.openai\\2.0.3\\build5nines.sharpvector.openai.2.0.3.nupkg.sha512",

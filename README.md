@@ -13,7 +13,7 @@ The use case is a personal AI voice assistant integrated with [VoiceMacro](https
 - Can give you news headlines
 - Can turn lights on and off and start your Roomba
 - Remote control web app when you're out of audio range
-- Also can play music, set timers, summarize Google searches, check email and summarize threads, create poems, translate to an Italian with an authenticate accent, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
+- Also can play music, set timers, summarize Google searches, check email and summarize threads, create poems, translate to Italian with an authenticate accent, etc, anything Alexa can do, but smarter, more private, and easily customizable with VoiceMacro scripting
 - Macros can be easily created to scrape websites with current information to summarize daily events, tide schedule, and so on, in addition to the plugins which use API calls
 - You can keep incrementally customizing it with fun symbolic and AI macro functions on the fly as RPA to automate anything a human can do on a Windows PC
 - Can now be run entirely local if you also install LM Studio and tiny-openai-whisper-api

@@ -390,13 +390,13 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.4.4",
+    "version": "1.1.0.5",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chrom\\source\\repos\\VectorDBServerLocal\\VectorDBServer\\VectorDBServer.csproj",
+      "projectUniqueName": "C:\\Users\\chrom\\source\\repos\\VectorDBServer\\VectorDBServer\\VectorDBServer.csproj",
       "projectName": "VectorDBServer",
-      "projectPath": "C:\\Users\\chrom\\source\\repos\\VectorDBServerLocal\\VectorDBServer\\VectorDBServer.csproj",
+      "projectPath": "C:\\Users\\chrom\\source\\repos\\VectorDBServer\\VectorDBServer\\VectorDBServer.csproj",
       "packagesPath": "C:\\Users\\chrom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chrom\\source\\repos\\VectorDBServerLocal\\VectorDBServer\\obj\\",
+      "outputPath": "C:\\Users\\chrom\\source\\repos\\VectorDBServer\\VectorDBServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

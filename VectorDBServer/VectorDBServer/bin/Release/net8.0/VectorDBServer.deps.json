@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "VectorDBServer/1.0.4.4": {
+      "VectorDBServer/1.1.0.5": {
         "dependencies": {
           "Build5Nines.SharpVector": "2.1.1",
           "Build5Nines.SharpVector.OpenAI": "2.0.3",
@@ -91,7 +91,7 @@
     }
   },
   "libraries": {
-    "VectorDBServer/1.0.4.4": {
+    "VectorDBServer/1.1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

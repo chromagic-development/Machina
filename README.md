@@ -33,7 +33,7 @@ Plugin Descriptions
 
 **GetCommand**  
 Get command_p text using voice AI STT  
-Argument 1: Deepgram API key or OpenAI Whisper endpoint (http) 
+Argument 1: Deepgram API key or OpenAI Whisper endpoint (http)  
 Argument 2: Maximum speech duration in seconds  
 Argument 3: Silence threshold in seconds (optional, default is 2s)  
 

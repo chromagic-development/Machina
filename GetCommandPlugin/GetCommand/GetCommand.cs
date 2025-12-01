@@ -1,10 +1,11 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// v1.1.0.7
+// v1.2.0.8
 // Uses Deepgram Nova-3 model or OpenAI Whisper endpoint
-// Implements combined Energy (RMS) and Zero-Crossing Rate (ZCR) in simple VAD
+// Combines Energy (RMS), Zero-Crossing Rate (ZCR), and Hysteresis (Hangover) in simple VAD
 // Set maxDurationSeconds for maximum listen time 
 // Set silenceThreshold in seconds
-// Copyright © 2024 Bruce Alexander
+// Pre-speech timeout is 3 seconds
+// Copyright © 2024-2025 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
 
@@ -259,10 +260,15 @@ namespace GetCommandPlugin
 
                     object lockObject = new object();
                     bool voiceDetected = false;
-                    int silenceCounter = 0;
-                    const int checkIntervalMs = 100; // Check for silence every 100 ms
-                    const double voiceActivityThreshold = 0.04; // Threshold for RMS-based VAD
-                    const double zcrThreshold = 0.4; // Threshold for ZCR-based VAD
+                    DateTime lastVoiceTime = DateTime.Now; // Track when voice was last heard
+
+                    const int checkIntervalMs = 100;
+                    const double voiceActivityThreshold = 0.04;
+                    const double zcrThreshold = 0.4;
+                    const int InitialSilenceTimeoutMs = 3000; // Pre-speech timeout (3s)
+
+                    // Hangover constant
+                    int silenceHangoverMs = silenceThreshold * 1000;
 
                     waveIn.DataAvailable += (sender, e) =>
                     {
@@ -270,14 +276,13 @@ namespace GetCommandPlugin
                         {
                             memoryStream.Write(e.Buffer, 0, e.BytesRecorded);
 
-                            // Calculate RMS and ZCR to determine if voice activity is present
                             double rms = CalculateRms(e.Buffer, e.BytesRecorded);
                             double zcr = CalculateZcr(e.Buffer, e.BytesRecorded);
 
                             if (rms > voiceActivityThreshold || zcr > zcrThreshold)
                             {
                                 voiceDetected = true;
-                                silenceCounter = 0;
+                                lastVoiceTime = DateTime.Now; // Voice detected, reset the timeout
                             }
                         }
                     };
@@ -285,46 +290,64 @@ namespace GetCommandPlugin
                     waveIn.StartRecording();
 
                     DateTime recordingStartTime = DateTime.Now;
+                    bool speechStarted = false; // New flag to distinguish initial silence from post-speech silence
+
                     while (true)
                     {
                         Thread.Sleep(checkIntervalMs);
                         lock (lockObject)
                         {
+                            // Check Max Duration
                             if ((DateTime.Now - recordingStartTime).TotalSeconds >= maxDurationSeconds)
                             {
                                 break;
                             }
 
-                            if (!voiceDetected)
+                            // Check if voice has been detected at least once
+                            if (voiceDetected)
                             {
-                                silenceCounter++;
-                                if (silenceCounter * checkIntervalMs >= silenceThreshold * 1000)
+                                speechStarted = true;
+                            }
+
+                            // Check for Silence (Hangover Logic)
+                            if (speechStarted)
+                            {
+                                // Time elapsed since the last voice activity
+                                TimeSpan silenceDuration = DateTime.Now - lastVoiceTime;
+
+                                // Stop if the silence duration exceeds the configured silence threshold
+                                if (silenceDuration.TotalMilliseconds >= silenceHangoverMs)
                                 {
                                     break;
                                 }
                             }
-                            else
+                            else // Still in the initial waiting period for the user to start talking
                             {
-                                voiceDetected = false;
+                                // Stop if we wait too long for the user to start talking
+                                if ((DateTime.Now - recordingStartTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
 
                     waveIn.StopRecording();
+
+                    // --- The rest of the WAV header writing remains the same ---
+                    // Ensure the stream is correctly positioned at the beginning
+                    memoryStream.Position = 0;
+
+                    // Write WAV header
+                    using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(memoryStream), new WaveFormat(16000, 16, 1)))
+                    {
+                        // Write the audio data to the wave file
+                        waveFileWriter.Write(memoryStream.ToArray(), 0, (int)memoryStream.Length);
+                        waveFileWriter.Flush();
+                    }
+
+                    return memoryStream.ToArray();
                 }
-
-                // Ensure the stream is correctly positioned at the beginning
-                memoryStream.Position = 0;
-
-                // Write WAV header
-                using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(memoryStream), new WaveFormat(16000, 16, 1)))
-                {
-                    // Write the audio data to the wave file
-                    waveFileWriter.Write(memoryStream.ToArray(), 0, (int)memoryStream.Length);
-                    waveFileWriter.Flush();
-                }
-
-                return memoryStream.ToArray();
             }
         }
 

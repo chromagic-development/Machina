@@ -1,10 +1,11 @@
 ﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// v1.2.0.8
+// v1.3.1.11
 // Uses Deepgram Nova-3 model or OpenAI Whisper endpoint
-// Combines Energy (RMS), Zero-Crossing Rate (ZCR), and Hysteresis (Hangover) in simple VAD
-// Set maxDurationSeconds for maximum listen time 
+// Combines VAD from WebRTC, Pre-roll buffering, Silence Detection, and a Dynamic RMS Energy Floor
+// Pre-speech timeout is 5 seconds
+// Pre-roll buffering is 1 second
+// Set maxDurationSeconds for maximum listen time
 // Set silenceThreshold in seconds
-// Pre-speech timeout is 3 seconds
 // Copyright © 2024-2025 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
@@ -17,219 +18,136 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Reflection;
 using Newtonsoft.Json.Linq;
 using NAudio.Wave;
+using WebRtcVadSharp;
 
 namespace GetCommandPlugin
 {
     public static class Interface_Manager
     {
         public static VoiceMacro vmInstance = new VoiceMacro();
-
-        //The rest of interface code here.
-
     }
 
     public class VoiceMacro : vmInterface
     {
-
-        // This region is required
         #region "vmInterface"
-        public string DisplayName // the Name of plugin displayed in VoiceMacro
-        {
-            get
-            {
-                return "GetCommand";
-            }
-        }
+        public string DisplayName => "GetCommand";
+        public string Description => "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
+        public string ID => "f73e6ce3-ea89-484f-9516-1bc9c12d17bd";
 
-        public string Description // description of plugin
-        {
-            get
-            {
-                return "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
-            }
-        }
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr LoadLibrary(string libname);
 
-        public string ID
-        {
-            // Unique ID for plugin
-            get
-            {
-                return "f73e6ce3-ea89-484f-9516-1bc9c12d17bd";
-            }
-        }
-
-        // This is started when plugin is activated
         void vmInterface.Init()
         {
-            // Initialization routines go here
+            try
+            {
+                string assemblyPath = Assembly.GetExecutingAssembly().Location;
+                string pluginDir = Path.GetDirectoryName(assemblyPath);
+                string nativeLibPath = Path.Combine(pluginDir, "WebRtcVad", "WebRtcVad.dll");
 
+                if (File.Exists(nativeLibPath))
+                {
+                    IntPtr handle = LoadLibrary(nativeLibPath);
+                }
+            }
+            catch (Exception) { }
         }
 
-        // This is invoked when you use SendToPlugin action
         void vmInterface.ReceiveParams(string Param1, string Param2, string Param3, bool Synchron)
         {
             Task.Run(() => GetCommand(Param1, Param2, Param3));
         }
 
-        // This is invoked when a profile is switched
-        void vmInterface.ProfileSwitched(string ProfileGUID, string ProfileName)
-        {
-            // GetCommand plugin received profile switching to profile
+        void vmInterface.ProfileSwitched(string ProfileGUID, string ProfileName) { }
 
-        }
-
-        // This is started when VoiceMacro is terminated
         void vmInterface.Dispose()
         {
-            // Stop activities because VoiceMacro is shutting down
-            // Terminate Machina Wake Word engine
+            // End wake word listener upon close
             Process[] processes = Process.GetProcessesByName("Machina");
             foreach (var proc in processes)
             {
                 if (!proc.HasExited)
                 {
-                    proc.CloseMainWindow(); // Attempt to close the main window
-                    if (!proc.WaitForExit(5000)) // Wait for up to 5 seconds for the process to exit
-                    {
-                        // If it hasn't exited, force termination
-                        proc.Kill();
-                    }
+                    proc.CloseMainWindow();
+                    if (!proc.WaitForExit(5000)) proc.Kill();
                 }
             }
         }
         #endregion
 
-        // Get command_p text using voice AI STT
-        // Argument 1: DEEPGRAM_API_KEY or OpenAI Whisper endpoint (http prefix)
-        // Argument 2: Maximum speech duration in seconds
-        // Argument 3: Silence threshold in seconds
         async Task GetCommand(string param1, string param2, string param3)
         {
-
-            // Default value
-            if (string.IsNullOrEmpty(param3))
-            {
-                param3 = "2";
-            }
-
-            // Remove quotes
+            if (string.IsNullOrEmpty(param3)) param3 = "2";
             param1 = param1.Replace("\"", "");
 
-            // Convert seconds to integer
-            int intParam2 = int.Parse(param2);
-            int intParam3 = int.Parse(param3);
+            int intParam2;
+            int.TryParse(param2, out intParam2);
 
-            // Enforce range for duration
-            if (intParam2 == 0 || intParam2 > 30)
-            {
-                intParam2 = 5;
-            }
+            int intParam3;
+            int.TryParse(param3, out intParam3);
 
-            // Get command from STT
+            if (intParam2 == 0 || intParam2 > 45) intParam2 = 5;
+
             string transcription;
 
-            // Check if param1 is an http or DEEPGRAM_API_KEY
             if (param1.StartsWith("http"))
-            {
-                // Use OpenAI Whisper endpoint
                 transcription = await GetSTTWhisper(param1, intParam2, intParam3);
-            }
             else
-            {
-                // Use Deepgram API
                 transcription = await GetSTTDeepgram(param1, intParam2, intParam3);
-            }
 
-            // Set command variable from STT result
             vmCommand.SetVariable("command_p", transcription);
-
-            // Show command in VoiceMacro's log in blue as information
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        static async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold)
+        async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold)
         {
-            // Deepgram API endpoint
             string url = "https://api.deepgram.com/v1/listen?model=nova-3&smart_format=true";
+            byte[] audioData = RecordAudioWithWebRTC(maxDurationSeconds, silenceThreshold);
 
-            // Record audio from the microphone
-            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds, silenceThreshold);
+            if (audioData == null || audioData.Length == 0) return "";
 
-            // Create an instance of HttpClient
             using (HttpClient httpClient = new HttpClient())
             {
                 try
                 {
-                    // Prepare the HTTP request content
                     HttpContent content = new ByteArrayContent(audioData);
-
-                    // Set the content type header
                     content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("audio/wav");
-
-                    // Add Authorization header
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Token " + apiKey);
 
-                    // Send the POST request
                     HttpResponseMessage response = await httpClient.PostAsync(url, content);
 
-                    // Check if the request was successful
                     if (response.IsSuccessStatusCode)
                     {
-                        // Read the response content (transcription)
                         string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                        // Parse JSON response to extract the transcript
                         JObject json = JObject.Parse(jsonResponse);
-
-                        string transcript = null;
-
-                        if (json["results"] != null &&
-                            json["results"]["channels"] != null &&
-                            json["results"]["channels"][0] != null &&
-                            json["results"]["channels"][0]["alternatives"] != null &&
-                            json["results"]["channels"][0]["alternatives"][0] != null &&
-                            json["results"]["channels"][0]["alternatives"][0]["transcript"] != null)
-                        {
-                            transcript = (string)json["results"]["channels"][0]["alternatives"][0]["transcript"];
-                        }
-
-                        // Return the transcript or a default message
+                        string transcript = (string)json["results"]?["channels"]?[0]?["alternatives"]?[0]?["transcript"];
                         return transcript ?? "Nothing.";
                     }
-                    else
-                    {
-                        return "API request failed: " + response.StatusCode;
-                    }
+                    else return "API request failed: " + response.StatusCode;
                 }
-                catch (Exception ex)
-                {
-                    return "Error: " + ex.Message;
-                }
+                catch (Exception ex) { return "Error: " + ex.Message; }
             }
         }
 
-        static async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold)
+        async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold)
         {
-            // OpenAI Whisper API endpoint
-            string url = apiUrl;
-
-            // Record audio from the microphone
-            byte[] audioData = RecordAudioFromMicrophone(maxDurationSeconds, silenceThreshold);
+            byte[] audioData = RecordAudioWithWebRTC(maxDurationSeconds, silenceThreshold);
+            if (audioData == null || audioData.Length == 0) return "";
 
             using (HttpClient httpClient = new HttpClient())
             {
                 try
                 {
-                    // Create a multipart form data content
                     using (var content = new MultipartFormDataContent())
                     {
                         content.Add(new ByteArrayContent(audioData), "file", "audio.wav");
                         content.Add(new StringContent("whisper-1"), "model");
-
-                        // Send the POST request
-                        HttpResponseMessage response = await httpClient.PostAsync(url, content);
+                        HttpResponseMessage response = await httpClient.PostAsync(apiUrl, content);
 
                         if (response.IsSuccessStatusCode)
                         {
@@ -237,185 +155,197 @@ namespace GetCommandPlugin
                             JObject json = JObject.Parse(jsonResponse);
                             return json["text"]?.ToString() ?? "Nothing.";
                         }
-                        else
+                        else return "API request failed: " + response.StatusCode;
+                    }
+                }
+                catch (Exception ex) { return "Error: " + ex.Message; }
+            }
+        }
+
+        byte[] RecordAudioWithWebRTC(int maxDurationSeconds, int silenceThreshold)
+        {
+            const int SampleRateHz = 16000;
+            const int FrameDurationMs = 30;
+            const int FrameSize = SampleRateHz * FrameDurationMs / 1000;
+            const int FrameBytes = FrameSize * 2;
+
+            // Roll back this amount of time to capture any words clipped before speech detection
+            const int PreRollMilliseconds = 1000;
+
+            // Wait this long for speech to start
+            const int InitialSilenceTimeoutMs = 5000;
+
+            using (var memoryStream = new MemoryStream())
+            using (var waveIn = new WaveInEvent())
+            using (var stopSignal = new ManualResetEvent(false))
+            {
+                try
+                {
+                    using (var vad = new WebRtcVad()
+                    {
+                        OperatingMode = OperatingMode.VeryAggressive,
+                        SampleRate = SampleRate.Is16kHz
+                    })
+                    {
+                        waveIn.WaveFormat = new WaveFormat(SampleRateHz, 16, 1);
+
+                        List<byte> audioBuffer = new List<byte>();
+                        Queue<byte[]> preRollQueue = new Queue<byte[]>();
+                        int maxPreRollFrames = PreRollMilliseconds / FrameDurationMs;
+
+                        bool speechStarted = false;
+                        DateTime lastVoiceTime = DateTime.Now;
+                        DateTime startTime = DateTime.Now;
+
+                        // Initial silence value
+                        float noiseFloor = 0.02f;
+                        // Minimum allowed floor to prevent oversensitivity
+                        float minNoiseFloor = 0.005f;
+                        // Maximum allowed floor that can drown out voices
+                        float maxNoiseFloor = 0.5f;
+                        // Buffer above floor required for speech
+                        float energyOffset = 0.03f;
+
+                        waveIn.DataAvailable += (sender, e) =>
                         {
-                            return "API request failed: " + response.StatusCode;
+                            if (stopSignal.WaitOne(0)) return;
+
+                            byte[] incoming = new byte[e.BytesRecorded];
+                            Array.Copy(e.Buffer, incoming, e.BytesRecorded);
+                            audioBuffer.AddRange(incoming);
+
+                            while (audioBuffer.Count >= FrameBytes)
+                            {
+                                byte[] frame = audioBuffer.GetRange(0, FrameBytes).ToArray();
+                                audioBuffer.RemoveRange(0, FrameBytes);
+
+                                // Calculate RMS energy
+                                float currentEnergy = CalculateRMS(frame);
+
+                                // If current energy is quieter than initial floor, then drop the floor immediately
+                                if (currentEnergy < noiseFloor)
+                                {
+                                    noiseFloor = currentEnergy;
+                                    if (noiseFloor < minNoiseFloor) noiseFloor = minNoiseFloor;
+                                }
+                                else
+                                {
+                                    // If louder, then adapt to steady background noise before speech is detected to avoid rolling in the user's voice level
+                                    if (!speechStarted)
+                                    {
+                                        noiseFloor += 0.0005f;
+                                        if (noiseFloor > maxNoiseFloor) noiseFloor = maxNoiseFloor;
+                                    }
+                                }
+
+                                // Calculate dynamic threshold of background noise + offset
+                                float dynamicThreshold = noiseFloor + energyOffset;
+
+                                // If energy is higher than background noise, then WebRTC decides if it's speech
+                                bool isSpeech = (currentEnergy > dynamicThreshold) && vad.HasSpeech(frame);
+
+                                if (isSpeech)
+                                {
+                                    lastVoiceTime = DateTime.Now;
+
+                                    if (!speechStarted)
+                                    {
+                                        speechStarted = true;
+                                        // Dump pre-roll
+                                        while (preRollQueue.Count > 0)
+                                        {
+                                            byte[] preFrame = preRollQueue.Dequeue();
+                                            memoryStream.Write(preFrame, 0, preFrame.Length);
+                                        }
+                                    }
+                                    memoryStream.Write(frame, 0, frame.Length);
+                                }
+                                else
+                                {
+                                    // Silence
+                                    if (speechStarted)
+                                    {
+                                        // Record silence to maintain flow
+                                        memoryStream.Write(frame, 0, frame.Length);
+
+                                        if ((DateTime.Now - lastVoiceTime).TotalSeconds >= silenceThreshold)
+                                        {
+                                            stopSignal.Set();
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        // Buffering Pre-Roll
+                                        preRollQueue.Enqueue(frame);
+                                        if (preRollQueue.Count > maxPreRollFrames)
+                                            preRollQueue.Dequeue();
+
+                                        if ((DateTime.Now - startTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
+                                        {
+                                            stopSignal.Set();
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if ((DateTime.Now - startTime).TotalSeconds >= maxDurationSeconds)
+                            {
+                                stopSignal.Set();
+                            }
+                        };
+
+                        startTime = DateTime.Now;
+                        lastVoiceTime = DateTime.Now;
+                        waveIn.StartRecording();
+                        stopSignal.WaitOne();
+                        waveIn.StopRecording();
+
+                        if (memoryStream.Length == 0) return new byte[0];
+
+                        memoryStream.Position = 0;
+                        using (var outputStream = new MemoryStream())
+                        {
+                            using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(outputStream), new WaveFormat(SampleRateHz, 16, 1)))
+                            {
+                                memoryStream.CopyTo(waveFileWriter);
+                            }
+                            return outputStream.ToArray();
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    return "Error: " + ex.Message;
+                    vmCommand.AddLogEntry("WebRtcVad Error: " + ex.Message, Color.Red, ID, "E", "Init Fail");
+                    return null;
                 }
             }
         }
 
-        static byte[] RecordAudioFromMicrophone(int maxDurationSeconds, int silenceThreshold)
+        private float CalculateRMS(byte[] buffer)
         {
-            using (var memoryStream = new MemoryStream())
-            {
-                using (var waveIn = new WaveInEvent())
-                {
-                    waveIn.WaveFormat = new WaveFormat(16000, 16, 1); // 16kHz, 16-bit, mono
-
-                    object lockObject = new object();
-                    bool voiceDetected = false;
-                    DateTime lastVoiceTime = DateTime.Now; // Track when voice was last heard
-
-                    const int checkIntervalMs = 100;
-                    const double voiceActivityThreshold = 0.04;
-                    const double zcrThreshold = 0.4;
-                    const int InitialSilenceTimeoutMs = 3000; // Pre-speech timeout (3s)
-
-                    // Hangover constant
-                    int silenceHangoverMs = silenceThreshold * 1000;
-
-                    waveIn.DataAvailable += (sender, e) =>
-                    {
-                        lock (lockObject)
-                        {
-                            memoryStream.Write(e.Buffer, 0, e.BytesRecorded);
-
-                            double rms = CalculateRms(e.Buffer, e.BytesRecorded);
-                            double zcr = CalculateZcr(e.Buffer, e.BytesRecorded);
-
-                            if (rms > voiceActivityThreshold || zcr > zcrThreshold)
-                            {
-                                voiceDetected = true;
-                                lastVoiceTime = DateTime.Now; // Voice detected, reset the timeout
-                            }
-                        }
-                    };
-
-                    waveIn.StartRecording();
-
-                    DateTime recordingStartTime = DateTime.Now;
-                    bool speechStarted = false; // New flag to distinguish initial silence from post-speech silence
-
-                    while (true)
-                    {
-                        Thread.Sleep(checkIntervalMs);
-                        lock (lockObject)
-                        {
-                            // Check Max Duration
-                            if ((DateTime.Now - recordingStartTime).TotalSeconds >= maxDurationSeconds)
-                            {
-                                break;
-                            }
-
-                            // Check if voice has been detected at least once
-                            if (voiceDetected)
-                            {
-                                speechStarted = true;
-                            }
-
-                            // Check for Silence (Hangover Logic)
-                            if (speechStarted)
-                            {
-                                // Time elapsed since the last voice activity
-                                TimeSpan silenceDuration = DateTime.Now - lastVoiceTime;
-
-                                // Stop if the silence duration exceeds the configured silence threshold
-                                if (silenceDuration.TotalMilliseconds >= silenceHangoverMs)
-                                {
-                                    break;
-                                }
-                            }
-                            else // Still in the initial waiting period for the user to start talking
-                            {
-                                // Stop if we wait too long for the user to start talking
-                                if ((DateTime.Now - recordingStartTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
-                                {
-                                    break;
-                                }
-                            }
-                        }
-                    }
-
-                    waveIn.StopRecording();
-
-                    // --- The rest of the WAV header writing remains the same ---
-                    // Ensure the stream is correctly positioned at the beginning
-                    memoryStream.Position = 0;
-
-                    // Write WAV header
-                    using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(memoryStream), new WaveFormat(16000, 16, 1)))
-                    {
-                        // Write the audio data to the wave file
-                        waveFileWriter.Write(memoryStream.ToArray(), 0, (int)memoryStream.Length);
-                        waveFileWriter.Flush();
-                    }
-
-                    return memoryStream.ToArray();
-                }
-            }
-        }
-
-        private static double CalculateRms(byte[] buffer, int bytesRecorded)
-        {
-            int sampleCount = bytesRecorded / 2; // 2 bytes per sample (16-bit audio)
-            double sumSquares = 0;
-
-            for (int i = 0; i < bytesRecorded; i += 2)
+            float sum = 0;
+            for (int i = 0; i < buffer.Length; i += 2)
             {
                 short sample = BitConverter.ToInt16(buffer, i);
-                double sample32 = sample / 32768.0; // Convert to -1 to 1 range
-                sumSquares += sample32 * sample32;
+                float sampleFloat = sample / 32768f;
+                sum += sampleFloat * sampleFloat;
             }
-
-            return Math.Sqrt(sumSquares / sampleCount);
-        }
-
-        private static double CalculateZcr(byte[] buffer, int bytesRecorded)
-        {
-            int zeroCrossings = 0;
-            int sampleCount = bytesRecorded / 2;
-
-            short previousSample = BitConverter.ToInt16(buffer, 0);
-
-            for (int i = 2; i < bytesRecorded; i += 2)
-            {
-                short currentSample = BitConverter.ToInt16(buffer, i);
-
-                // Check if there's a zero-crossing
-                if ((previousSample > 0 && currentSample < 0) || (previousSample < 0 && currentSample > 0))
-                {
-                    zeroCrossings++;
-                }
-
-                previousSample = currentSample;
-            }
-
-            // ZCR is the number of zero crossings per sample
-            return (double)zeroCrossings / sampleCount;
+            return (float)Math.Sqrt(sum / (buffer.Length / 2));
         }
     }
 
     public class IgnoreDisposeStream : Stream
     {
         private readonly Stream _innerStream;
-
-        public IgnoreDisposeStream(Stream innerStream)
-        {
-            _innerStream = innerStream;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            // Don't dispose the inner stream
-        }
-
+        public IgnoreDisposeStream(Stream innerStream) { _innerStream = innerStream; }
+        protected override void Dispose(bool disposing) { }
         public override bool CanRead => _innerStream.CanRead;
         public override bool CanSeek => _innerStream.CanSeek;
         public override bool CanWrite => _innerStream.CanWrite;
         public override long Length => _innerStream.Length;
-
-        public override long Position
-        {
-            get => _innerStream.Position;
-            set => _innerStream.Position = value;
-        }
-
+        public override long Position { get => _innerStream.Position; set => _innerStream.Position = value; }
         public override void Flush() => _innerStream.Flush();
         public override int Read(byte[] buffer, int offset, int count) => _innerStream.Read(buffer, offset, count);
         public override long Seek(long offset, SeekOrigin origin) => _innerStream.Seek(offset, origin);

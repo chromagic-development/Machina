@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebRtcVadSharp</name>
+    </assembly>
+    <members>
+        <member name="T:WebRtcVadSharp.FrameLength">
+            <summary>
+            Frame length, in ms, of input audio.
+            </summary>
+            <remarks>
+            WebRTC only supports specific combinations of frame sizes and sample rates.
+            </remarks>
+        </member>
+        <member name="F:WebRtcVadSharp.FrameLength.Is10ms">
+            <summary>
+            10ms frame length.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.FrameLength.Is20ms">
+            <summary>
+            20ms frame length.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.FrameLength.Is30ms">
+            <summary>
+            30ms frame length.
+            </summary>
+        </member>
+        <member name="T:WebRtcVadSharp.IWebRtcVad">
+            <summary>
+            Voice activity detector interface to ease unit testing.
+            </summary>
+        </member>
+        <member name="P:WebRtcVadSharp.IWebRtcVad.SampleRate">
+            <summary>
+            Gets or sets the sample rate when using the audio-only <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[])"/> overload.
+            </summary>
+        </member>
+        <member name="P:WebRtcVadSharp.IWebRtcVad.FrameLength">
+            <summary>
+            Gets or sets the frame length when using the audio-only <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[])"/> overload.
+            </summary>
+        </member>
+        <member name="P:WebRtcVadSharp.IWebRtcVad.OperatingMode">
+            <summary>
+            Gets or sets the aggressiveness of the detection.
+            </summary>
+            <seealso cref="P:WebRtcVadSharp.IWebRtcVad.OperatingMode"/>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[])">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <remarks>
+            The supplied frame must be encoded according to <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/>.
+            To test a frame at other rates or length, either re-set the appropriate properties, or use the
+            standalone overload <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)"/>.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <param name="sampleRate">The sample rate used to encode <paramref name="audioFrame"/>.</param>
+            <param name="frameLength">The length of the frame in <paramref name="audioFrame"/>.</param>
+            <remarks>
+            This overload ignores the <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/> properties.
+            To avoid passing the rate and length on each call, use the <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Byte[])"/>
+            overload instead.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Int16[])">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <remarks>
+            The supplied frame must be encoded according to <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/>.
+            To test a frame at other rates or length, either re-set the appropriate properties, or use the
+            standalone overload <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Int16[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)"/>.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Int16[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <param name="sampleRate">The sample rate used to encode <paramref name="audioFrame"/>.</param>
+            <param name="frameLength">The length of the frame in <paramref name="audioFrame"/>.</param>
+            <remarks>
+            This overload ignores the <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/> properties.
+            To avoid passing the rate and length on each call, use the <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.Int16[])"/>
+            overload instead.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.IntPtr)">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <remarks>
+            The supplied frame must be encoded according to <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/>.
+            To test a frame at other rates or length, either re-set the appropriate properties, or use the
+            standalone overload <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.IntPtr,WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)"/>.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.IntPtr,WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <summary>
+            Test whether the supplied frame contains speech.
+            </summary>
+            <param name="audioFrame">Single frame of audio.</param>
+            <param name="sampleRate">The sample rate used to encode <paramref name="audioFrame"/>.</param>
+            <param name="frameLength">The length of the frame in <paramref name="audioFrame"/>.</param>
+            <remarks>
+            This overload ignores the <see cref="P:WebRtcVadSharp.IWebRtcVad.SampleRate"/> and <see cref="P:WebRtcVadSharp.IWebRtcVad.FrameLength"/> properties.
+            To avoid passing the rate and length on each call, use the <see cref="M:WebRtcVadSharp.IWebRtcVad.HasSpeech(System.IntPtr)"/>
+            overload instead.
+            </remarks>
+            <returns><b>true</b> if the provided frame contains speech, otherwise <b>false</b>.</returns>
+        </member>
+        <member name="T:WebRtcVadSharp.OperatingMode">
+            <summary>
+            The VAD operating mode.  The default is <see cref="F:WebRtcVadSharp.OperatingMode.HighQuality"/>.
+            </summary>
+            <remarks>
+            A more aggressive (higher mode) VAD is more restrictive in reporting speech.
+            
+            In other words: the probability of "true" results detecting actual speech
+            increases with increasing mode. However, as aggressiveness goes up, so too
+            does the missed detection rate.
+            
+            In still other words:
+             - False positives (non-speech) are more common at mode 0.
+             - False negatives (missed speech) are more common at mode 3.
+             
+            Note: these names come from the WebRTC source (vad_core.c).
+            </remarks>
+        </member>
+        <member name="F:WebRtcVadSharp.OperatingMode.HighQuality">
+            <summary>
+            Least aggressive speech detection for high-quality audio.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.OperatingMode.LowBitrate">
+            <summary>
+            More aggressive speech detection for low bitrate audio.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.OperatingMode.Aggressive">
+            <summary>
+            Aggressive speech detection for moderately noisy audio.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.OperatingMode.VeryAggressive">
+            <summary>
+            Highly aggressive speech detection for very noisy audio.
+            </summary>
+        </member>
+        <member name="T:WebRtcVadSharp.SampleRate">
+            <summary>
+            Sample rate of the input audio.
+            </summary>
+            <remarks>
+            WebRTC only supports specific combinations of frame sizes and sample rates.
+            </remarks>
+        </member>
+        <member name="F:WebRtcVadSharp.SampleRate.Is8kHz">
+            <summary>
+            8kHz sample rate.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.SampleRate.Is16kHz">
+            <summary>
+            16kHz sample rate.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.SampleRate.Is32kHz">
+            <summary>
+            32kHz sample rate.
+            </summary>
+        </member>
+        <member name="F:WebRtcVadSharp.SampleRate.Is48kHz">
+            <summary>
+            48kHz sample rate.
+            </summary>
+        </member>
+        <member name="T:WebRtcVadSharp.WebRtcVad">
+            <summary>
+            A .NET adapter for WebRTC's voice activity detection library.
+            </summary>
+            <remarks>
+            Because the underlying WebRTC library has robust (and fast) error checking
+            of its own, this class primarily validates input arguments <i>after</i> the raw
+            WebRTC calls have failed to provide specific information about what went
+            wrong. This approach avoids costly enum conversions/validations until a
+            failure state obtains, at which point performance presumably doesn't matter.
+            </remarks>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.#ctor">
+            <summary>
+            Creates and initializes a WebRTC voice activity detector.
+            </summary>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.#ctor(WebRtcVadSharp.WebRtc.IWebRtcDll)">
+            <summary>
+            Creates and initializes a WebRTC voice activity detector.
+            </summary>
+            <remarks>
+            This constructor injects a WebRTC library for unit testing, rather than
+            depending on the P/Invoke implementation provided by the default constructor.
+            </remarks>
+            <param name="library">Interface for the underlying WebRTC library.</param>
+        </member>
+        <member name="P:WebRtcVadSharp.WebRtcVad.SampleRate">
+            <summary>
+            Gets or sets the sample rate when using the audio-only <see cref="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Byte[])"/> overload.
+            Defaults to <see cref="F:WebRtcVadSharp.SampleRate.Is8kHz"/>.
+            </summary>
+        </member>
+        <member name="P:WebRtcVadSharp.WebRtcVad.FrameLength">
+            <summary>
+            Gets or sets the frame length when using the audio-only <see cref="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Byte[])"/> overload.
+            Defaults to <see cref="F:WebRtcVadSharp.FrameLength.Is10ms"/>.
+            </summary>
+        </member>
+        <member name="P:WebRtcVadSharp.WebRtcVad.OperatingMode">
+            <summary>
+            Gets or sets the aggressiveness of the detection.
+            Defaults to <see cref="F:WebRtcVadSharp.OperatingMode.HighQuality"/>.
+            </summary>
+            <seealso cref="T:WebRtcVadSharp.OperatingMode"/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Byte[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Int16[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.Int16[],WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.HasSpeech(System.IntPtr,WebRtcVadSharp.SampleRate,WebRtcVadSharp.FrameLength)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.Dispose(System.Boolean)">
+            <summary>
+            Dispose the underlying WebRTC resources.
+            </summary>
+            <param name="disposing">Whether to dispose managed resources.</param>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtcVad.Dispose">
+            <summary>
+            Dispose the underlying WebRTC resources.
+            </summary>
+        </member>
+        <member name="T:WebRtcVadSharp.WebRtc.IWebRtcDll">
+            <summary>
+            Interface for the underlying WebRTC DLL.
+            </summary>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Create">
+            <summary>
+            Creates an empty VAD context.
+            </summary>
+            <returns>A handle to a new VAD context.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Init(System.IntPtr)">
+            <summary>
+            Initializes a VAD context.
+            </summary>
+            <param name="handle">Handle to the fresh VAD context.</param>
+            <returns>0 if the initialization is successful, otherwise -1.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.SetMode(System.IntPtr,System.Int32)">
+            <summary>
+            Sets the aggressiveness mode for the supplied context.
+            </summary>
+            <param name="self">Handle to the VAD context to update.</param>
+            <param name="mode">New aggressiveness mode.</param>
+            <returns>0 if the mode change is successful, otherwise -1.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.ValidRateAndFrameLength(System.Int32,System.UInt64)">
+            <summary>
+            Tests a sample rate/frame length combination for validity.
+            </summary>
+            <param name="rate">The sample rate to test.</param>
+            <param name="frame_length">The frame length to test.</param>
+            <returns>0 if the combination is valid, otherwise -1.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Process(System.IntPtr,System.Int32,System.Byte[],System.UInt64)">
+            <summary>
+            Process a frame of audio for voice content.
+            </summary>
+            <param name="handle">Handle to an initialized VAD context.</param>
+            <param name="fs">The sample rate of <paramref name="audio_frame"/>.</param>
+            <param name="audio_frame">Frame of audio to test for speech.</param>
+            <param name="frame_length">Length of the frame, in 16-bit samples.</param>
+            <returns>1 if the sample contains speech, 0 if no speech is found, and -1 on error.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Process(System.IntPtr,System.Int32,System.Int16[],System.UInt64)">
+            <summary>
+            Process a frame of audio for voice content.
+            </summary>
+            <param name="handle">Handle to an initialized VAD context.</param>
+            <param name="fs">The sample rate of <paramref name="audio_frame"/>.</param>
+            <param name="audio_frame">Frame of audio to test for speech.</param>
+            <param name="frame_length">Length of the frame, in 16-bit samples.</param>
+            <returns>1 if the sample contains speech, 0 if no speech is found, and -1 on error.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Process(System.IntPtr,System.Int32,System.IntPtr,System.UInt64)">
+            <summary>
+            Process a frame of audio for voice content.
+            </summary>
+            <param name="handle">Handle to an initialized VAD context.</param>
+            <param name="fs">The sample rate of <paramref name="audio_frame"/>.</param>
+            <param name="audio_frame">Frame of audio to test for speech.</param>
+            <param name="frame_length">Length of the frame, in 16-bit samples.</param>
+            <returns>1 if the sample contains speech, 0 if no speech is found, and -1 on error.</returns>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.IWebRtcDll.Free(System.IntPtr)">
+            <summary>
+            Free the resources associated with the supplied handle.
+            </summary>
+            <param name="handle">Handle of the VAD context to free.</param>
+        </member>
+        <member name="T:WebRtcVadSharp.WebRtc.WebRtcDll">
+            <summary>
+            P/Invoke interface to the WebRTC DLL.
+            </summary>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Create">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Init(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Process(System.IntPtr,System.Int32,System.Byte[],System.UInt64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Process(System.IntPtr,System.Int32,System.Int16[],System.UInt64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Process(System.IntPtr,System.Int32,System.IntPtr,System.UInt64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.SetMode(System.IntPtr,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.ValidRateAndFrameLength(System.Int32,System.UInt64)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WebRtcVadSharp.WebRtc.WebRtcDll.Free(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

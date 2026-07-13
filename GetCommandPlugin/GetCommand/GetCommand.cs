@@ -1,12 +1,15 @@
-﻿// GetCommand VM plugin: Get command_p text using voice AI STT
-// v1.3.1.11
+// GetCommand VM plugin: Get command_p text using voice AI STT
+// v1.4.0.13
 // Uses Deepgram Nova-3 model or OpenAI Whisper endpoint
-// Combines VAD from WebRTC, Pre-roll buffering, Silence Detection, and a Dynamic RMS Energy Floor
+// Combines Silero VAD (v5, ONNX), Pre-roll buffering, Silence Detection, a Dynamic RMS Energy Floor, and ambient-aware end-of-speech detection
+// Requires silero_vad.onnx and the ONNX Runtime DLLs in the plugin folder
+// Runs in 32-bit or 64-bit hosts: AnyCPU assembly + onnx\x86 and onnx\x64 natives picked at runtime
+// ONNX Runtime is pinned to 1.22.1, the last version shipping 32-bit Windows natives (VoiceMacro is a 32-bit process)
 // Pre-speech timeout is 5 seconds
 // Pre-roll buffering is 1 second
 // Set maxDurationSeconds for maximum listen time
 // Set silenceThreshold in seconds
-// Copyright © 2024-2025 Bruce Alexander
+// Copyright © 2024-2026 Bruce Alexander
 // vmAPI Library Copyright © 2018-2019 FSC-SOFT
 // This software is licensed under the MIT License. See LICENSE file for details.
 
@@ -15,6 +18,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
@@ -23,12 +27,29 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using Newtonsoft.Json.Linq;
 using NAudio.Wave;
-using WebRtcVadSharp;
+using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
 
 namespace GetCommandPlugin
 {
     public static class Interface_Manager
     {
+        static Interface_Manager()
+        {
+            // The host app has no binding redirects for our dependencies, so resolve
+            // any version of a DLL we ship from the plugin folder.
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            {
+                try
+                {
+                    string name = new AssemblyName(args.Name).Name;
+                    string candidate = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), name + ".dll");
+                    return File.Exists(candidate) ? Assembly.LoadFrom(candidate) : null;
+                }
+                catch (Exception) { return null; }
+            };
+        }
+
         public static VoiceMacro vmInstance = new VoiceMacro();
     }
 
@@ -36,11 +57,8 @@ namespace GetCommandPlugin
     {
         #region "vmInterface"
         public string DisplayName => "GetCommand";
-        public string Description => "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds\r\nArgument 3: Silence threshold in seconds (optional)";
+        public string Description => "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Max duration in seconds (optional, lang code prefix)\r\nArgument 3: Silence threshold in seconds (optional, default 2)";
         public string ID => "f73e6ce3-ea89-484f-9516-1bc9c12d17bd";
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadLibrary(string libname);
 
         void vmInterface.Init()
         {
@@ -48,12 +66,11 @@ namespace GetCommandPlugin
             {
                 string assemblyPath = Assembly.GetExecutingAssembly().Location;
                 string pluginDir = Path.GetDirectoryName(assemblyPath);
-                string nativeLibPath = Path.Combine(pluginDir, "WebRtcVad", "WebRtcVad.dll");
 
-                if (File.Exists(nativeLibPath))
-                {
-                    IntPtr handle = LoadLibrary(nativeLibPath);
-                }
+                // Warm up the model so the first command doesn't pay the load cost.
+                // EnsureSession also preloads the right-arch native onnxruntime, so the
+                // plugin works even in hosts that never call Init().
+                SileroVad.EnsureSession(GetModelPath(pluginDir));
             }
             catch (Exception) { }
         }
@@ -67,6 +84,8 @@ namespace GetCommandPlugin
 
         void vmInterface.Dispose()
         {
+            SileroVad.DisposeSession();
+
             // End wake word listener upon close
             Process[] processes = Process.GetProcessesByName("Machina");
             foreach (var proc in processes)
@@ -80,34 +99,66 @@ namespace GetCommandPlugin
         }
         #endregion
 
+        private static string GetModelPath(string pluginDir)
+        {
+            string path = Path.Combine(pluginDir, "silero_vad.onnx");
+            if (!File.Exists(path)) path = Path.Combine(pluginDir, "SileroVad", "silero_vad.onnx");
+            return path;
+        }
+
         async Task GetCommand(string param1, string param2, string param3)
         {
             if (string.IsNullOrEmpty(param3)) param3 = "2";
             param1 = param1.Replace("\"", "");
+            param2 = (param2 ?? "").Trim();
+
+            // Argument 2 may lead with an alphabetic BCP-47 / ISO language code before the
+            // number, e.g. "IT2" = Italian, 2 seconds. A bare number leaves the language
+            // unset and the STT service uses its default (English).
+            int digitsStart = 0;
+            while (digitsStart < param2.Length && (char.IsLetter(param2[digitsStart]) || param2[digitsStart] == '-'))
+                digitsStart++;
+
+            string language = "";
+            string langCode = param2.Substring(0, digitsStart).Trim('-');
+            if (langCode.Length > 0)
+            {
+                // Normalize casing to canonical BCP-47: lowercase language, uppercase region
+                string[] parts = langCode.Split('-');
+                parts[0] = parts[0].ToLowerInvariant();
+                for (int i = 1; i < parts.Length; i++)
+                    parts[i] = parts[i].Length == 2 ? parts[i].ToUpperInvariant() : parts[i].ToLowerInvariant();
+                language = string.Join("-", parts);
+            }
 
             int intParam2;
-            int.TryParse(param2, out intParam2);
+            int.TryParse(param2.Substring(digitsStart), out intParam2);
 
             int intParam3;
             int.TryParse(param3, out intParam3);
 
             if (intParam2 == 0 || intParam2 > 45) intParam2 = 5;
+            // Unparseable, zero, or negative silence thresholds would end capture on the
+            // first quiet frame, so fall back to the 2-second default
+            if (intParam3 <= 0) intParam3 = 2;
 
             string transcription;
 
             if (param1.StartsWith("http"))
-                transcription = await GetSTTWhisper(param1, intParam2, intParam3);
+                transcription = await GetSTTWhisper(param1, intParam2, intParam3, language);
             else
-                transcription = await GetSTTDeepgram(param1, intParam2, intParam3);
+                transcription = await GetSTTDeepgram(param1, intParam2, intParam3, language);
 
             vmCommand.SetVariable("command_p", transcription);
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold)
+        async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold, string language)
         {
-            string url = "https://api.deepgram.com/v1/listen?model=nova-3&smart_format=true";
-            byte[] audioData = RecordAudioWithWebRTC(maxDurationSeconds, silenceThreshold);
+            string url = "https://api.deepgram.com/v1/listen?model=nova-3"
+                + (string.IsNullOrEmpty(language) ? "" : "&language=" + Uri.EscapeDataString(language))
+                + "&smart_format=true";
+            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold);
 
             if (audioData == null || audioData.Length == 0) return "";
 
@@ -134,9 +185,9 @@ namespace GetCommandPlugin
             }
         }
 
-        async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold)
+        async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold, string language)
         {
-            byte[] audioData = RecordAudioWithWebRTC(maxDurationSeconds, silenceThreshold);
+            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold);
             if (audioData == null || audioData.Length == 0) return "";
 
             using (HttpClient httpClient = new HttpClient())
@@ -147,6 +198,9 @@ namespace GetCommandPlugin
                     {
                         content.Add(new ByteArrayContent(audioData), "file", "audio.wav");
                         content.Add(new StringContent("whisper-1"), "model");
+                        // Whisper expects a bare ISO-639-1 code, so send only the primary subtag
+                        if (!string.IsNullOrEmpty(language))
+                            content.Add(new StringContent(language.Split('-')[0]), "language");
                         HttpResponseMessage response = await httpClient.PostAsync(apiUrl, content);
 
                         if (response.IsSuccessStatusCode)
@@ -162,12 +216,12 @@ namespace GetCommandPlugin
             }
         }
 
-        byte[] RecordAudioWithWebRTC(int maxDurationSeconds, int silenceThreshold)
+        byte[] RecordAudioWithSilero(int maxDurationSeconds, int silenceThreshold)
         {
             const int SampleRateHz = 16000;
-            const int FrameDurationMs = 30;
-            const int FrameSize = SampleRateHz * FrameDurationMs / 1000;
+            const int FrameSize = SileroVad.ChunkSamples;                  // 512 samples, fixed by the model
             const int FrameBytes = FrameSize * 2;
+            const int FrameDurationMs = FrameSize * 1000 / SampleRateHz;   // 32 ms
 
             // Roll back this amount of time to capture any words clipped before speech detection
             const int PreRollMilliseconds = 1000;
@@ -181,158 +235,336 @@ namespace GetCommandPlugin
             {
                 try
                 {
-                    using (var vad = new WebRtcVad()
+                    // Shared ONNX session, fresh recurrent state for this recording
+                    string pluginDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    var vad = new SileroVad(GetModelPath(pluginDir));
+
+                    waveIn.WaveFormat = new WaveFormat(SampleRateHz, 16, 1);
+
+                    List<byte> audioBuffer = new List<byte>();
+                    Queue<byte[]> preRollQueue = new Queue<byte[]>();
+                    int maxPreRollFrames = PreRollMilliseconds / FrameDurationMs;
+
+                    bool speechStarted = false;
+                    DateTime lastVoiceTime = DateTime.Now;
+                    DateTime startTime = DateTime.Now;
+
+                    // Initial silence value
+                    float noiseFloor = 0.02f;
+                    // Minimum allowed floor to prevent oversensitivity
+                    float minNoiseFloor = 0.005f;
+                    // Maximum allowed floor that can drown out voices
+                    float maxNoiseFloor = 0.5f;
+                    // Buffer above floor required for speech
+                    float energyOffset = 0.03f;
+
+                    // Silero speech-probability thresholds, with hysteresis: a higher bar
+                    // to start speech than to keep it (Silero's own recommended pattern).
+                    const float OnsetProbability = 0.5f;
+                    const float ContinueProbability = 0.35f;
+
+                    // --- End-of-speech (endpointing) tuning ---
+                    // Separate background estimate used ONLY to decide when speech has stopped.
+                    // Unlike noiseFloor (which snaps to troughs), this is a running average of the
+                    // pre-speech background, so steady ambient (e.g. soft music) doesn't keep the
+                    // session alive after the user stops talking. Frozen once speech begins.
+                    float ambientReference = noiseFloor;
+                    const float AmbientSmooth = 0.05f;        // how fast it follows pre-speech background
+                    const float ContinuationFactor = 2.0f;    // voice must exceed background by ~6 dB to count
+
+                    // Sliding window so sparse frames misflagged by the VAD don't keep refreshing.
+                    Queue<bool> voiceWindow = new Queue<bool>();
+                    int voiceCount = 0;
+                    const int VoiceWindowFrames = 10;          // ~320 ms at 32 ms/frame
+                    const float VoiceRatioThreshold = 0.5f;    // majority of recent frames must be voice
+
+                    waveIn.DataAvailable += (sender, e) =>
                     {
-                        OperatingMode = OperatingMode.VeryAggressive,
-                        SampleRate = SampleRate.Is16kHz
-                    })
-                    {
-                        waveIn.WaveFormat = new WaveFormat(SampleRateHz, 16, 1);
+                        if (stopSignal.WaitOne(0)) return;
 
-                        List<byte> audioBuffer = new List<byte>();
-                        Queue<byte[]> preRollQueue = new Queue<byte[]>();
-                        int maxPreRollFrames = PreRollMilliseconds / FrameDurationMs;
+                        byte[] incoming = new byte[e.BytesRecorded];
+                        Array.Copy(e.Buffer, incoming, e.BytesRecorded);
+                        audioBuffer.AddRange(incoming);
 
-                        bool speechStarted = false;
-                        DateTime lastVoiceTime = DateTime.Now;
-                        DateTime startTime = DateTime.Now;
-
-                        // Initial silence value
-                        float noiseFloor = 0.02f;
-                        // Minimum allowed floor to prevent oversensitivity
-                        float minNoiseFloor = 0.005f;
-                        // Maximum allowed floor that can drown out voices
-                        float maxNoiseFloor = 0.5f;
-                        // Buffer above floor required for speech
-                        float energyOffset = 0.03f;
-
-                        waveIn.DataAvailable += (sender, e) =>
+                        while (audioBuffer.Count >= FrameBytes)
                         {
-                            if (stopSignal.WaitOne(0)) return;
+                            byte[] frame = audioBuffer.GetRange(0, FrameBytes).ToArray();
+                            audioBuffer.RemoveRange(0, FrameBytes);
 
-                            byte[] incoming = new byte[e.BytesRecorded];
-                            Array.Copy(e.Buffer, incoming, e.BytesRecorded);
-                            audioBuffer.AddRange(incoming);
+                            // Convert once to float samples for both RMS and the model
+                            float[] samples = new float[FrameSize];
+                            for (int i = 0; i < FrameSize; i++)
+                                samples[i] = BitConverter.ToInt16(frame, i * 2) / 32768f;
 
-                            while (audioBuffer.Count >= FrameBytes)
+                            float currentEnergy = CalculateRMS(samples);
+
+                            // If current energy is quieter than initial floor, then drop the floor immediately
+                            if (currentEnergy < noiseFloor)
                             {
-                                byte[] frame = audioBuffer.GetRange(0, FrameBytes).ToArray();
-                                audioBuffer.RemoveRange(0, FrameBytes);
-
-                                // Calculate RMS energy
-                                float currentEnergy = CalculateRMS(frame);
-
-                                // If current energy is quieter than initial floor, then drop the floor immediately
-                                if (currentEnergy < noiseFloor)
+                                noiseFloor = currentEnergy;
+                                if (noiseFloor < minNoiseFloor) noiseFloor = minNoiseFloor;
+                            }
+                            else
+                            {
+                                // If louder, then adapt to steady background noise before speech is detected to avoid rolling in the user's voice level
+                                if (!speechStarted)
                                 {
-                                    noiseFloor = currentEnergy;
-                                    if (noiseFloor < minNoiseFloor) noiseFloor = minNoiseFloor;
+                                    noiseFloor += 0.0005f;
+                                    if (noiseFloor > maxNoiseFloor) noiseFloor = maxNoiseFloor;
                                 }
-                                else
+                            }
+
+                            // Onset gate: background + offset, confirmed by the model.
+                            float dynamicThreshold = noiseFloor + energyOffset;
+
+                            // Run Silero on every frame to keep its recurrent state continuous
+                            float speechProbability = vad.Process(samples);
+
+                            if (!speechStarted)
+                            {
+                                // PRE-SPEECH: learn the typical background level (running average,
+                                // not the trough) so we can later tell when the user stops over it.
+                                ambientReference += AmbientSmooth * (currentEnergy - ambientReference);
+
+                                bool onsetSpeech = (currentEnergy > dynamicThreshold) && speechProbability >= OnsetProbability;
+                                if (onsetSpeech)
                                 {
-                                    // If louder, then adapt to steady background noise before speech is detected to avoid rolling in the user's voice level
-                                    if (!speechStarted)
-                                    {
-                                        noiseFloor += 0.0005f;
-                                        if (noiseFloor > maxNoiseFloor) noiseFloor = maxNoiseFloor;
-                                    }
-                                }
-
-                                // Calculate dynamic threshold of background noise + offset
-                                float dynamicThreshold = noiseFloor + energyOffset;
-
-                                // If energy is higher than background noise, then WebRTC decides if it's speech
-                                bool isSpeech = (currentEnergy > dynamicThreshold) && vad.HasSpeech(frame);
-
-                                if (isSpeech)
-                                {
+                                    speechStarted = true;
                                     lastVoiceTime = DateTime.Now;
 
-                                    if (!speechStarted)
+                                    // Freeze the background estimate for endpointing; keep it sane.
+                                    if (ambientReference < noiseFloor) ambientReference = noiseFloor;
+
+                                    // Dump pre-roll, then the triggering frame.
+                                    while (preRollQueue.Count > 0)
                                     {
-                                        speechStarted = true;
-                                        // Dump pre-roll
-                                        while (preRollQueue.Count > 0)
-                                        {
-                                            byte[] preFrame = preRollQueue.Dequeue();
-                                            memoryStream.Write(preFrame, 0, preFrame.Length);
-                                        }
+                                        byte[] preFrame = preRollQueue.Dequeue();
+                                        memoryStream.Write(preFrame, 0, preFrame.Length);
                                     }
                                     memoryStream.Write(frame, 0, frame.Length);
                                 }
                                 else
                                 {
-                                    // Silence
-                                    if (speechStarted)
-                                    {
-                                        // Record silence to maintain flow
-                                        memoryStream.Write(frame, 0, frame.Length);
+                                    // Buffering Pre-Roll
+                                    preRollQueue.Enqueue(frame);
+                                    if (preRollQueue.Count > maxPreRollFrames)
+                                        preRollQueue.Dequeue();
 
-                                        if ((DateTime.Now - lastVoiceTime).TotalSeconds >= silenceThreshold)
-                                        {
-                                            stopSignal.Set();
-                                            return;
-                                        }
-                                    }
-                                    else
+                                    if ((DateTime.Now - startTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
                                     {
-                                        // Buffering Pre-Roll
-                                        preRollQueue.Enqueue(frame);
-                                        if (preRollQueue.Count > maxPreRollFrames)
-                                            preRollQueue.Dequeue();
-
-                                        if ((DateTime.Now - startTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
-                                        {
-                                            stopSignal.Set();
-                                            return;
-                                        }
+                                        stopSignal.Set();
+                                        return;
                                     }
                                 }
                             }
-
-                            if ((DateTime.Now - startTime).TotalSeconds >= maxDurationSeconds)
+                            else
                             {
-                                stopSignal.Set();
+                                // DURING SPEECH: always record so the audio stays continuous.
+                                memoryStream.Write(frame, 0, frame.Length);
+
+                                // Continuation gate: voice must exceed the frozen background by
+                                // ContinuationFactor, so steady music alone won't count as speech.
+                                float continuationThreshold = ambientReference * ContinuationFactor;
+                                bool frameVoice = (currentEnergy > continuationThreshold) && speechProbability >= ContinueProbability;
+
+                                // Smooth over a short window: a few stray misflagged frames won't refresh.
+                                voiceWindow.Enqueue(frameVoice);
+                                if (frameVoice) voiceCount++;
+                                if (voiceWindow.Count > VoiceWindowFrames && voiceWindow.Dequeue()) voiceCount--;
+
+                                bool voiceActive = ((float)voiceCount / voiceWindow.Count) >= VoiceRatioThreshold;
+
+                                if (voiceActive)
+                                {
+                                    lastVoiceTime = DateTime.Now;
+                                }
+                                else if ((DateTime.Now - lastVoiceTime).TotalSeconds >= silenceThreshold)
+                                {
+                                    stopSignal.Set();
+                                    return;
+                                }
                             }
-                        };
-
-                        startTime = DateTime.Now;
-                        lastVoiceTime = DateTime.Now;
-                        waveIn.StartRecording();
-                        stopSignal.WaitOne();
-                        waveIn.StopRecording();
-
-                        if (memoryStream.Length == 0) return new byte[0];
-
-                        memoryStream.Position = 0;
-                        using (var outputStream = new MemoryStream())
-                        {
-                            using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(outputStream), new WaveFormat(SampleRateHz, 16, 1)))
-                            {
-                                memoryStream.CopyTo(waveFileWriter);
-                            }
-                            return outputStream.ToArray();
                         }
+
+                        if ((DateTime.Now - startTime).TotalSeconds >= maxDurationSeconds)
+                        {
+                            stopSignal.Set();
+                        }
+                    };
+
+                    startTime = DateTime.Now;
+                    lastVoiceTime = DateTime.Now;
+                    waveIn.StartRecording();
+                    stopSignal.WaitOne();
+                    waveIn.StopRecording();
+
+                    if (memoryStream.Length == 0) return new byte[0];
+
+                    memoryStream.Position = 0;
+                    using (var outputStream = new MemoryStream())
+                    {
+                        using (var waveFileWriter = new WaveFileWriter(new IgnoreDisposeStream(outputStream), new WaveFormat(SampleRateHz, 16, 1)))
+                        {
+                            memoryStream.CopyTo(waveFileWriter);
+                        }
+                        return outputStream.ToArray();
                     }
                 }
                 catch (Exception ex)
                 {
-                    vmCommand.AddLogEntry("WebRtcVad Error: " + ex.Message, Color.Red, ID, "E", "Init Fail");
+                    // Include the inner-exception chain: for load failures the outer message
+                    // (e.g. a type-initializer error) hides the actual cause
+                    string message = ex.Message;
+                    for (Exception inner = ex.InnerException; inner != null; inner = inner.InnerException)
+                        message += " -> " + inner.Message;
+                    vmCommand.AddLogEntry("Silero VAD Error: " + message, Color.Red, ID, "E", "Init Fail");
                     return null;
                 }
             }
         }
 
-        private float CalculateRMS(byte[] buffer)
+        private float CalculateRMS(float[] samples)
         {
             float sum = 0;
-            for (int i = 0; i < buffer.Length; i += 2)
+            for (int i = 0; i < samples.Length; i++)
+                sum += samples[i] * samples[i];
+            return (float)Math.Sqrt(sum / samples.Length);
+        }
+    }
+
+    // Thin wrapper around the Silero VAD v5 ONNX model: returns a speech probability
+    // (0..1) per 512-sample chunk. The InferenceSession is shared process-wide; each
+    // instance carries its own recurrent state, so create one per recording session.
+    public class SileroVad
+    {
+        public const int ChunkSamples = 512;    // 32 ms at 16 kHz, fixed by the v5 model
+        private const int ContextSamples = 64;  // the model wants the previous chunk's tail prepended
+
+        private static InferenceSession session;
+        private static DenseTensor<long> srTensor;
+        private static readonly object sessionLock = new object();
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr LoadLibrary(string libname);
+
+        // Resolve the folder the plugin actually runs from. Location can be empty
+        // when a host loads the assembly from memory, so fall back to CodeBase.
+        private static string PluginDir()
+        {
+            Assembly asm = Assembly.GetExecutingAssembly();
+            string path = asm.Location;
+            if (string.IsNullOrEmpty(path))
             {
-                short sample = BitConverter.ToInt16(buffer, i);
-                float sampleFloat = sample / 32768f;
-                sum += sampleFloat * sampleFloat;
+                try { path = new Uri(asm.CodeBase).LocalPath; } catch (Exception) { }
             }
-            return (float)Math.Sqrt(sum / (buffer.Length / 2));
+            return string.IsNullOrEmpty(path) ? null : Path.GetDirectoryName(path);
+        }
+
+        // Load the native onnxruntime matching the process bitness before the managed
+        // layer needs it: the P/Invoke probe never searches the plugin folder, so
+        // without this the load fails in hosts whose app dir isn't the plugin dir.
+        // Returns a description of what happened, for error reporting.
+        private static string PreloadNative()
+        {
+            string dir = PluginDir();
+            if (dir == null) return "plugin folder could not be resolved";
+            string arch = Environment.Is64BitProcess ? "x64" : "x86";
+            string path = Path.Combine(dir, "onnx", arch, "onnxruntime.dll");
+            if (!File.Exists(path)) path = Path.Combine(dir, "onnxruntime.dll");
+            if (!File.Exists(path)) return "onnxruntime.dll (" + arch + ") not found under " + dir;
+            if (LoadLibrary(path) != IntPtr.Zero) return path;
+            return path + " failed to load, Win32 error " + Marshal.GetLastWin32Error();
+        }
+
+        private float[] state = new float[2 * 1 * 128];
+        private readonly float[] context = new float[ContextSamples];
+
+        public SileroVad(string modelPath)
+        {
+            EnsureSession(modelPath);
+        }
+
+        public static void EnsureSession(string modelPath)
+        {
+            lock (sessionLock)
+            {
+                if (session != null) return;
+
+                // Works regardless of whether the host ever called the plugin's Init()
+                string nativeResult = PreloadNative();
+
+                if (!File.Exists(modelPath))
+                    throw new FileNotFoundException("Silero VAD model not found: " + modelPath);
+
+                try
+                {
+                    var options = new SessionOptions();
+                    // The model is tiny; a thread pool costs more than it saves
+                    options.IntraOpNumThreads = 1;
+                    options.InterOpNumThreads = 1;
+                    var s = new InferenceSession(modelPath, options);
+
+                    if (!s.InputMetadata.ContainsKey("state"))
+                    {
+                        s.Dispose();
+                        throw new InvalidOperationException("Model is not Silero VAD v5 (missing 'state' input) - use silero_vad.onnx from the v5 release");
+                    }
+
+                    // "sr" is a scalar in v5; build the tensor to whatever rank the model declares
+                    srTensor = s.InputMetadata["sr"].Dimensions.Length == 0
+                        ? new DenseTensor<long>(new long[] { 16000 }, new int[0])
+                        : new DenseTensor<long>(new long[] { 16000 }, new[] { 1 });
+
+                    session = s;
+                }
+                catch (TypeInitializationException ex)
+                {
+                    // The managed layer couldn't bind the native onnxruntime; say exactly
+                    // what the preload attempted so the log pinpoints the cause
+                    throw new InvalidOperationException("ONNX Runtime native load failed. Native preload: " + nativeResult, ex);
+                }
+            }
+        }
+
+        public static void DisposeSession()
+        {
+            lock (sessionLock)
+            {
+                if (session != null)
+                {
+                    session.Dispose();
+                    session = null;
+                }
+            }
+        }
+
+        // samples: exactly ChunkSamples mono 16 kHz samples in -1..1
+        public float Process(float[] samples)
+        {
+            float[] input = new float[ContextSamples + ChunkSamples];
+            Array.Copy(context, 0, input, 0, ContextSamples);
+            Array.Copy(samples, 0, input, ContextSamples, ChunkSamples);
+
+            var inputs = new List<NamedOnnxValue>
+            {
+                NamedOnnxValue.CreateFromTensor("input", new DenseTensor<float>(input, new[] { 1, ContextSamples + ChunkSamples })),
+                NamedOnnxValue.CreateFromTensor("state", new DenseTensor<float>(state, new[] { 2, 1, 128 })),
+                NamedOnnxValue.CreateFromTensor("sr", srTensor)
+            };
+
+            float probability = 0f;
+            using (var results = session.Run(inputs))
+            {
+                foreach (var result in results)
+                {
+                    if (result.Name == "output") probability = result.AsEnumerable<float>().First();
+                    else if (result.Name == "stateN") state = result.AsEnumerable<float>().ToArray();
+                }
+            }
+
+            // Carry the tail of this chunk as context for the next one
+            Array.Copy(input, input.Length - ContextSamples, context, 0, ContextSamples);
+            return probability;
         }
     }
 

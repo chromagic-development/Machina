@@ -20,3 +20,13 @@ C:\Users\chrom\source\repos\GetCommandPluginWebRtc\GetCommand\obj\Release\GetCom
 C:\Users\chrom\source\repos\GetCommandPluginWebRtc\GetCommand\obj\Release\GetCommand.csproj.Up2Date
 C:\Users\chrom\source\repos\GetCommandPluginWebRtc\GetCommand\obj\Release\GetCommand.dll
 C:\Users\chrom\source\repos\GetCommandPluginWebRtc\GetCommand\obj\Release\GetCommand.pdb
+C:\Machina\Plugins\silero_vad.onnx
+C:\Machina\Plugins\onnx\x86\onnxruntime.dll
+C:\Machina\Plugins\onnx\x86\onnxruntime_providers_shared.dll
+C:\Machina\Plugins\onnx\x64\onnxruntime.dll
+C:\Machina\Plugins\onnx\x64\onnxruntime_providers_shared.dll
+C:\Users\chrom\source\repos\GetCommandPluginClaude2\GetCommand\obj\Release\GetCommand.csproj.AssemblyReference.cache
+C:\Users\chrom\source\repos\GetCommandPluginClaude2\GetCommand\obj\Release\GetCommand.csproj.CoreCompileInputs.cache
+C:\Users\chrom\source\repos\GetCommandPluginClaude2\GetCommand\obj\Release\GetCommand.csproj.Up2Date
+C:\Users\chrom\source\repos\GetCommandPluginClaude2\GetCommand\obj\Release\GetCommand.dll
+C:\Users\chrom\source\repos\GetCommandPluginClaude2\GetCommand\obj\Release\GetCommand.pdb

@@ -1,5 +1,5 @@
 // GetCommand VM plugin: Get command_p text using voice AI STT
-// v1.5.0.14
+// v1.6.0.15
 // Uses Deepgram Nova-3 model or OpenAI Whisper endpoint
 // Combines Silero VAD (v5, ONNX), Pre-roll buffering, Silence Detection, and a fixed RMS
 // Copyright © 2024-2026 Bruce Alexander
@@ -51,7 +51,7 @@ namespace GetCommandPlugin
     {
         #region "vmInterface"
         public string DisplayName => "GetCommand";
-        public string Description => "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds, optionally led by a BCP-47/ISO language code (e.g. IT2 = Italian, 2s)\r\nArgument 3: Silence threshold in seconds (optional, default 2), optionally followed by ':' and a speech energy floor, e.g. 2:0.035";
+        public string Description => "Get command_p text using voice AI STT\r\nArgument 1: Deepgram API key or OpenAI Whisper endpoint (http)\r\nArgument 2: Maximum speech duration in seconds (optionally provide language code before seconds)\r\nArgument 3: Silence threshold in seconds (optionally follow by ':' and initial silence timeout in s)";
         public string ID => "f73e6ce3-ea89-484f-9516-1bc9c12d17bd";
 
         void vmInterface.Init()
@@ -96,8 +96,12 @@ namespace GetCommandPlugin
         // RMS level (0..1) a frame must exceed to count as the user speaking into the mic.
         // Everything below it - room tone, instrumental music, vocal music - is ignored on
         // level alone, so no background estimate is needed. Tied to microphone gain: if the
-        // mic or its input level changes, retune via the ":<floor>" suffix on argument 3.
-        private const float DefaultSpeechEnergyFloor = 0.04f;
+        // mic or its input level changes, retune this constant.
+        private const float SpeechEnergyFloor = 0.04f;
+
+        // How long to wait for speech to start before giving up, when argument 3 carries
+        // no ":<seconds>" suffix
+        private const int DefaultInitialSilenceTimeoutMs = 5000;
 
         private static string GetModelPath(string pluginDir)
         {
@@ -107,9 +111,9 @@ namespace GetCommandPlugin
         }
 
         // Get command_p text using voice AI STT
-        // Argument 1: DEEPGRAM_API_KEY or OpenAI Whisper endpoint (http prefix)
+        // Argument 1: DEEPGRAM_API_KEY or OpenAI Whisper endpoint (http)
         // Argument 2: Maximum speech duration in seconds (optionally provide language code before seconds)
-        // Argument 3: Silence threshold in seconds
+        // Argument 3: Silence threshold in seconds (optionally follow by ':' and initial silence timeout in s)
         async Task GetCommand(string param1, string param2, string param3)
         {
             if (string.IsNullOrEmpty(param3)) param3 = "2";
@@ -138,18 +142,19 @@ namespace GetCommandPlugin
             int intParam2;
             int.TryParse(param2.Substring(digitsStart), out intParam2);
 
-            // Argument 3 may carry an optional ":<floor>" suffix overriding the speech energy
-            // floor, e.g. "2:0.035", so the level gate can be retuned per macro without a rebuild.
+            // Argument 3 may carry an optional ":<seconds>" suffix overriding how long the
+            // recorder waits for speech to start, e.g. "2:10", so the initial wait can be
+            // retuned per macro without a rebuild.
             string[] param3Parts = param3.Split(':');
 
-            float energyFloor = DefaultSpeechEnergyFloor;
+            int initialSilenceTimeoutMs = DefaultInitialSilenceTimeoutMs;
             if (param3Parts.Length > 1)
             {
-                float parsedFloor;
-                // Invariant culture: the suffix is authored as "0.035" regardless of locale
-                if (float.TryParse(param3Parts[1].Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out parsedFloor)
-                    && parsedFloor > 0f && parsedFloor < 1f)
-                    energyFloor = parsedFloor;
+                int parsedTimeout;
+                // Invariant culture: the suffix is authored as a plain integer regardless of locale
+                if (int.TryParse(param3Parts[1].Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out parsedTimeout)
+                    && parsedTimeout > 0)
+                    initialSilenceTimeoutMs = parsedTimeout * 1000;
             }
 
             int intParam3;
@@ -163,20 +168,20 @@ namespace GetCommandPlugin
             string transcription;
 
             if (param1.StartsWith("http"))
-                transcription = await GetSTTWhisper(param1, intParam2, intParam3, language, energyFloor);
+                transcription = await GetSTTWhisper(param1, intParam2, intParam3, language, initialSilenceTimeoutMs);
             else
-                transcription = await GetSTTDeepgram(param1, intParam2, intParam3, language, energyFloor);
+                transcription = await GetSTTDeepgram(param1, intParam2, intParam3, language, initialSilenceTimeoutMs);
 
             vmCommand.SetVariable("command_p", transcription);
             vmCommand.AddLogEntry(transcription, Color.Blue, ID, "V", "STT for command received");
         }
 
-        async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold, string language, float energyFloor)
+        async Task<string> GetSTTDeepgram(string apiKey, int maxDurationSeconds, int silenceThreshold, string language, int initialSilenceTimeoutMs)
         {
             string url = "https://api.deepgram.com/v1/listen?model=nova-3"
                 + (string.IsNullOrEmpty(language) ? "" : "&language=" + Uri.EscapeDataString(language))
                 + "&smart_format=true";
-            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold, energyFloor);
+            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold, initialSilenceTimeoutMs);
 
             if (audioData == null || audioData.Length == 0) return "";
 
@@ -203,9 +208,9 @@ namespace GetCommandPlugin
             }
         }
 
-        async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold, string language, float energyFloor)
+        async Task<string> GetSTTWhisper(string apiUrl, int maxDurationSeconds, int silenceThreshold, string language, int initialSilenceTimeoutMs)
         {
-            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold, energyFloor);
+            byte[] audioData = RecordAudioWithSilero(maxDurationSeconds, silenceThreshold, initialSilenceTimeoutMs);
             if (audioData == null || audioData.Length == 0) return "";
 
             using (HttpClient httpClient = new HttpClient())
@@ -234,7 +239,7 @@ namespace GetCommandPlugin
             }
         }
 
-        byte[] RecordAudioWithSilero(int maxDurationSeconds, int silenceThreshold, float speechEnergyFloor)
+        byte[] RecordAudioWithSilero(int maxDurationSeconds, int silenceThreshold, int initialSilenceTimeoutMs)
         {
             const int SampleRateHz = 16000;
             const int FrameSize = SileroVad.ChunkSamples;                  // 512 samples, fixed by the model
@@ -243,9 +248,6 @@ namespace GetCommandPlugin
 
             // Roll back this amount of time to capture any words clipped before speech detection
             const int PreRollMilliseconds = 1000;
-
-            // Wait this long for speech to start
-            const int InitialSilenceTimeoutMs = 30000;
 
             using (var memoryStream = new MemoryStream())
             using (var waveIn = new WaveInEvent())
@@ -272,7 +274,7 @@ namespace GetCommandPlugin
                     const float OnsetProbability = 0.5f;
                     const float ContinueProbability = 0.35f;
 
-                    // The level gate (speechEnergyFloor) and the model answer different
+                    // The level gate (SpeechEnergyFloor) and the model answer different
                     // questions, and each covers the other's blind spot: the floor rejects
                     // anything quieter than the user - including vocal music, which Silero
                     // scores as speech - while Silero rejects loud non-speech such as door
@@ -304,7 +306,7 @@ namespace GetCommandPlugin
 
                             // Loud enough to be the user rather than background, whatever the background is
                             float currentEnergy = CalculateRMS(samples);
-                            bool loudEnough = currentEnergy > speechEnergyFloor;
+                            bool loudEnough = currentEnergy > SpeechEnergyFloor;
 
                             // Run Silero on every frame to keep its recurrent state continuous
                             float speechProbability = vad.Process(samples);
@@ -332,7 +334,7 @@ namespace GetCommandPlugin
                                     if (preRollQueue.Count > maxPreRollFrames)
                                         preRollQueue.Dequeue();
 
-                                    if ((DateTime.Now - startTime).TotalMilliseconds >= InitialSilenceTimeoutMs)
+                                    if ((DateTime.Now - startTime).TotalMilliseconds >= initialSilenceTimeoutMs)
                                     {
                                         stopSignal.Set();
                                         return;
